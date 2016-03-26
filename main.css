@@ -74,3 +74,34 @@
   margin-right: 10px;
   top:5px;
 }
+#difficulty{
+  display: none;
+}
+#blockAmount{
+  display: none;
+}
+#finalStat{
+  display: none;
+}
+#easy{
+  position: absolute;
+  left: 37%;
+  top:200px;
+  font-size: 30px;
+}
+#medium{
+  position: absolute;
+  left: 37%;
+  top:300px;
+  font-size: 30px;
+}
+#hard{
+  position: absolute;
+  left: 37%;
+  top:400px;
+  font-size: 30px;
+}
+#difTitle{
+  position: absolute;
+  left:50px
+}
