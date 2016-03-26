@@ -1,0 +1,30 @@
+#box{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  position: absolute;
+  top:50px;
+  left:50px;
+}
+#playzone{
+  height:750px;
+  width:80%;
+  border-style: solid;
+  border-color: red;
+  border-width: 4px;
+  position: absolute;
+  top:30px;
+}
+#scores{
+  position: absolute;
+  right: 20px;
+  top:5px;
+  font-size: 20px;
+  font-family: 'Montserrat';
+}
+.scoor{
+  font-family: 'Raleway';
+  margin-left:1155px;
+  margin-top:10px;
+  font-size: 20px
+}
