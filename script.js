@@ -1,5 +1,4 @@
-
-    var blocknum = 1;
+var blocknum = 1;
     var i = 3;
     var max_height= document.getElementById("playzone").clientHeight;
     var max_width= screen.width*.8;
