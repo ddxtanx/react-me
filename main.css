@@ -19,6 +19,8 @@
   position: absolute;
   right: 20px;
   top:5px;
+  margin-left: 5px;
+  margin-right: 5px;
   font-size: 20px;
   font-family: 'Montserrat';
 }
@@ -32,6 +34,8 @@
   position: absolute;
   top:5px;
   left:40%;
+  margin-left: 5px;
+  margin-right: 5px;
   font-family: 'Montserrat';
   font-size: 15px;
 }
@@ -52,27 +56,37 @@
 #missedTitle{
   position: absolute;
   top:5px;
+  margin-left: 5px;
+  margin-right: 5px;
   left:22%;
 }
 #boxesTitle{
   position: absolute;
   top:5px;
+  margin-left: 5px;
+  margin-right: 5px;
   left:10%;
 }
 #yeet{
   position: absolute;
   left:47%;
+  margin-left: 5px;
+  margin-right: 5px;
   top:5px;
 }
 #stopper{
   position: absolute;
   top:5px;
+  margin-left: 5px;
+  margin-right: 5px;
   left:66%;
 }
 #starter{
   display: none;
   position: absolute;
   top:5px;
+  margin-left: 5px;
+  margin-right: 5px;
   left:66%;
 }
 .startstuff{
