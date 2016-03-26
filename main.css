@@ -129,3 +129,27 @@
   top:400px;
   font-size: 30px;
 }
+#youavg{
+  position: absolute;
+  left: 30%;
+  top:100px;
+  font-size: 30px;
+}
+#youhit{
+  position: absolute;
+  left: 30%;
+  top:200px;
+  font-size: 30px;
+}
+#youscore{
+  position: absolute;
+  left: 30%;
+  top:300px;
+  font-size: 30px;
+}
+#playAgain{
+  position: absolute;
+  left: 30%;
+  top:400px;
+  font-size: 30px;
+}
