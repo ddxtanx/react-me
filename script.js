@@ -1,24 +1,5 @@
-document.getElementById("startbut").onclick=function(){
-  document.getElementById("startme").style.display="none";
-  document.getElementById("difficulty").style.display="block";
-  document.getElementById("easy").onclick=function(){
-    document.getElementById("difficulty").style.display="none";
-    document.getElementById("blockAmount").style.display="block";
-  };
-  document.getElementById("medium").onclick=function(){
-    document.getElementById("difficulty").style.display="none";
-    document.getElementById("blockAmount").style.display="block";
-  };
-  document.getElementById("hard").onclick=function(){
-    document.getElementById("difficulty").style.display="none";
-    document.getElementById("blockAmount").style.display="block";
-  };
-};
-
 var blocknum = 1;
 var i = 3;
-var max_height= document.getElementById("playzone").clientHeight;
-var max_width= screen.width*0.8;
 var makeTime = Date.now();
 var rand_height = getRandomIntInclusive(50,150);
 var rand_col1 = getRandomIntInclusive(0,9);
@@ -34,8 +15,10 @@ var average = 0;
 var stoppedTime = 0;
 var restartTime = 0;
 var interId;
+var maxBlocks = 20;
 var b = document.getElementById("starter");
-var time = Math.floor(Math.random() *2999 +1);
+var randTime = 0;
+var time = Math.floor(Math.random() *randTime +1);
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -48,12 +31,95 @@ function setHW(h, w, divid, fontsiz){
 function setDivs(){
   setHW(1000, 100, "timeTitle", 100+'px');
 }
+document.getElementById("startbut").onclick=function(){
+  document.getElementById("startme").style.display="none";
+  document.getElementById("difficulty").style.display="block";
+  document.getElementById("easy").onclick=function(){
+    document.getElementById("difficulty").style.display="none";
+    document.getElementById("blockAmount").style.display="block";
+    randTime= 3000;
+    document.getElementById("twenty").onclick=function(){
+      maxBlocks=20;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+    document.getElementById("thirty").onclick=function(){
+      maxBlocks=30;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+    document.getElementById("fifty").onclick=function(){
+      maxBlocks=50;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+  };
+  document.getElementById("medium").onclick=function(){
+    document.getElementById("difficulty").style.display="none";
+    document.getElementById("blockAmount").style.display="block";
+    randTime= 2000;
+    document.getElementById("twenty").onclick=function(){
+      maxBlocks=20;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+    document.getElementById("thirty").onclick=function(){
+      maxBlocks=30;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+    document.getElementById("fifty").onclick=function(){
+      maxBlocks=50;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+  };
+  document.getElementById("hard").onclick=function(){
+    document.getElementById("difficulty").style.display="none";
+    document.getElementById("blockAmount").style.display="block";
+    randTime= 1000;
+    document.getElementById("twenty").onclick=function(){
+      maxBlocks=20;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+    document.getElementById("thirty").onclick=function(){
+      maxBlocks=30;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+    document.getElementById("fifty").onclick=function(){
+      maxBlocks=50;
+      document.getElementById("blockAmount").style.display="none";
+      document.getElementById("game").className =
+    document.getElementById("game").className.replace(/\bhide\b/,'');
+      document.getElementById("game").style.display="block";
+    };
+  };
 window.onload=setDivs;
-function make(){
+function make(maxNum){
   setTimeout(function(){
     var a=document.getElementById("box");
+    var max_height= document.getElementById("playzone").clientHeight;
+    var max_width= screen.width*0.8;
     var item_h=getRandomIntInclusive(200, max_height-50);
-    var item_w=getRandomIntInclusive(0, max_width-80);
+    var item_w=getRandomIntInclusive(0, max_width-100);
     a.style.top=item_h+'px';
     a.style.left=item_w+'px';
     a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
@@ -61,7 +127,7 @@ function make(){
     rand_col2 = getRandomIntInclusive(0,9);
     rand_col3 = getRandomIntInclusive(0,9);
     a.style.display="block";
-    time = Math.floor(Math.random() *2999 +1);
+    time = Math.floor(Math.random() *randTime +1);
     if(i%3===0){
       a.style.borderRadius="0%";
       a.style.height=rand_height+"px";
@@ -87,6 +153,11 @@ function make(){
   }, time);
   document.getElementById("boxesHit").innerHTML=blocknum;
   blocknum++;
+  if(blocknum-1>=maxNum){
+    alert("Done!");
+    goToFinal();
+
+  }
 }
 var a = document.getElementById("box");
 a.onclick=function(){
@@ -108,7 +179,7 @@ function hideBox(){
   average = Math.floor(average);
   average/=1000;
   document.getElementById("check").innerHTML=average;
-  make();
+  make(maxBlocks);
 }
 document.getElementById("boxesMissed").innerHTML=missed_hits;
 document.getElementById("playzone").onclick=function(){
@@ -139,4 +210,5 @@ document.getElementById("starter").onclick=function(){
   alert(time);
   document.getElementById("stopper").style.display="block";
   stopInter();
+};
 };
