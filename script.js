@@ -15,6 +15,7 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     var hideTime;
     var react;
     var rand_color;
+    var missed_hits = 0;
     var time = Math.floor(Math.random() *2999 +1);
     function getRandomIntInclusive(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -55,10 +56,14 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
         }
         makeTime = Date.now();
       }, time);
+      document.getElementById("boxesHit").innerHTML=blocknum;
       blocknum++;
     }
     var a = document.getElementById("box");
     a.onclick=function(){
+      hideBox();
+    };
+    function hideBox(idtag){
       hideTime=Date.now();
       react = (hideTime - makeTime)/1000;
       document.getElementById("score").innerHTML=react;
@@ -72,6 +77,10 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
       if(document.getElementById("scoring").top>636){
         document.getElementById("scoring").style.display="none";
       }
-    };
-
     }
+    document.getElementById("boxesMissed").innerHTML=missed_hits;
+    document.getElementById("playzone").onclick=function(){
+      missed_hits++;
+      document.getElementById("boxesMissed").innerHTML=missed_hits;
+    }
+  };

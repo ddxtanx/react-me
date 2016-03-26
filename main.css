@@ -48,3 +48,13 @@
   left: 40%;
   top: 350px;
 }
+#missedTitle{
+  position: absolute;
+  top:5px;
+  left:30%;
+}
+#boxesTitle{
+  position: absolute;
+  top:5px;
+  left:15%;
+}
