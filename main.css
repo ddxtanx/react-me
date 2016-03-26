@@ -82,6 +82,9 @@
 #finalStat{
   display: none;
 }
+#game{
+  display: none;
+}
 #easy{
   position: absolute;
   left: 37%;
@@ -102,5 +105,27 @@
 }
 #difTitle{
   position: absolute;
-  left:50px
+  left:50px;
+}
+#howman{
+  position: absolute;
+  left: 25%;
+}
+#twenty{
+  position: absolute;
+  left: 45%;
+  top:200px;
+  font-size: 30px;
+}
+#thirty{
+  position: absolute;
+  left: 45%;
+  top:300px;
+  font-size: 30px;
+}
+#fifty{
+  position: absolute;
+  left: 45%;
+  top:400px;
+  font-size: 30px;
 }

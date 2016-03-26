@@ -1,4 +1,5 @@
 var blocknum = 1;
+var blockyouron = 1;
 var i = 3;
 var makeTime = Date.now();
 var rand_height = getRandomIntInclusive(50,150);
@@ -152,8 +153,8 @@ function make(maxNum){
     makeTime = Date.now();
   }, time);
   document.getElementById("boxesHit").innerHTML=blocknum;
-  blocknum++;
-  if(blocknum-1>=maxNum){
+  blockyouron++;
+  if(blockyouron-1>=maxNum){
     alert("Done!");
     document.getElementById("game").style.display="none";
     document.getElementById("finalStat").style.display="block";
@@ -162,6 +163,7 @@ function make(maxNum){
 var a = document.getElementById("box");
 a.onclick=function(){
   hideBox();
+  blocknum++;
 };
 function hideBox(){
   hideTime=Date.now();
@@ -181,10 +183,12 @@ function hideBox(){
   document.getElementById("check").innerHTML=average;
   make(maxBlocks);
 }
-document.getElementById("boxesMissed").innerHTML=missed_hits;
 document.getElementById("playzone").onclick=function(){
   missed_hits++;
-  document.getElementById("boxesMissed").innerHTML=missed_hits;
+  var scoress = document.getElementById("scores");
+  scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
+  document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
+  make(maxBlocks);
 };
 document.getElementById("stopper").onclick=function(){
   stoppedTime= Date.now();
@@ -211,4 +215,8 @@ document.getElementById("starter").onclick=function(){
   document.getElementById("stopper").style.display="block";
   stopInter();
 };
+};
+document.getElementById("playAgain").onclick=function(){
+  document.getElementById("finalStat").style.display="none";
+  document.getElementById("difficulty").style.display="block";
 };
