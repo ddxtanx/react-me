@@ -6,7 +6,6 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     var i = 3;
     var max_height= document.getElementById("playzone").clientHeight;
     var max_width= screen.width*0.8;
-    alert(max_width);
     var makeTime = Date.now();
     var rand_height = getRandomIntInclusive(50,150);
     var rand_col1 = getRandomIntInclusive(0,9);
@@ -27,6 +26,16 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     function getRandomIntInclusive(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
+    function setHW(h, w, divid, fontsiz){
+      var divnam = document.getElementById(divid);
+      divnam.style.height=h;
+      divnam.style.width=h;
+      divman.style.fontSize=fontsiz;
+    }
+    function setDivs(){
+      setHW(1000, 100, "timeTitle", 100+'px');
+    }
+    window.onload=setDivs;
     function make(){
       setTimeout(function(){
         var a=document.getElementById("box");

@@ -17,7 +17,7 @@
   <meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
-<body>
+<body onload="setDivs;">
   <div id="startme">
   <p class="startscr" id="startscph"> Welcome to U React! This is a game all about testing your reaction speed! <br /> Once you click the start button then you just have to <br /> click the circles, squares, or curvy boxes, and see how fast your reaction speed is! </p>
   <button id="startbut" class="startscr"> Click to start Game! </button>
@@ -27,11 +27,11 @@
   <div id="playzone"> </div>
   <div id="box"> </div>
   <p> Your Time: <span id="score"> </p>
-    <p id="scores"> Yours Scores Are: </p>
-    <p id="average"> U React! </p>
-    <p id="boxesTitle">You have hit: <span id="boxesHit"></span> boxes! </p>
-    <p id="missedTitle"> You have missed: <span id="boxesMissed"></span> times! </p>
-    <p id="yeet">Your average is <span id="check"> </span> seconds per block. </p>
+    <p id="scores" class="startstuff"> Yours Scores Are: </p>
+    <p id="average" class="startstuff"> U React! </p>
+    <p id="boxesTitle" class="startstuff">You have hit: <span id="boxesHit"></span> boxes! </p>
+    <p id="missedTitle" class="startstuff"> You have missed: <span id="boxesMissed"></span> times! </p>
+    <p id="yeet" class="startstuff">Your average is <span id="check"> </span> seconds per block. </p>
     <button id="stopper"> Push To Stop </button>
     <button id="starter" onclick="stopInter();"> Push To Restart </button>
   </div>
