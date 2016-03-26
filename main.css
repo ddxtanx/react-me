@@ -3,7 +3,7 @@
   width: 100px;
   background-color: red;
   position: absolute;
-  top:50px;
+  top:70px;
   left:50px;
 }
 #playzone{
@@ -13,7 +13,7 @@
   border-color: red;
   border-width: 4px;
   position: absolute;
-  top:30px;
+  top:55px;
 }
 #scores{
   position: absolute;
@@ -22,7 +22,7 @@
   font-size: 20px;
   font-family: 'Montserrat';
 }
-.scoor{
+#scoor{
   font-family: 'Raleway';
   margin-left:80%;
   margin-top:10px;
@@ -31,7 +31,7 @@
 #average{
   position: absolute;
   top:5px;
-  left:675px;
+  left:40%;
   font-family: 'Montserrat'
 }
 .startscr{
@@ -45,16 +45,32 @@
 }
 #startbut{
   position: absolute;
-  left: 40%;
+  left: 35%;
   top: 350px;
 }
 #missedTitle{
   position: absolute;
   top:5px;
-  left:30%;
+  left:22%;
 }
 #boxesTitle{
   position: absolute;
   top:5px;
-  left:15%;
+  left:10%;
+}
+#yeet{
+  position: absolute;
+  left:47%;
+  top:5px;
+}
+#stopper{
+  position: absolute;
+  top:5px;
+  left:66%;
+}
+#starter{
+  display: none;
+  position: absolute;
+  top:5px;
+  left:66%;
 }

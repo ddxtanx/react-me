@@ -5,7 +5,7 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     var blocknum = 1;
     var i = 3;
     var max_height= document.getElementById("playzone").clientHeight;
-    var max_width= screen.width*.8;
+    var max_width= screen.width*0.8;
     var makeTime = Date.now();
     var rand_height = getRandomIntInclusive(50,150);
     var rand_col1 = getRandomIntInclusive(0,9);
@@ -14,16 +14,22 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     var pos_top=30;
     var hideTime;
     var react;
+    var totalTime = 0;
     var rand_color;
     var missed_hits = 0;
+    var average = 0;
+    var stoppedTime = 0;
+    var restartTime = 0;
+    var interId;
+    var b = document.getElementById("starter");
     var time = Math.floor(Math.random() *2999 +1);
     function getRandomIntInclusive(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-    function make(idtag){
+    function make(){
       setTimeout(function(){
-        var a=document.getElementById(idtag);
-        var item_h=getRandomIntInclusive(100, max_height-100);
+        var a=document.getElementById("box");
+        var item_h=getRandomIntInclusive(200, max_height-100);
         var item_w=getRandomIntInclusive(0, max_width-200);
         a.style.top=item_h+'px';
         a.style.left=item_w+'px';
@@ -33,7 +39,7 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
         rand_col3 = getRandomIntInclusive(0,9);
         a.style.display="block";
         time = Math.floor(Math.random() *2999 +1);
-        if(i%3==0){
+        if(i%3===0){
           a.style.borderRadius="0%";
           a.style.height=rand_height+"px";
           a.style.width=rand_height+"px";
@@ -63,24 +69,52 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     a.onclick=function(){
       hideBox();
     };
-    function hideBox(idtag){
+    function hideBox(){
       hideTime=Date.now();
       react = (hideTime - makeTime)/1000;
+      totalTime+=react;
       document.getElementById("score").innerHTML=react;
       a.style.display="none";
       var scoress = document.getElementById("scores");
-      scoress.insertAdjacentHTML('afterend', '<div class="scoor"> <p id="scoring"> </p> </div>');
+      scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
       var scorer = 5;
       document.getElementById("scoring").innerHTML="For block number "+ blocknum + " it took you " + react + " seconds";
       scorer+=5;
-      make("box");
-      if(document.getElementById("scoring").top>636){
-        document.getElementById("scoring").style.display="none";
-      }
+      average = (totalTime/blocknum);
+      average*=1000;
+      average = Math.floor(average);
+      average/=1000;
+      document.getElementById("check").innerHTML=average;
+      make();
     }
     document.getElementById("boxesMissed").innerHTML=missed_hits;
     document.getElementById("playzone").onclick=function(){
       missed_hits++;
       document.getElementById("boxesMissed").innerHTML=missed_hits;
+    };
+    document.getElementById("stopper").onclick=function(){
+      stoppedTime= Date.now();
+      react=0;
+      a.style.display="none";
+      time*=100000;
+      this.style.display="none";
+      b.style.display="block";
+      interId= setInterval(myInter, 300);
+    };
+    function myInter() {
+      a.style.display="none";
     }
-  };
+    function stopInter() {
+      clearInterval(interId);
+    }
+    document.getElementById("starter").onclick=function(){
+      alert("Working?");
+      a.style.display="block";
+      restartTime = Date.now();
+      time = 1;
+      this.style.display="none";
+      alert(time);
+      document.getElementById("stopper").style.display="block";
+      stopInter();
+    };
+};
