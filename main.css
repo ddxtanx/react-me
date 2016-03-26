@@ -76,5 +76,9 @@
   left:66%;
 }
 .startstuff{
+  position: absolute;
   font-size:13px;
+  padding-left: 2px;
+  padding-right: 2px;
+  top:5px;
 }
