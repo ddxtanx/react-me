@@ -153,3 +153,8 @@
   top:400px;
   font-size: 30px;
 }
+#toolti{
+  position: absolute;
+  top:300px;
+  left:40%;
+}

@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
 
   <!-- jQuery library -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -38,17 +41,19 @@
     <p id="youavg"> You averaged <span id="check"></span> boxes per second!</p>
     <p id="youhit"> You hit <span id="boxesHit"> </span> out of <span id="boxyouon"></span> boxes! </p>
     <p id="youscore"> You scored </p>
+    <div class="tooltip"  id="toolti" title="Scores are calculated by dividing 100 times the amount of blocks you hit by two time the product of your average speed and the sum of the time taken for you to finish and 10 times the amount of blocks you hit"> Scoring Info </div>
     <button id="playAgain"> Play Again? </button>
   </div>
   <div id="game" class="hide">
     <div id="playzone"> </div>
     <div id="box"> </div>
-    <p> Your Time: <span id="score"> </p>
+    <p> Your Time: <span id="score"> </span></p>
       <p id="scores" class="startstuff"> Yours Scores Are: </p>
       <p id="average" class="startstuff"> U React! </p>
       <button id="stopper" class="startstuff"> Push To Stop </button>
       <button id="starter" onclick="stopInter();" class="startstuff"> Push To Restart </button>
     </div>
     <script src="script.js"></script>
+    <script src="jquery.js"> </script>
   </body>
   </html>

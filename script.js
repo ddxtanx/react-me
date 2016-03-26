@@ -198,6 +198,9 @@ document.getElementById("startbut").onclick=function(){
       score=Math.floor(score);
       score/=10000;
     }
+    if (score=="Infinity"){
+      score=0;
+    }
       document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
     }
   }
