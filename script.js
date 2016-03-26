@@ -188,6 +188,7 @@ document.getElementById("playzone").onclick=function(){
   var scoress = document.getElementById("scores");
   scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
   document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
+  a.style.display="none";
   make(maxBlocks);
 };
 document.getElementById("stopper").onclick=function(){
