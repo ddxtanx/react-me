@@ -78,7 +78,7 @@
 .startstuff{
   position: absolute;
   font-size:13px;
-  padding-left: 2px;
-  padding-right: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
   top:5px;
 }
