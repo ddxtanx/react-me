@@ -18,7 +18,7 @@
 #scores{
   position: absolute;
   right: 20px;
-  top:5px;
+
   margin-left: 5px;
   margin-right: 5px;
   font-size: 20px;
@@ -32,7 +32,6 @@
 }
 #average{
   position: absolute;
-  top:5px;
   left:40%;
   margin-left: 5px;
   margin-right: 5px;
@@ -55,14 +54,13 @@
 }
 #missedTitle{
   position: absolute;
-  top:5px;
   margin-left: 5px;
   margin-right: 5px;
   left:22%;
 }
 #boxesTitle{
   position: absolute;
-  top:5px;
+
   margin-left: 5px;
   margin-right: 5px;
   left:10%;
@@ -72,11 +70,11 @@
   left:47%;
   margin-left: 5px;
   margin-right: 5px;
-  top:5px;
+
 }
 #stopper{
   position: absolute;
-  top:5px;
+
   margin-left: 5px;
   margin-right: 5px;
   left:66%;
@@ -84,7 +82,7 @@
 #starter{
   display: none;
   position: absolute;
-  top:5px;
+
   margin-left: 5px;
   margin-right: 5px;
   left:66%;
