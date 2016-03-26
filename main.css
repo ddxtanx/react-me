@@ -60,12 +60,12 @@
 }
 #stopper{
   position: absolute;
-  left:50%;
+  left:55%;
 }
 #starter{
   display: none;
   position: absolute;
-  left:50%;
+  left:55%;
 }
 .startstuff{
   position: absolute;
