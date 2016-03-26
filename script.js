@@ -1,4 +1,8 @@
-var blocknum = 1;
+document.getElementById("startbut").onclick=function(){
+  document.getElementById("startme").style.display="none";
+  document.getElementById("game").className =
+document.getElementById("game").className.replace(/\bhide\b/,'');
+    var blocknum = 1;
     var i = 3;
     var max_height= document.getElementById("playzone").clientHeight;
     var max_width= screen.width*.8;
@@ -69,3 +73,5 @@ var blocknum = 1;
         document.getElementById("scoring").style.display="none";
       }
     };
+
+    }

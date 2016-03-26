@@ -39,7 +39,12 @@
 }
 #startscph{
   position: absolute;
-  left:675;
+  left:300px;
   top:200px;
-  font-size=40px
+  font-size:20px;
+}
+#startbut{
+  position: absolute;
+  left: 675px;
+  top: 350px;
 }
