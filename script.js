@@ -6,6 +6,7 @@ document.getElementById("game").className.replace(/\bhide\b/,'');
     var i = 3;
     var max_height= document.getElementById("playzone").clientHeight;
     var max_width= screen.width*0.8;
+    alert(max_width);
     var makeTime = Date.now();
     var rand_height = getRandomIntInclusive(50,150);
     var rand_col1 = getRandomIntInclusive(0,9);
