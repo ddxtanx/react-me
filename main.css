@@ -34,3 +34,12 @@
   left:675px;
   font-family: 'Montserrat'
 }
+.startscr{
+  font-family: 'Montserrat';
+}
+#startscph{
+  position: absolute;
+  left:675;
+  top:200px;
+  font-size=40px
+}
