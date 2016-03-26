@@ -32,20 +32,21 @@
   position: absolute;
   top:5px;
   left:40%;
-  font-family: 'Montserrat'
+  font-family: 'Montserrat';
+  font-size: 15px;
 }
 .startscr{
   font-family: 'Montserrat';
 }
 #startscph{
   position: absolute;
-  left:25%;
+  left:20%;
   top:200px;
   font-size:20px;
 }
 #startbut{
   position: absolute;
-  left: 35%;
+  left: 30%;
   top: 350px;
 }
 #missedTitle{
