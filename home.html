@@ -35,7 +35,10 @@
     <button id="fifty"> 50 </button>
   </div>
   <div id="finalStat">
-
+    <p id="youavg"> You averaged <span id="check"></span> boxes per second!</p>
+    <p id="youhit"> You hit <span id="boxesHit"> </span> out of <span id="hit-missed"></span> boxes! </p>
+    <p id="youtook"> You took <span id="totTime"> </span> seconds to hit <span id="boxesHit"></span> boxes!</p>
+    <button id="playAgain"> Play Again? </button>
   </div>
   <div id="game" class="hide">
     <div id="playzone"> </div>
@@ -43,9 +46,6 @@
     <p> Your Time: <span id="score"> </p>
       <p id="scores" class="startstuff"> Yours Scores Are: </p>
       <p id="average" class="startstuff"> U React! </p>
-      <p id="boxesTitle" class="startstuff">You have hit: <span id="boxesHit"></span> boxes! </p>
-      <p id="missedTitle" class="startstuff"> You have missed: <span id="boxesMissed"></span> times! </p>
-      <p id="yeet" class="startstuff">Your average is <span id="check"> </span> seconds per block. </p>
       <button id="stopper" class="startstuff"> Push To Stop </button>
       <button id="starter" onclick="stopInter();" class="startstuff"> Push To Restart </button>
     </div>

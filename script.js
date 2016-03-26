@@ -119,7 +119,7 @@ function make(maxNum){
     var max_height= document.getElementById("playzone").clientHeight;
     var max_width= screen.width*0.8;
     var item_h=getRandomIntInclusive(200, max_height-50);
-    var item_w=getRandomIntInclusive(0, max_width-100);
+    var item_w=getRandomIntInclusive(0, max_width-150);
     a.style.top=item_h+'px';
     a.style.left=item_w+'px';
     a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
@@ -155,8 +155,8 @@ function make(maxNum){
   blocknum++;
   if(blocknum-1>=maxNum){
     alert("Done!");
-    goToFinal();
-
+    document.getElementById("game").style.display="none";
+    document.getElementById("finalStat").style.display="block";
   }
 }
 var a = document.getElementById("box");
