@@ -9,9 +9,8 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
 
   <!-- jQuery library -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
-
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.0.min.js"></script>
     <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
 
   <!-- Latest compiled JavaScript -->
@@ -19,6 +18,11 @@
   <meta charset="utf-8" />
   <meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+       $(document).ready(function() {
+           $('.tooltip').tooltipster();
+       });
+   </script>
 </head>
 <body onload="setDivs;">
   <div id="startme">

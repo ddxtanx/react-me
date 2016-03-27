@@ -14,7 +14,7 @@ var rand_color;
 var blocknum = 0;
 var blockyouron = 1;
 var i = 3;
-var makeTime = Date.now();
+var startTime=Date.now();
 var rand_height = getRandomIntInclusive(50,150);
 var rand_col1 = getRandomIntInclusive(0,9);
 var rand_col2 = getRandomIntInclusive(0,9);
@@ -35,6 +35,7 @@ var timeTaken =0;
 var score = 0;
 var b = document.getElementById("starter");
 var randTime = 0;
+var startTime;
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -61,7 +62,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
     document.getElementById("thirty").onclick=function(){
       maxBlocks=30;
@@ -69,7 +70,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
     document.getElementById("fifty").onclick=function(){
       maxBlocks=50;
@@ -77,7 +78,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
   };
   document.getElementById("medium").onclick=function(){
@@ -91,7 +92,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
     document.getElementById("thirty").onclick=function(){
       maxBlocks=30;
@@ -99,7 +100,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
     document.getElementById("fifty").onclick=function(){
       maxBlocks=50;
@@ -107,7 +108,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
   };
   document.getElementById("hard").onclick=function(){
@@ -121,7 +122,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
     document.getElementById("thirty").onclick=function(){
       maxBlocks=30;
@@ -129,7 +130,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
     document.getElementById("fifty").onclick=function(){
       maxBlocks=50;
@@ -137,7 +138,7 @@ document.getElementById("startbut").onclick=function(){
       document.getElementById("game").className =
       document.getElementById("game").className.replace(/\bhide\b/,'');
       document.getElementById("game").style.display="block";
-      var startTime = Date.now();
+      startTime = Date.now();
     };
   };
   window.onload=setDivs;
@@ -176,7 +177,7 @@ document.getElementById("startbut").onclick=function(){
         rand_height = getRandomIntInclusive(50,150);
         i+=getRandomIntInclusive(1,5);
       }
-      makeTime = Date.now();
+      startTime = Date.now();
     }, sec);
     blockyouron++;
     if(blockyouron-1>=maxNum){
@@ -211,7 +212,7 @@ document.getElementById("startbut").onclick=function(){
   };
   function hideBox(){
     hideTime=Date.now();
-    react = (hideTime - makeTime)/1000;
+    react = (hideTime - startTime)/1000;
     totalTime+=react;
     document.getElementById("score").innerHTML=react;
     a.style.display="none";
@@ -243,9 +244,8 @@ document.getElementById("startbut").onclick=function(){
   };
   document.getElementById("stopper").onclick=function(){
     stoppedTime= Date.now();
+    startTime=0;
     react=0;
-    a.style.display="none";
-    time*=100000;
     this.style.display="none";
     b.style.display="block";
     interId= setInterval(myInter, 300);
@@ -255,14 +255,14 @@ document.getElementById("startbut").onclick=function(){
   }
   function stopInter() {
     clearInterval(interId);
+    make(maxBlocks, .5);
   }
   document.getElementById("starter").onclick=function(){
-    alert("Working?");
     a.style.display="block";
-    restartTime = Date.now();
-    time = 1;
+    startTime=0;
+    react=0;
+    blockyouron--;
     this.style.display="none";
-    alert(time);
     document.getElementById("stopper").style.display="block";
     stopInter();
   };
