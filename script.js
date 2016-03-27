@@ -187,7 +187,6 @@ document.getElementById("startbut").onclick=function(){
       var finishTime = Date.now();
       var timeTaken = finishTime-makeTime;
       timeTaken/=1000;
-      blocknum++;
       document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
       document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
       timeTaken+=10*missed_hits;
