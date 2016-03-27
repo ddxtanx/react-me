@@ -6,7 +6,7 @@
   left:10px;
   top:5px;
   font-family: 'Montserrat';
-
+  font-size:40px;
 }
 #box{
   height: 100px;
@@ -48,14 +48,14 @@
 #startscph{
   position: absolute;
   left:10%;
-  top:100px;
-  font-size:20px;
+  top:10%;
+  font-size:1.75em;
   margin-right:30px;
 }
 #startbut{
   position: absolute;
   left: 30%;
-  top: 175px;
+  top: 40%;
 }
 #missedTitle{
   position: absolute;
