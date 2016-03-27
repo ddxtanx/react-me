@@ -200,7 +200,7 @@
 #youavg
 {
 	font-size:30px;
-	left:30%;
+	left:25%;
 	position:absolute;
 	top:100px;
 }
@@ -208,7 +208,7 @@
 #youhit
 {
 	font-size:30px;
-	left:30%;
+	left:25%;
 	position:absolute;
 	top:200px;
 }
@@ -216,7 +216,7 @@
 #youscore
 {
 	font-size:30px;
-	left:30%;
+	left:25%;
 	position:absolute;
 	top:300px;
 }
@@ -239,7 +239,7 @@
 #survey
 {
 	font-size:30px;
-	left:20%;
+	left:10%;
 	position:absolute;
 	text-decoration:none;
 	top:450px;
