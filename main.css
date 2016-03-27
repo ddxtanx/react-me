@@ -261,3 +261,33 @@
 	margin-top:-6px;
 	width:100%;
 }
+#circle{
+  position: absolute;
+  height:100px;
+  width:100px;
+  left:5%;
+  top:5%;
+  background-color: #7777FF;
+  border-radius: 100%;
+  display:none;
+}
+#square{
+  position: absolute;
+  height:100px;
+  width:100px;
+  left:60%;
+  top:5%;
+  background-color: #11CC11;
+  border-radius: 0%;
+  display:none;
+}
+#squircle{
+  position: absolute;
+  height:100px;
+  width:100px;
+  left:80%;
+  top:5%;
+  background-color: #FF7777;
+  border-radius: 25%;
+  display:none;
+}

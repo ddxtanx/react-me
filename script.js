@@ -48,98 +48,107 @@ function setHW(h, w, divid, fontsiz){
 function setDivs(){
   setHW(1000, 100, "timeTitle", 100+'px');
 }
-document.getElementById("startbut").onclick=function(){
-  document.getElementById("startme").style.display="none";
-  document.getElementById("difficulty").style.display="block";
-  document.getElementById("easy").onclick=function(){
+$("#squarespan").mouseenter(function(){
+  $("#square").fadeIn();
+});
+$("#circlespan").mouseenter(function(){
+  $("#circle").fadeIn();
+});
+$("#squirclespan").mouseenter(function(){
+  $("#squircle").fadeIn();
+});
+$("#squarespan").mouseleave(function(){
+  $("#square").fadeOut();
+});
+$("#circlespan").mouseleave(function(){
+  $("#circle").fadeOut();
+});
+$("#squirclespan").mouseleave(function(){
+  $("#squircle").fadeOut();
+});
+$("#startbut").click(function(){
+  $("#startme").fadeOut();
+  $("#difficulty").fadeIn();
+  $("#easy").click(function(){
     multiplier=1;
-    document.getElementById("difficulty").style.display="none";
-    document.getElementById("blockAmount").style.display="block";
+    $("#difficulty").fadeOut();
+    $("#blockAmount").fadeIn();
     randTime= 3000;
-    document.getElementById("twenty").onclick=function(){
+    $("#twenty").click(function(){
       maxBlocks=20;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-    document.getElementById("thirty").onclick=function(){
+    });
+    $("#thirty").click(function(){
       maxBlocks=30;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-    document.getElementById("fifty").onclick=function(){
+    });
+    $("#fifty").click(function(){
       maxBlocks=50;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-  };
-  document.getElementById("medium").onclick=function(){
+    });
+  });
+  $("#medium").click(function(){
     multiplier=2;
-    document.getElementById("difficulty").style.display="none";
-    document.getElementById("blockAmount").style.display="block";
+    $("#difficulty").fadeOut();
+    $("#blockAmount").fadeIn();
     randTime= 2000;
-    document.getElementById("twenty").onclick=function(){
+    $("#twenty").click(function(){
       maxBlocks=20;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-    document.getElementById("thirty").onclick=function(){
+    });
+    $("#thirty").click(function(){
       maxBlocks=30;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-    document.getElementById("fifty").onclick=function(){
+    });
+    $("#fifty").click(function(){
       maxBlocks=50;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-  };
+    });
+  });
   document.getElementById("hard").onclick=function(){
     multiplier=3;
-    document.getElementById("difficulty").style.display="none";
-    document.getElementById("blockAmount").style.display="block";
+    $("#difficulty").fadeOut();
+    $("#blockAmount").fadeIn();
     randTime= 1000;
-    document.getElementById("twenty").onclick=function(){
+    $("#twenty").click(function(){
       maxBlocks=20;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-    document.getElementById("thirty").onclick=function(){
+    });
+    $("#thirty").click(function(){
       maxBlocks=30;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
-    document.getElementById("fifty").onclick=function(){
+    });
+    $("#fifty").click(function(){
       maxBlocks=50;
-      document.getElementById("blockAmount").style.display="none";
-      document.getElementById("game").className =
-      document.getElementById("game").className.replace(/\bhide\b/,'');
-      document.getElementById("game").style.display="block";
+      $("#blockAmount").fadeOut();
+      $("#game").removeClass("hide");
+      $("#game").fadeIn();
       startTime = Date.now();
-    };
+    });
   };
   window.onload=setDivs;
   function make(maxNum, sec){
@@ -155,7 +164,7 @@ document.getElementById("startbut").onclick=function(){
       rand_col1 = getRandomIntInclusive(0,9);
       rand_col2 = getRandomIntInclusive(0,9);
       rand_col3 = getRandomIntInclusive(0,9);
-      a.style.display="block";
+      $("#box").fadeIn(100);
       if(i%3===0){
         a.style.borderRadius="0%";
         a.style.height=rand_height+"px";
@@ -182,8 +191,8 @@ document.getElementById("startbut").onclick=function(){
     blockyouron++;
     if(blockyouron-1>=maxNum){
       alert("Done!");
-      document.getElementById("game").style.display="none";
-      document.getElementById("finalStat").style.display="block";
+      $("#game").fadeOut(200);
+      $("#finalStat").fadeIn(300);
       var finishTime = Date.now();
       var timeTaken = finishTime-makeTime;
       timeTaken/=1000;
@@ -216,7 +225,7 @@ document.getElementById("startbut").onclick=function(){
     react = (hideTime - startTime)/1000;
     totalTime+=react;
     document.getElementById("score").innerHTML=react;
-    a.style.display="none";
+    $("#box").fadeOut(100);
     var scoress = document.getElementById("scores");
     scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
     var scorer = 5;
@@ -240,7 +249,7 @@ document.getElementById("startbut").onclick=function(){
     var scoress = document.getElementById("scores");
     scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
     document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
-    a.style.display="none";
+    $("#box").fadeOut(100);
     make(maxBlocks,0.1);
   };
   document.getElementById("stopper").onclick=function(){
@@ -256,7 +265,7 @@ document.getElementById("startbut").onclick=function(){
   }
   function stopInter() {
     clearInterval(interId);
-    make(maxBlocks, .5);
+    make(maxBlocks, 0.5);
   }
   document.getElementById("starter").onclick=function(){
     a.style.display="block";
@@ -267,7 +276,7 @@ document.getElementById("startbut").onclick=function(){
     document.getElementById("stopper").style.display="block";
     stopInter();
   };
-};
+});
 document.getElementById("playAgain").onclick=function(){
   location.reload();
 };

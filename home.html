@@ -18,12 +18,6 @@
   <meta charset="utf-8" />
   <meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="jquery.js"> </script>
-  <script>
-       $(document).ready(function() {
-           $('.tooltip').tooltipster();
-       });
-   </script>
 </head>
 <body onload="setDivs;">
   <div id="startme">
@@ -31,8 +25,11 @@
     <h3 id="titleslot"> U React! <h3>
     </div>
     <div class="customHr">.</div>
-    <p class="startscr" id="startscph"> Welcome to U React! This is a game all about testing your reaction speed!  Once you click the start button then you just have to click the <br /><span style="color:#7777FF;">circles</span>, <br /><span style="color:#11CC11"> squares </span>, <br /> <span style="color:#FF7777"> or curvy boxes, </span> <br /> and see how fast your reaction speed is! <br /> Note: if you are on a tablet, please switch to portrait mode. </p>
+    <p class="startscr" id="startscph"> Welcome to U React! This is a game all about testing your reaction speed!  Once you click the start button then you just have to click the <br /><span style="color:#7777FF;" id="circlespan">circles</span>, <br /><span style="color:#11CC11" id="squarespan"> squares </span>, <br /> <span style="color:#FF7777" id="squirclespan"> or curvy boxes, </span> <br /> and see how fast your reaction speed is! <br /> Note: if you are on a tablet, please switch to portrait mode. </p>
     <button type="button" id="startbut" class="startscr btn btn-primary"> Click to start Game! </button>
+    <div id="circle"> </div>
+    <div id="square"> </div>
+    <div id="squircle"></div>
   </div>
   <div id="difficulty">
     <h1 id="difTitle"> Choose Your Difficulty: The Higher the difficulty, the faster the blocks appear! </h1>
@@ -63,6 +60,7 @@
       <button id="stopper" class="startstuff btn btn-danger"> Push To Stop </button>
       <button id="starter" onclick="stopInter();" class="startstuff btn btn-warning"> Push To Restart </button>
     </div>
+      <script src="jquery.js"> </script>
     <script src="script.js"></script>
   </body>
   </html>
