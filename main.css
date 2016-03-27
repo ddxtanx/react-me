@@ -1,6 +1,13 @@
 * {
     box-sizing: border-box;
 }
+#titleslot{
+  position: absolute;
+  left:10px;
+  top:5px;
+  font-family: 'Montserrat';
+
+}
 #box{
   height: 100px;
   width: 100px;
@@ -41,14 +48,14 @@
 #startscph{
   position: absolute;
   left:10%;
-  top:200px;
+  top:100px;
   font-size:20px;
   margin-right:30px;
 }
 #startbut{
   position: absolute;
   left: 30%;
-  top: 400px;
+  top: 175px;
 }
 #missedTitle{
   position: absolute;
