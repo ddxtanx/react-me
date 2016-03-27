@@ -51,11 +51,12 @@
   top:10%;
   font-size:1.75em;
   margin-right:30px;
+  font-size:30px;
 }
 #startbut{
   position: absolute;
   left: 30%;
-  top: 15em;
+  top: 40%;
 }
 #missedTitle{
   position: absolute;
