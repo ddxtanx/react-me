@@ -169,3 +169,10 @@
   top:300px;
   left:40%;
 }
+#survey{
+  position: absolute;
+  left:20%;
+  top:450px;
+  font-size:30px;
+  text-decoration: none;
+}
