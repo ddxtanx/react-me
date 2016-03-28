@@ -156,7 +156,7 @@ $("#startbut").click(function(){
       var a=document.getElementById("box");
       var max_height= document.getElementById("playzone").clientHeight;
       var max_width= screen.width*0.8;
-      var item_h=getRandomIntInclusive(200, max_height-50);
+      var item_h=getRandomIntInclusive(200, max_height-100);
       var item_w=getRandomIntInclusive(0, max_width-150);
       a.style.top=item_h+'px';
       a.style.left=item_w+'px';
