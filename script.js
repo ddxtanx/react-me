@@ -1,3 +1,8 @@
+/* PREFACE:
+I did not add any comments to this program, so if you are confused about anything, email me
+at gcc@ameritech.net and I will get back to you as soon as I can.
+Comments will be coming soon, once I don't have a lot going on with school.
+*/
 var blocknum = 0;
 var blockyouron = 1;
 var i = 3;
