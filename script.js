@@ -4,8 +4,8 @@ at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
 var playTop = 55;
-var max_width = window.innerWidth;
-var max_height = window.innerHeight;
+var max_width = 0;
+var max_height = 0;
 var blocknum = 0;
 var blockyouron = 1;
 var i = 3;
@@ -23,7 +23,12 @@ var blocknum = 0;
 var blockyouron = 1;
 var i = 3;
 var startTime=Date.now();
-var rand_height = getRandomIntInclusive(50,150);
+setWindowSize();
+var heightRatioMax = 728/150;
+var heightRatioMin = 728/50;
+var widthRatioMin=1289/50;
+var widthRatioMax=1289/150;
+var rand_height = getRandomIntInclusive(50/heightRatioMin,150/heightRatioMax);
 var rand_col1 = getRandomIntInclusive(0,9);
 var rand_col2 = getRandomIntInclusive(0,9);
 var rand_col3 = getRandomIntInclusive(0,9);
@@ -120,6 +125,8 @@ $("#squirclespan").mouseleave(function(){
   $("#squircle").fadeOut();
 });
 $("#startbut").click(function(){
+  $("#playzone").css('height', max_height-55+'px');
+  $("#playzone").css('width', max_width*0.8+'px');
   $("#startme").fadeOut();
   $("#difficulty").fadeIn();
   $("#easy").click(function(){
@@ -346,6 +353,4 @@ if(isMobile.iPhone()){
   $(".customHr").css('margin-top', '-70px');
   $("#startbut").css('top', '60%');
   $("#average").css('top', '20%');
-  $("#playzone").css('height', max_height+'px');
-  $("#playzone").css('width', max_width*0.8+'px');
 }
