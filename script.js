@@ -82,7 +82,7 @@ var isMobile = {
 var isPortrait = window.matchMedia("(orientation: landscape)").matches;
 if (isPortrait) {
    isPortrait = window.matchMedia("(orientation: landscape)").matches;
-   alert(isPortrait);
+   alert("Please switch to portrait mode!");
 };
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
