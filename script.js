@@ -319,7 +319,7 @@ document.getElementById("playAgain").onclick=function(){
 if(isMobile.iPhone()){
   $('*').each(function(){
        var k =  parseInt($(this).css('font-size'));
-       var redSize = ((k*80)/100) ; //here, you can give the percentage( now it is reduced to 90%)
+       var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
            $(this).css('font-size',redSize);
 
        });
