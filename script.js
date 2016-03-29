@@ -79,14 +79,11 @@ var isMobile = {
         return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
 };
-if(isMobile.Chrome()||isMobile.Windows()){
-  window.location="../index.html"
-};
 var isPortrait = window.matchMedia("(orientation: landscape)").matches;
 if (isPortrait) {
    isPortrait = window.matchMedia("(orientation: landscape)").matches;
    alert(isPortrait);
-}
+};
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
 });
