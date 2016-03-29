@@ -3,6 +3,7 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+var playTop = 55;
 var max_width = window.innerWidth;
 var max_height = window.innerHeight;
 var blocknum = 0;
@@ -47,40 +48,40 @@ function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 var isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iPad: function() {
-        return navigator.userAgent.match(/iPad/i);
-    },
-    iPhone: function(){
-      return navigator.userAgent.match(/iPhone/i);
-    },
-    iOS: function(){
-      return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    Chrome: function(){
-      return navigator.userAgent.match(/Chrome/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
+  Android: function() {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function() {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iPad: function() {
+    return navigator.userAgent.match(/iPad/i);
+  },
+  iPhone: function(){
+    return navigator.userAgent.match(/iPhone/i);
+  },
+  iOS: function(){
+    return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
+  },
+  Opera: function() {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function() {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  Chrome: function(){
+    return navigator.userAgent.match(/Chrome/i);
+  },
+  any: function() {
+    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+  }
 };
 var isPortrait = window.matchMedia("(orientation: landscape)").matches;
 if(isMobile.iOS()){
-if (isPortrait) {
-   isPortrait = window.matchMedia("(orientation: landscape)").matches;
-   alert("Please switch to portrait mode!");
-};
+  if (isPortrait) {
+    isPortrait = window.matchMedia("(orientation: landscape)").matches;
+    alert("Please switch to portrait mode!");
+  };
 };
 window.addEventListener('resize', setWindowSize);
 
@@ -206,10 +207,8 @@ $("#startbut").click(function(){
     setTimeout(function(){
       var a=document.getElementById("box");
       setWindowSize();
-      alert(max_width);
-      alert(max_height);
-      var item_h=getRandomIntInclusive(200, max_height-100);
-      var item_w=getRandomIntInclusive(0, max_width-150);
+      var item_h=getRandomIntInclusive(playTop+rand_height, max_height-rand_height);
+      var item_w=getRandomIntInclusive(rand_height, max_height-rand_height);
       a.style.top=item_h+'px';
       a.style.left=item_w+'px';
       a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
@@ -256,14 +255,14 @@ $("#startbut").click(function(){
         score=0;
       }
       else if(blocknum!==0){
-      score = (blocknum*100*multiplier)/(timeTaken*2*average);
-      score*=10000;
-      score=Math.floor(score);
-      score/=10000;
-    }
-    if (score=="Infinity"){
-      score=0;
-    }
+        score = (blocknum*100*multiplier)/(timeTaken*2*average);
+        score*=10000;
+        score=Math.floor(score);
+        score/=10000;
+      }
+      if (score=="Infinity"){
+        score=0;
+      }
       document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
     }
   }
@@ -334,17 +333,17 @@ document.getElementById("playAgain").onclick=function(){
 };
 if(isMobile.iPhone()){
   $('*').each(function(){
-       var k =  parseInt($(this).css('font-size'));
-       var h = parseInt($(this).css('height'));
-       var w = parseInt($(this).css('width'));
-       var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
-       var newH = ((h*50)/100) ;
-       var newW = ((w*50)/100) ;
-           $(this).css('font-size',redSize);
-           $(this).css('width', newW);
-           $(this).css('height', newH);
-       });
-       $(".customHr").css('margin-top', '-70px');
-       $("#startbut").css('top', '60%');
-       $("#average").css('top', '20%');
+    var k =  parseInt($(this).css('font-size'));
+    var h = parseInt($(this).css('height'));
+    var w = parseInt($(this).css('width'));
+    var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
+    var newH = ((h*50)/100) ;
+    var newW = ((w*50)/100) ;
+    $(this).css('font-size',redSize);
+    $(this).css('width', newW);
+    $(this).css('height', newH);
+  });
+  $(".customHr").css('margin-top', '-70px');
+  $("#startbut").css('top', '60%');
+  $("#average").css('top', '20%');
 }
