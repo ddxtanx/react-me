@@ -59,7 +59,7 @@ var isMobile = {
     },
     iOS: function(){
       return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
-    },  
+    },
     Opera: function() {
         return navigator.userAgent.match(/Opera Mini/i);
     },
@@ -317,8 +317,8 @@ if(isMobile.iPhone()){
        var k =  parseInt($(this).css('font-size'));
        var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
            $(this).css('font-size',redSize);
-           $(".customHr").css('margin-top', '-70px');
-           $("#startbut").css('top', '60%');
-           $("#average").css('top', '20%');
        });
+       $(".customHr").css('margin-top', '-70px');
+       $("#startbut").css('top', '60%');
+       $("#average").css('top', '20%');
 }
