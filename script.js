@@ -44,15 +44,6 @@ var startTime;
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function setHW(h, w, divid, fontsiz){
-  var divnam = document.getElementById(divid);
-  divnam.style.height=h;
-  divnam.style.width=h;
-  divman.style.fontSize=fontsiz;
-}
-function setDivs(){
-  setHW(1000, 100, "timeTitle", 100+'px');
-}
 var isMobile = {
     Android: function() {
         return navigator.userAgent.match(/Android/i);
