@@ -3,6 +3,8 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+var max_width = window.innerWidth;
+var max_height = window.innerHeight;
 var blocknum = 0;
 var blockyouron = 1;
 var i = 3;
@@ -80,6 +82,24 @@ if (isPortrait) {
    alert("Please switch to portrait mode!");
 };
 };
+window.addEventListener('resize', setWindowSize);
+
+function setWindowSize() {
+  if (typeof (window.innerWidth) == 'number') {
+    max_width = window.innerWidth;
+    max_height = window.innerHeight;
+  } else {
+    if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+      max_width = document.documentElement.clientWidth;
+      max_height = document.documentElement.clientHeight;
+    } else {
+      if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+        max_width = document.body.clientWidth;
+        max_height = document.body.clientHeight;
+      }
+    }
+  }
+}
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
 });
@@ -185,8 +205,9 @@ $("#startbut").click(function(){
   function make(maxNum, sec){
     setTimeout(function(){
       var a=document.getElementById("box");
-      var max_height= document.getElementById("playzone").clientHeight;
-      var max_width= screen.width*0.8;
+      setWindowSize();
+      alert(max_width);
+      alert(max_height);
       var item_h=getRandomIntInclusive(200, max_height-100);
       var item_w=getRandomIntInclusive(0, max_width-150);
       a.style.top=item_h+'px';
