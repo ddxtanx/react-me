@@ -382,8 +382,8 @@ if( isMobile.iOS()!=null){
   $("#fifty").css('left', '25%');
   $("#starter").hide();
   $("#stopper").hide();
-  document.getElementById("scoring").style.fontSize="15px";
-  document.getElementById("scoring").style.marginTop="20px";
+  document.getElementById("scoor").style.fontSize="15px";
+  document.getElementById("scoor").style.marginTop="20px";
   $("#scores").css('font-size', '15px');
   $("#youtime").css({
     'position':'absolute',
