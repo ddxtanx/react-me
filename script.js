@@ -346,4 +346,6 @@ if(isMobile.iPhone()){
   $(".customHr").css('margin-top', '-70px');
   $("#startbut").css('top', '60%');
   $("#average").css('top', '20%');
+  $("#playzone").css('height', max_height+'px');
+  $("#playzone").css('width', max_width*0.8+'px');
 }
