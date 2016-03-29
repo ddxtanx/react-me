@@ -323,5 +323,6 @@ if(isMobile.iPhone()){
            $(this).css('font-size',redSize);
            $(".customHr").css('margin-top', '-70px');
            $("#startbut").css('top', '60%');
+           $("#average").css('top', '20%');
        });
 }
