@@ -402,6 +402,7 @@ if( isMobile.iOS()!=null){
   $("#startscph").css('font-size', '16px');
   $("#titleslot").css('left', '27%');
 }
+setWindowSize();
 var dpi = window.devicePixelRatio;
 alert(max_height);
 alert(max_width);
