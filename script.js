@@ -315,8 +315,14 @@ document.getElementById("playAgain").onclick=function(){
 if(isMobile.iPhone()){
   $('*').each(function(){
        var k =  parseInt($(this).css('font-size'));
+       var h = parseInt($(this).css('height'));
+       var w = parseInt($(this).css('width'));
        var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
+       var newH = ((h*50)/100) ;
+       var newW = ((w*50)/100) ;
            $(this).css('font-size',redSize);
+           $(this).css('width', newW);
+           $(this).css('height', newH);
        });
        $(".customHr").css('margin-top', '-70px');
        $("#startbut").css('top', '60%');
