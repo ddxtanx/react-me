@@ -21,7 +21,6 @@ var totalTime = 0;
 var rand_color;
 var blocknum = 0;
 var blockyouron = 1;
-var i = 3;
 var startTime=Date.now();
 setWindowSize();
 var heightRatioMax = 728/150;
@@ -219,10 +218,10 @@ $("#startbut").click(function(){
       var item_h=getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
       var item_w=getRandomIntInclusive(rand_height, max_height-rand_height);
       if(max_width<max_height){
-        while(item_w>max_width){
+        while(item_w+rand_height>max_width*0.8){
           item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
         }
-        while(item_h>max_height){
+        while(item_h+rand_height>max_height){
           item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
         }
       };
