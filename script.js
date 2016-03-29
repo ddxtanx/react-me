@@ -299,6 +299,10 @@ $("#startbut").click(function(){
     var scorer = 5;
     document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
     scorer+=5;
+    if( isMobile.iOS()!=null){
+      document.getElementById("scoor").style.fontSize="15px";
+      document.getElementById("scoor").style.marginTop="20px";
+    }
     if (blocknum===0){
       average=0;
     }
@@ -382,8 +386,6 @@ if( isMobile.iOS()!=null){
   $("#fifty").css('left', '25%');
   $("#starter").hide();
   $("#stopper").hide();
-  document.getElementById("scoor").style.fontSize="15px";
-  document.getElementById("scoor").style.marginTop="20px";
   $("#scores").css('font-size', '15px');
   $("#youtime").css({
     'position':'absolute',
