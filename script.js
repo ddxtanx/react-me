@@ -59,7 +59,7 @@ var isMobile = {
     },
     iOS: function(){
       return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
-    }
+    },  
     Opera: function() {
         return navigator.userAgent.match(/Opera Mini/i);
     },
