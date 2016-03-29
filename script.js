@@ -182,7 +182,6 @@ $("#startbut").click(function(){
       startTime = Date.now();
     });
   };
-  window.onload=setDivs;
   function make(maxNum, sec){
     setTimeout(function(){
       var a=document.getElementById("box");
