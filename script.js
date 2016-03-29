@@ -218,6 +218,14 @@ $("#startbut").click(function(){
       setWindowSize();
       var item_h=getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
       var item_w=getRandomIntInclusive(rand_height, max_height-rand_height);
+      if(max_width<max_height){
+        while(item_w>max_width){
+          item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
+        }
+        while(item_h>max_height){
+          item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
+        }
+      };
       a.style.top=item_h+'px';
       a.style.left=item_w+'px';
       a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
