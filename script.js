@@ -66,6 +66,9 @@ var isMobile = {
     iPhone: function(){
       return navigator.userAgent.match(/iPhone/i);
     },
+    iOS: function(){
+      return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
+    }
     Opera: function() {
         return navigator.userAgent.match(/Opera Mini/i);
     },
@@ -80,9 +83,11 @@ var isMobile = {
     }
 };
 var isPortrait = window.matchMedia("(orientation: landscape)").matches;
+if(isMobile.iOS()){
 if (isPortrait) {
    isPortrait = window.matchMedia("(orientation: landscape)").matches;
    alert("Please switch to portrait mode!");
+};
 };
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
