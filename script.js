@@ -402,3 +402,5 @@ if( isMobile.iOS()!=null){
   $("#startscph").css('font-size', '16px');
   $("#titleslot").css('left', '27%');
 }
+alert(max_height);
+alert(max_width);
