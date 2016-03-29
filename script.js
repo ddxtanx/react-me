@@ -349,10 +349,10 @@ document.getElementById("playAgain").onclick=function(){
   location.reload();
 };
 if( isMobile.iOS()!=null){
-  $(".customHr").css('margin-top', '-6px');
+  $(".customHr").css('margin-top', '-70px');
   $(".customHr").css('width', '100%');
-  $("#startbut").css('top', '80%');
-  $("#startbut").css('font-size', '20px');
+  $("#startbut").css('top', '82%');
+  $("#startbut").css('font-size', '15px');
   $("#circle").css({
     'height':'75px',
     'width':'75px'
@@ -371,17 +371,19 @@ if( isMobile.iOS()!=null){
   $("#difTitle").css({
     'left':'10px',
     'top':'0%',
-    'font-size':'34px'
+    'font-size':'29px'
   });
-  $("#easy").css('left', '20%');
-  $("#medium").css('left', '20%');
-  $("#hard").css('left', '20%');
-  $("#twenty").css('left', '30%');
-  $("#thirty").css('left', '30%');
-  $("#fifty").css('left', '30%');
+  $("#easy").css('left', '15%');
+  $("#medium").css('left', '15%');
+  $("#hard").css('left', '15%');
+  $("#howman").css('left', '15%');
+  $("#twenty").css('left', '25%');
+  $("#thirty").css('left', '25%');
+  $("#fifty").css('left', '25%');
   $("#starter").hide();
   $("#stopper").hide();
-  $("#average").css('font-size', '15px');
+  document.getElementById("scoring").style.fontSize="15px";
+  document.getElementById("scoring").style.marginTop="20px";
   $("#scores").css('font-size', '15px');
   $("#youtime").css({
     'position':'absolute',
@@ -399,8 +401,11 @@ if( isMobile.iOS()!=null){
   $("#youavg").css('left', '15%');
   $("#youhit").css('left', '15%');
   $("#survey").css('font-size', '25px');
-  $("#startscph").css('font-size', '16px');
-  $("#titleslot").css('left', '27%');
+  $("#startscph").css('font-size', '13px');
+  $("#titleslot").css({
+    'left':'25%',
+    'top':'10%'
+  });
 }
 setWindowSize();
 var dpi = window.devicePixelRatio;
