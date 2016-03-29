@@ -53,6 +53,40 @@ function setHW(h, w, divid, fontsiz){
 function setDivs(){
   setHW(1000, 100, "timeTitle", 100+'px');
 }
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iPad: function() {
+        return navigator.userAgent.match(/iPad/i);
+    },
+    iPhone: function(){
+      return navigator.userAgent.match(/iPhone/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    Chrome: function(){
+      return navigator.userAgent.match(/Chrome/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+if(isMobile.Chrome()||isMobile.Windows()){
+  window.location="../index.html"
+};
+var isPortrait = window.matchMedia("(orientation: landscape)").matches;
+if (isPortrait) {
+   isPortrait = window.matchMedia("(orientation: landscape)").matches;
+   alert(isPortrait);
+}
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
 });
@@ -285,3 +319,11 @@ $("#startbut").click(function(){
 document.getElementById("playAgain").onclick=function(){
   location.reload();
 };
+if(isMobile.iPhone()){
+  $('*').each(function(){
+       var k =  parseInt($(this).css('font-size'));
+       var redSize = ((k*80)/100) ; //here, you can give the percentage( now it is reduced to 90%)
+           $(this).css('font-size',redSize);
+
+       });
+}
