@@ -28,7 +28,9 @@ var heightRatioMax = 728/150;
 var heightRatioMin = 728/50;
 var widthRatioMin=1289/50;
 var widthRatioMax=1289/150;
-var rand_height = getRandomIntInclusive(150/heightRatioMax,(150/heightRatioMax)/5);
+var rand_min = Math.floor((heightRatioMax*max_height)/74)-2;
+var rand_max = Math.floor((heightRatioMax*max_height)/26);
+var rand_height = getRandomIntInclusive(200000/(rand_min, rand_max));
 var rand_col1 = getRandomIntInclusive(0,9);
 var rand_col2 = getRandomIntInclusive(0,9);
 var rand_col3 = getRandomIntInclusive(0,9);
@@ -214,7 +216,7 @@ $("#startbut").click(function(){
     setTimeout(function(){
       var a=document.getElementById("box");
       setWindowSize();
-      var item_h=getRandomIntInclusive(playTop+rand_height, max_height-rand_height);
+      var item_h=getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
       var item_w=getRandomIntInclusive(rand_height, max_height-rand_height);
       a.style.top=item_h+'px';
       a.style.left=item_w+'px';
