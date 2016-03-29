@@ -322,6 +322,6 @@ if(isMobile.iPhone()){
        var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
            $(this).css('font-size',redSize);
            $(".customHr").css('margin-top', '-70px');
-           $("#startBut").css('top', '60%');
+           $("#startbut").css('top', '60%');
        });
 }
