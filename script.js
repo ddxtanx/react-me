@@ -89,6 +89,61 @@ if(isMobile.iOS()){
     alert("Please switch to portrait mode!");
   };
 };
+if(isMobile.iPhone()){
+  $('*').each(function(){
+    var k =  parseInt($(this).css('font-size'));
+    var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
+    $(this).css('font-size',redSize);
+  });
+  $(".customHr").css('margin-top', '-6px');
+  $(".customHr").css('width', '100%');
+  $("#startbut").css('top', '80%');
+  $("#startbut").css('font-size', '20px');
+  $("#circle").css({
+    'height':'75px',
+    'width':'75px'
+  });
+  $("#square").css({
+    'height':'75px',
+    'width':'75px',
+    'top':'2%'
+  });
+  $("#squircle").css({
+    'height':'75px',
+    'width':'75px',
+    'top': '9%',
+    'left':'78%'
+  });
+  $("#difTitle").css({
+    'left':'10px',
+    'top':'0%',
+    'font-size':'34px'
+  });
+  $("#easy").css('left', '37%');
+  $("#medium").css('left', '37%');
+  $("#hard").css('left', '37%');
+  $("#twenty").css('left', '30%');
+  $("#thirty").css('left', '30%');
+  $("#fifty").css('left', '30%');
+  $("#starter").hide();
+  $("#stopper").hide();
+  $("#average").css('font-size', '15px');
+  $("#scores").css('font-size', '15px');
+  $("#youtime").css({
+    'position':'absolute',
+    'top':'5%',
+    'font-size':'13px'
+  });
+  $("#scoring").css('font-size', '11px');
+  $("#youscore").css('left', '15%');
+  $("#youavg").css('left', '15%');
+  $("#youhit").css('left', '15%');
+  $("#playAgain").css('left': '25%');
+  $("#survey").css('font-size': '25px');
+  $("#startscph").css('font-size', '16px');
+  $("#titleslot").css('left', '27%');
+
+}
 window.addEventListener('resize', setWindowSize);
 
 function setWindowSize() {
@@ -347,15 +402,3 @@ $("#startbut").click(function(){
 document.getElementById("playAgain").onclick=function(){
   location.reload();
 };
-if(isMobile.iPhone()){
-  $('*').each(function(){
-    var k =  parseInt($(this).css('font-size'));
-    var redSize = ((k*50)/100) ; //here, you can give the percentage( now it is reduced to 90%)
-    var newH = ((h*50)/100) ;
-    var newW = ((w*50)/100) ;
-    $(this).css('font-size',redSize);
-  });
-  $(".customHr").css('margin-top', '-70px');
-  $("#startbut").css('top', '60%');
-  $("#average").css('top', '20%');
-}
