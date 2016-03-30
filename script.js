@@ -295,7 +295,7 @@ $("#startbut").click(function(){
     document.getElementById("score").innerHTML=react;
     $("#box").fadeOut(100);
     var scoress = document.getElementById("scores");
-    scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
+    scoress.insertAdjacentHTML('afterend', '<div class="scoor"> <p id="scoring"> </p> </div>');
     var scorer = 5;
     document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
     scorer+=5;
@@ -395,10 +395,7 @@ if( isMobile.iOS()!=null ){
   $("#scoring").css({
     'font-size': '15px'
   });
-  $("#scoor").css({
-    'font-size': '15px',
-    'margin-top': '20px'
-  });
+  $(".scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
   $("#youscore").css('left', '15%');
   $("#youavg").css('left', '15%');
   $("#youhit").css('left', '15%');
