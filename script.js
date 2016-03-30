@@ -410,21 +410,24 @@ if( isMobile.iOS()!=null ){
   });
   $("#youscore").css({
     'left':'10%',
-    'top':'35%'
+    'top':'35%',
+    'font-size': '15px'
   });
   $("#youhit").css({
     'left':'10%',
-    'top':'25%'
+    'top':'25%',
+    'font-size': '15px'
   });
   $("#playAgain").css({
     'left':'10%',
-    'top':'45%'
-  })
+    'top':'45%',
+    'font-size': '15px'
+  });
   $("#survey").css({
     'left':'10%',
-    'top':'55%'
-  })
-  $("#survey").css('font-size', '25px');
+    'top':'55%',
+    'font-size': '15px'
+  });
   $("#startscph").css('font-size', '13px');
   $("#titleslot").css({
     'left':'25%',
