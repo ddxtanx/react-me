@@ -8,7 +8,8 @@ var item_w = 0;
 var playTop = 55;
 var max_width = 0;
 var max_height = 0;
-var blocknum = -1;
+var blocknum = 0;
+blocknum--;
 var blockyouron = 1;
 var i = 3;
 var makeTime = Date.now();
@@ -288,6 +289,10 @@ $("#startbut").click(function(){
   a.onclick=function(){
     hideBox();
     blocknum++;
+  };
+  if(document.getElementById("playzone").style.display=="block"){
+    $("#playzone").css('width', max_width*0.8);
+    $("#playzone").css('height', max_height-55);
   };
   function hideBox(){
     hideTime=Date.now();
