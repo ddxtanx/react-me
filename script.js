@@ -348,7 +348,7 @@ $("#startbut").click(function(){
 document.getElementById("playAgain").onclick=function(){
   location.reload();
 };
-if( isMobile.iOS()!=null){
+if( isMobile.iOS()!=null ){
   $(".customHr").css('margin-top', '-70px');
   $(".customHr").css('width', '100%');
   $("#startbut").css('top', '82%');
@@ -405,3 +405,4 @@ if( isMobile.iOS()!=null){
     'top':'10%'
   });
 }
+setWindowSize();
