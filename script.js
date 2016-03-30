@@ -299,10 +299,6 @@ $("#startbut").click(function(){
     var scorer = 5;
     document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
     scorer+=5;
-    if( isMobile.iOS()!=null){
-      document.getElementById("scoor").style.fontSize="15px";
-      document.getElementById("scoor").style.marginTop="20px";
-    }
     if (blocknum===0){
       average=0;
     }
@@ -409,8 +405,3 @@ if( isMobile.iOS()!=null){
     'top':'10%'
   });
 }
-setWindowSize();
-var dpi = window.devicePixelRatio;
-alert(max_height);
-alert(max_width);
-alert(dpi);
