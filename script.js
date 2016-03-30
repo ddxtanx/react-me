@@ -3,6 +3,8 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+var item_h = 0;
+var item_w = 0;
 var playTop = 55;
 var max_width = 0;
 var max_height = 0;
@@ -216,16 +218,12 @@ $("#startbut").click(function(){
     setTimeout(function(){
       var a=document.getElementById("box");
       setWindowSize();
-      var item_h=getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
-      var item_w=getRandomIntInclusive(rand_height, max_height-rand_height);
-      if(max_width<max_height){
-        while(item_w+rand_height>max_width*0.8){
-          item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
-        }
-        while(item_h+rand_height>max_height){
-          item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
-        }
-      };
+      rand_height = getRandomIntInclusive(50,150);
+      item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-5));
+      if( isMobile.iPhone()!=null){
+        rand_height = getRandomIntInclusive(30,70);
+      }
+      item_w = getRandomIntInclusive(rand_height, max_height-rand_height-350);
       a.style.top=item_h+'px';
       a.style.left=item_w+'px';
       a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
@@ -255,6 +253,12 @@ $("#startbut").click(function(){
         i+=getRandomIntInclusive(1,5);
       }
       startTime = Date.now();
+      if(item_w+rand_height>max_width*0.8){
+        item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
+      }
+      else if(item_h+rand_height>max_height){
+        item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
+      }
     }, sec);
     blockyouron++;
     if(blockyouron-1>=maxNum){
@@ -309,7 +313,7 @@ $("#startbut").click(function(){
       average/=1000;
     }
     document.getElementById("check").innerHTML=average;
-    make(maxBlocks,randTime);
+    make(maxBlocks, randTime);
     if (isMobile.iOS()!=null){
       $("#scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
     }
@@ -320,6 +324,9 @@ $("#startbut").click(function(){
     scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
     document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
     $("#box").fadeOut(100);
+    if (isMobile.iOS()!=null){
+      $("#scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
+    }
     make(maxBlocks,0.1);
   };
   document.getElementById("stopper").onclick=function(){
