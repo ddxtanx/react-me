@@ -407,6 +407,9 @@ if( isMobile.iOS()!=null ){
     'left':'25%',
     'top':'10%'
   });
-  $("#average").css('right', '0%');
+  $("#average").css({
+    'position': 'absolute',
+    'left': '30%'
+  });
 }
 setWindowSize();
