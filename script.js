@@ -104,7 +104,9 @@ function setWindowSize() {
   $("#playzone").css('width', max_width*0.8);
   $("#playzone").css('height', max_height-55);
 }
+setWindowSize();
 $("#playzone").css('width', max_width*0.8);
+$("#playzone").css('height', max_height-55);
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
 });
