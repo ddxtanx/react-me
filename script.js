@@ -110,6 +110,7 @@ function setWindowSize() {
     }
   }
 }
+$("#playzone").css('width', max_width*0.8);
 $("#squarespan").mouseenter(function(){
   $("#square").fadeIn();
 });
