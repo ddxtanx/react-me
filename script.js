@@ -382,7 +382,10 @@ if( isMobile.iOS()!=null ){
   $("#fifty").css('left', '25%');
   $("#starter").hide();
   $("#stopper").hide();
-  $("#scores").css('font-size', '15px');
+  $("#scores").css({
+    'font-size':'15px',
+    'right': '0%'
+  });
   $("#youtime").css({
     'position':'absolute',
     'top':'5%',
@@ -404,5 +407,6 @@ if( isMobile.iOS()!=null ){
     'left':'25%',
     'top':'10%'
   });
+  $("#average").css('right', '0%');
 }
 setWindowSize();
