@@ -410,19 +410,19 @@ if( isMobile.iOS()!=null ){
   });
   $("#youscore").css({
     'left':'10%',
-    'top':'30%'
+    'top':'35%'
   });
   $("#youhit").css({
     'left':'10%',
-    'top':'20%'
+    'top':'25%'
   });
   $("#playAgain").css({
     'left':'10%',
-    'top':'40%'
+    'top':'45%'
   })
   $("#survey").css({
     'left':'10%',
-    'top':'50%'
+    'top':'55%'
   })
   $("#survey").css('font-size', '25px');
   $("#startscph").css('font-size', '13px');
