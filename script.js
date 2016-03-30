@@ -406,7 +406,8 @@ if( isMobile.iOS()!=null ){
   });
   $("#youavg").css({
     'left':'10%',
-    'top':'10%'
+    'top':'5%',
+    'font-size' : '15px'
   });
   $("#youscore").css({
     'left':'10%',
