@@ -355,16 +355,17 @@ if( isMobile.iOS()!=null ){
   $("#startbut").css('font-size', '15px');
   $("#circle").css({
     'height':'75px',
-    'width':'75px'
+    'width':'75px',
+    'margin-left':'-5%'
   });
   $("#square").css({
-    'height':'75px',
-    'width':'75px',
-    'top':'2%'
+    'height':'50px',
+    'width':'50px',
+    'top':'2%',
   });
   $("#squircle").css({
-    'height':'75px',
-    'width':'75px',
+    'height':'50px',
+    'width':'50px',
     'top': '9%',
     'left':'78%'
   });
