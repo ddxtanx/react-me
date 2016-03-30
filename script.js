@@ -426,7 +426,7 @@ if( isMobile.iOS()!=null ){
     'font-size': '15px'
   });
   $("#survey").css({
-    'left':'10%',
+    'right':'10%',
     'top':'55%',
     'font-size': '15px'
   });
