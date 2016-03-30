@@ -9,7 +9,6 @@ var playTop = 55;
 var max_width = 0;
 var max_height = 0;
 var blocknum = 0;
-blocknum--;
 var blockyouron = 1;
 var i = 3;
 var makeTime = Date.now();
