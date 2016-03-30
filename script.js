@@ -315,7 +315,7 @@ $("#startbut").click(function(){
     document.getElementById("check").innerHTML=average;
     make(maxBlocks, randTime);
     if (isMobile.iOS()!=null){
-      $("#scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
+      $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
     }
   }
   document.getElementById("playzone").onclick=function(){
@@ -325,7 +325,7 @@ $("#startbut").click(function(){
     document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
     $("#box").fadeOut(100);
     if (isMobile.iOS()!=null){
-      $("#scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
+      $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
     }
     make(maxBlocks,0.1);
   };
@@ -404,9 +404,26 @@ if( isMobile.iOS()!=null ){
   $("#scoring").css({
     'font-size': '15px'
   });
-  $("#youscore").css('left', '15%');
-  $("#youavg").css('left', '15%');
-  $("#youhit").css('left', '15%');
+  $("#youavg").css({
+    'left':'10%',
+    'top':'10%'
+  });
+  $("#youscore").css({
+    'left':'10%',
+    'top':'30%'
+  });
+  $("#youhit").css({
+    'left':'10%',
+    'top':'20%'
+  });
+  $("#playAgain").css({
+    'left':'10%',
+    'top':'40%'
+  })
+  $("#survey").css({
+    'left':'10%',
+    'top':'50%'
+  })
   $("#survey").css('font-size', '25px');
   $("#startscph").css('font-size', '13px');
   $("#titleslot").css({
@@ -417,5 +434,6 @@ if( isMobile.iOS()!=null ){
     'position': 'absolute',
     'left': '30%'
   });
+
 }
 setWindowSize();
