@@ -84,14 +84,6 @@ var isMobile = {
     return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
   }
 };
-var isPortrait = window.matchMedia("(orientation: landscape)").matches;
-if(isMobile.iOS()){
-  if (isPortrait) {
-    isPortrait = window.matchMedia("(orientation: landscape)").matches;
-    alert("Please switch to portrait mode!");
-  };
-};
-
 window.addEventListener('resize', setWindowSize);
 
 function setWindowSize() {
@@ -110,7 +102,7 @@ function setWindowSize() {
     }
   }
   $("#playzone").css('width', max_width*0.8);
-  $("#playzone").css('height', max_height-55;
+  $("#playzone").css('height', max_height-55);
 }
 $("#playzone").css('width', max_width*0.8);
 $("#squarespan").mouseenter(function(){
