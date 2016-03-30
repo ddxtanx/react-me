@@ -163,9 +163,9 @@
 
 #difTitle
 {
-	left:50px;
-	position:absolute;
-  top:7%;
+	position: absolute;
+	left:100px;
+  top:10%;
 }
 
 #howman
@@ -225,9 +225,9 @@
 #playAgain
 {
 	font-size:30px;
-	left:30%;
+	right:30%;
 	position:absolute;
-	top:400px;
+	top:450px;
 }
 
 #toolti
@@ -243,7 +243,7 @@
 	left:10%;
 	position:absolute;
 	text-decoration:none;
-	top:450px;
+	top:400px;
 }
 
 #title
