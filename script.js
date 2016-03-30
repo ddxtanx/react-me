@@ -109,6 +109,8 @@ function setWindowSize() {
       }
     }
   }
+  $("#playzone").css('width', max_width*0.8);
+  $("#playzone").css('height', max_height-55;
 }
 $("#playzone").css('width', max_width*0.8);
 $("#squarespan").mouseenter(function(){
@@ -442,3 +444,8 @@ if( isMobile.iOS()!=null ){
 
 }
 setWindowSize();
+$("#difTitle").css({
+  'left':'10px',
+  'top':'0%',
+  'font-size':'29px'
+});
