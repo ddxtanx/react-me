@@ -3,6 +3,54 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+function setWindowSize() {
+ if (typeof (window.innerWidth) == 'number') {
+   max_width = window.innerWidth;
+   max_height = window.innerHeight;
+ } else {
+   if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+     max_width = document.documentElement.clientWidth;
+     max_height = document.documentElement.clientHeight;
+   } else {
+     if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+       max_width = document.body.clientWidth;
+       max_height = document.body.clientHeight;
+     }
+   }
+ }
+}
+var isMobile = {
+ Android: function() {
+   return navigator.userAgent.match(/Android/i);
+ },
+ BlackBerry: function() {
+   return navigator.userAgent.match(/BlackBerry/i);
+ },
+ iPad: function() {
+   return navigator.userAgent.match(/iPad/i);
+ },
+ iPhone: function(){
+   return navigator.userAgent.match(/iPhone/i);
+ },
+ iOS: function(){
+   return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
+ },
+ Opera: function() {
+   return navigator.userAgent.match(/Opera Mini/i);
+ },
+ Windows: function() {
+   return navigator.userAgent.match(/IEMobile/i);
+ },
+ Chrome: function(){
+   return navigator.userAgent.match(/Chrome/i);
+ },
+ any: function() {
+   return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+ }
+};
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 var item_h = 0;
 var item_w = 0;
 var playTop = 55;
@@ -52,58 +100,47 @@ var score = 0;
 var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
-function getRandomIntInclusive(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-var isMobile = {
-  Android: function() {
-    return navigator.userAgent.match(/Android/i);
-  },
-  BlackBerry: function() {
-    return navigator.userAgent.match(/BlackBerry/i);
-  },
-  iPad: function() {
-    return navigator.userAgent.match(/iPad/i);
-  },
-  iPhone: function(){
-    return navigator.userAgent.match(/iPhone/i);
-  },
-  iOS: function(){
-    return navigator.userAgent.match(/iPhone/||/iPad/||/iPod/i);
-  },
-  Opera: function() {
-    return navigator.userAgent.match(/Opera Mini/i);
-  },
-  Windows: function() {
-    return navigator.userAgent.match(/IEMobile/i);
-  },
-  Chrome: function(){
-    return navigator.userAgent.match(/Chrome/i);
-  },
-  any: function() {
-    return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-  }
-};
 window.addEventListener('resize', setWindowSize);
-
-function setWindowSize() {
-  if (typeof (window.innerWidth) == 'number') {
-    max_width = window.innerWidth;
-    max_height = window.innerHeight;
-  } else {
-    if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
-      max_width = document.documentElement.clientWidth;
-      max_height = document.documentElement.clientHeight;
-    } else {
-      if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
-        max_width = document.body.clientWidth;
-        max_height = document.body.clientHeight;
-      }
-    }
-  }
+function Game(){
+ item_h = 0;
+ item_w = 0;
+ playTop = 55;
+ max_width = 0;
+ max_height = 0;
+ blocknum = 0;
+ blockyouron = 1;
+ i = 3;
+ makeTime = Date.now();
+ pos_top=30;
+ totalTime = 0;
+ blocknum = 0;
+ blockyouron = 1;
+ startTime=Date.now();
+setWindowSize();
+ heightRatioMax = 728/150;
+ heightRatioMin = 728/50;
+ widthRatioMin=1289/50;
+ widthRatioMax=1289/150;
+ rand_min = Math.floor((heightRatioMax*max_height)/74)-2;
+ rand_max = Math.floor((heightRatioMax*max_height)/26);
+ rand_height = getRandomIntInclusive(200000/(rand_min, rand_max));
+ rand_col1 = getRandomIntInclusive(0,9);
+ rand_col2 = getRandomIntInclusive(0,9);
+ rand_col3 = getRandomIntInclusive(0,9);
+ pos_top=30;
+ totalTime = 0;
+ missed_hits = 0;
+ average = 0;
+ stoppedTime = 0;
+ restartTime = 0;
+ maxBlocks = 20;
+ multiplier = 0;
+ timeTaken =0;
+ score = 0;
+ b = document.getElementById("starter");
+ randTime = 0;
   $("#playzone").css('width', max_width*0.8);
   $("#playzone").css('height', max_height-55);
-}
 setWindowSize();
 $("#playzone").css('width', max_width*0.8);
 $("#playzone").css('height', max_height-55);
@@ -292,7 +329,7 @@ $("#startbut").click(function(){
   if(document.getElementById("playzone").style.display=="block"){
     $("#playzone").css('width', max_width*0.8);
     $("#playzone").css('height', max_height-55);
-  };
+  }
   function hideBox(){
     hideTime=Date.now();
     react = (hideTime - startTime)/1000;
@@ -355,9 +392,6 @@ $("#startbut").click(function(){
     stopInter();
   };
 });
-document.getElementById("playAgain").onclick=function(){
-  location.reload();
-};
 if( isMobile.iOS()!=null ){
   $(".customHr").css('margin-top', '-70px');
   $(".customHr").css('width', '100%');
@@ -446,4 +480,11 @@ $("#difTitle").css({
   'left':'10px',
   'top':'0%',
   'font-size':'29px'
+});
+}
+Game();
+$("#playAgain").click(function(){
+  Game();
+  $("#finalStat").fadeOut(300);
+  $("#difficulty").fadeIn(300);
 });
