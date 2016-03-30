@@ -310,7 +310,9 @@ $("#startbut").click(function(){
     }
     document.getElementById("check").innerHTML=average;
     make(maxBlocks,randTime);
-
+    if (isMobile.iOS()!=null){
+      $("#scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
+    }
   }
   document.getElementById("playzone").onclick=function(){
     missed_hits++;
@@ -395,7 +397,6 @@ if( isMobile.iOS()!=null ){
   $("#scoring").css({
     'font-size': '15px'
   });
-  $("#scoor").css({ 'margin-top':'20px', 'font-size':'15px'});
   $("#youscore").css('left', '15%');
   $("#youavg").css('left', '15%');
   $("#youhit").css('left', '15%');
