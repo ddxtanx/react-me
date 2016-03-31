@@ -227,7 +227,7 @@
 	font-size:30px;
 	right:30%;
 	position:absolute;
-	top:450px;
+	top:500px;
 }
 
 #toolti
@@ -244,6 +244,14 @@
 	position:absolute;
 	text-decoration:none;
 	top:400px;
+}
+#bugs
+{
+	font-size:30px;
+	left:10%;
+	position:absolute;
+	text-decoration:none;
+	top:450px;
 }
 
 #title
