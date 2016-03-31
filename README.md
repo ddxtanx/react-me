@@ -1,5 +1,5 @@
 # react-me
-The game itself is up and running at u-react.herokuapp.com
+The game itself is up and running at [u-react.herokuapp.com](http://u-react.herokuapp.com)
 
 
 This is a game all about testing your reaction speed, in a game like environment!
