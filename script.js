@@ -256,11 +256,11 @@ function Game(){
         var a=document.getElementById("box");
         setWindowSize();
         rand_height = getRandomIntInclusive(50,150);
-        item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-100));
+        item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
         if( isMobile.iPhone()!=null){
           rand_height = getRandomIntInclusive(30,70);
         }
-        item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
+        item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
         a.style.top=item_h+'px';
         a.style.left=item_w+'px';
         a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
