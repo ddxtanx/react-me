@@ -309,7 +309,7 @@ function Game(){
         if(blocknum===1){
           score=0;
           blocknum=0;
-        };
+        }
         document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
         document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
         timeTaken+=10*missed_hits;
@@ -476,23 +476,22 @@ function Game(){
       'position': 'absolute',
       'left': '30%'
     });
-
+    $("#difTitle").css({
+      'left':'30px',
+      'top':'10%',
+      'font-size':'19px'
+    });
+    $("#userid").css({
+      'height':'0',
+      'width':'0'
+    });
+    $("#repoid").css({
+      'height':'0',
+      'width':'0'
+    });
+  }
   }
   setWindowSize();
-  $("#difTitle").css({
-    'left':'30px',
-    'top':'10%',
-    'font-size':'19px'
-  });
-  $("#userid").css({
-    'height':'0',
-    'width':'0'
-  });
-  $("#repoid").css({
-    'height':'0',
-    'width':'0'
-  });
-}
 Game();
 $("#playAgain").click(function(){
   averagesArray.push(average);
