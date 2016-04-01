@@ -396,7 +396,7 @@ function Game(){
     };
   });
   if( isMobile.iOS()!=null ){
-    $(".customHr").css('margin-top', '-70px');
+    $(".customHr").css('margin-top', '-85px');
     $(".customHr").css('width', '100%');
     $("#startbut").css('top', '82%');
     $("#startbut").css('font-size', '15px');
@@ -480,9 +480,9 @@ function Game(){
   }
   setWindowSize();
   $("#difTitle").css({
-    'left':'200px',
-    'top':'0%',
-    'font-size':'29px'
+    'left':'30px',
+    'top':'10%',
+    'font-size':'19px'
   });
   $("#userid").css({
     'height':'0',
