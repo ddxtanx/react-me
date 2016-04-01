@@ -484,6 +484,14 @@ function Game(){
     'top':'0%',
     'font-size':'29px'
   });
+  $("#userid").css({
+    'height':'50px',
+    'width':'100px',
+  });
+  $("#repoid").css({
+    'height':'50px',
+    'width':'100px',
+  });
 }
 Game();
 $("#playAgain").click(function(){
