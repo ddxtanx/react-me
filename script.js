@@ -488,6 +488,7 @@ function Game(){
     'position':'absolute',
     'height':'50px',
     'width':'150px',
+    'font-size':'15px'
   });
   $("#repoid").css({
     'position':'absolute',
