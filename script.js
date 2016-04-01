@@ -486,11 +486,11 @@ function Game(){
   });
   $("#userid").css({
     'height':'50px',
-    'width':'100px',
+    'width':'150px',
   });
   $("#repoid").css({
     'height':'50px',
-    'width':'100px',
+    'width':'150px',
   });
 }
 Game();
