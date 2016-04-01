@@ -485,16 +485,12 @@ function Game(){
     'font-size':'29px'
   });
   $("#userid").css({
-    'position':'absolute',
-    'height':'50px',
-    'width':'150px',
-    'font-size':'15px'
+    'height':'0',
+    'width':'0'
   });
   $("#repoid").css({
-    'position':'absolute',
-    'height':'50px',
-    'width':'150px',
-    'font-size':'15px'
+    'height':'0',
+    'width':'0'
   });
 }
 Game();
