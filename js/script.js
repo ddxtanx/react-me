@@ -459,7 +459,7 @@ function Game(){
     });
     $("#playAgain").css({
       'left':'10%',
-      'top':'45%',
+      'top':'65%',
       'font-size': '15px'
     });
     $("#survey").css({
@@ -489,6 +489,11 @@ function Game(){
       'height':'0',
       'width':'0'
     });
+    $("#bugs").css({
+      'font-size':'15px',
+      'position':'absolute',
+      'top':'45%'
+    })
   }
   }
   setWindowSize();
