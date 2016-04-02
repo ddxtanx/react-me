@@ -313,14 +313,14 @@ function Game(){
         document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
         document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
         timeTaken+=10*missed_hits;
-        if(blocknum!==0){
+        if(average===0){
+          score=0;
+        }
+        else if(blocknum!==0&&average!=00){
           score = (blocknum*100*multiplier)/(timeTaken*2*average);
           score*=10000;
           score=Math.floor(score);
           score/=10000;
-        }
-        else if (score=="Infinity"){
-          score=0;
         }
         document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
       }
