@@ -395,8 +395,8 @@ function Game(){
       stopInter();
     };
   });
-$("#repoid").css({
-  'top':.05*max_height+'px';
+$(".customHr").css({
+  'top':'0.05*max_height+"px"';
 });
   if( isMobile.iOS()!=null ){
     $(".customHr").css('margin-top', '-85px');
