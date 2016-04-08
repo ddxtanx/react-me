@@ -316,7 +316,7 @@ function Game(){
         if(average===0){
           score=0;
         }
-        else if(blocknum!==0&&average!=00){
+        else if(blocknum!==0&&average!==0){
           score = (blocknum*100*multiplier)/(timeTaken*2*average);
           score*=10000;
           score=Math.floor(score);
@@ -396,7 +396,7 @@ function Game(){
     };
   });
 $(".customHr").css({
-  'top':'0.05*max_height+"px"';
+  'top':'0.05*max_height+"px"'
 });
   if( isMobile.iOS()!=null ){
     $(".customHr").css('margin-top', '-85px');
@@ -496,7 +496,7 @@ $(".customHr").css({
       'font-size':'15px',
       'position':'absolute',
       'top':'45%'
-    })
+    });
   }
   }
   setWindowSize();
