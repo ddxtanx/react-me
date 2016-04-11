@@ -399,7 +399,7 @@ $(".customHr").css({
   'top':'0.05*max_height+"px"'
 });
   if( isMobile.iOS()!=null ){
-    $(".customHr").css('margin-top', '-85px');
+    $(".customHr").css('margin-top', '-80px');
     $(".customHr").css('width', '100%');
     $("#startbut").css('top', '82%');
     $("#startbut").css('font-size', '15px');
