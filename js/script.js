@@ -135,6 +135,14 @@ var touches = evt.changedTouches;
     $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
   }
 }
+function handleEnd(){
+  evt.preventDefault();
+    log("touchend");
+    var el = document.getElementsByTagName("canvas")[0];
+    var ctx = el.getContext("2d");
+    var touches = evt.changedTouches;
+
+};
 function startup() {
   var el = document.getElementById("box");
   el.addEventListener("touchstart", handleStart, false);
@@ -367,14 +375,6 @@ function Game(){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
     }
-    function handleEnd(){
-      evt.preventDefault();
-        log("touchend");
-        var el = document.getElementsByTagName("canvas")[0];
-        var ctx = el.getContext("2d");
-        var touches = evt.changedTouches;
-
-    };
     document.getElementById("playzone").onclick=function(){
       missed_hits++;
       var scoress = document.getElementById("scores");
