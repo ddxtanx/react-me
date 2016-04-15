@@ -105,6 +105,36 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
+function handleStart(){
+  evt.preventDefault();
+log("touchstart.");
+var el = document.getElementsByTagName("canvas")[0];
+var ctx = el.getContext("2d");
+var touches = evt.changedTouches;
+  hideTime=Date.now();
+  react = (hideTime - startTime)/1000;
+  totalTime+=react;
+  document.getElementById("score").innerHTML=react;
+  $("#box").fadeOut(100);
+  var scoress = document.getElementById("scores");
+  scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
+  var scorer = 5;
+  document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
+  scorer+=5;
+  if (blocknum===0){
+    average=0;
+  }
+  else if(blocknum!==0){
+    average = (totalTime/blocknum);
+    average*=1000;
+    average = Math.floor(average);
+    average/=1000;
+  }
+  make(maxBlocks, randTime);
+  if (isMobile.iOS()!=null){
+    $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
+  }
+}
 function startup() {
   var el = document.getElementById("box");
   el.addEventListener("touchstart", handleStart, false);
@@ -336,36 +366,6 @@ function Game(){
     if(document.getElementById("playzone").style.display=="block"){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
-    }
-    function handleStart(){
-      evt.preventDefault();
-  log("touchstart.");
-  var el = document.getElementsByTagName("canvas")[0];
-  var ctx = el.getContext("2d");
-  var touches = evt.changedTouches;
-      hideTime=Date.now();
-      react = (hideTime - startTime)/1000;
-      totalTime+=react;
-      document.getElementById("score").innerHTML=react;
-      $("#box").fadeOut(100);
-      var scoress = document.getElementById("scores");
-      scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
-      var scorer = 5;
-      document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
-      scorer+=5;
-      if (blocknum===0){
-        average=0;
-      }
-      else if(blocknum!==0){
-        average = (totalTime/blocknum);
-        average*=1000;
-        average = Math.floor(average);
-        average/=1000;
-      }
-      make(maxBlocks, randTime);
-      if (isMobile.iOS()!=null){
-        $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
-      }
     }
     function handleEnd(){
       evt.preventDefault();
