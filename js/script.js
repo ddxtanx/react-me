@@ -105,6 +105,80 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
+function make(maxNum, sec){
+  setTimeout(function(){
+    var a=document.getElementById("box");
+    setWindowSize();
+    rand_height = getRandomIntInclusive(50,150);
+    item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
+    if( isMobile.iPhone()!=null){
+      rand_height = getRandomIntInclusive(30,70);
+    }
+    item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
+    a.style.top=item_h+'px';
+    a.style.left=item_w+'px';
+    a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
+    rand_col1 = getRandomIntInclusive(0,9);
+    rand_col2 = getRandomIntInclusive(0,9);
+    rand_col3 = getRandomIntInclusive(0,9);
+    $("#box").fadeIn(100);
+    if(i%3===0){
+      a.style.borderRadius="0%";
+      a.style.height=rand_height+"px";
+      a.style.width=rand_height+"px";
+      rand_height = getRandomIntInclusive(50,150);
+      i+=getRandomIntInclusive(1,5);
+    }
+    else if(i%3==1){
+      a.style.borderRadius="35%";
+      a.style.height=rand_height+"px";
+      a.style.width=rand_height+"px";
+      rand_height = getRandomIntInclusive(50,150);
+      i+=getRandomIntInclusive(1,5);
+    }
+    else if(i%3==2){
+      a.style.borderRadius="100%";
+      a.style.height=rand_height+"px";
+      a.style.width=rand_height+"px";
+      rand_height = getRandomIntInclusive(50,150);
+      i+=getRandomIntInclusive(1,5);
+    }
+    startTime = Date.now();
+    if(item_w+rand_height>max_width*0.8){
+      item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
+    }
+    else if(item_h+rand_height>max_height){
+      item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
+    }
+  }, sec);
+  blockyouron++;
+  if(blockyouron-1>=maxNum){
+    alert("Done!");
+    $("#game").fadeOut(200);
+    $("#finalStat").fadeIn(300);
+    var finishTime = Date.now();
+    var timeTaken = finishTime-makeTime;
+    timeTaken/=1000;
+    blocknum++;
+    if(blocknum===1){
+      score=0;
+      blocknum=0;
+    }
+    document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
+    document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
+    timeTaken+=10*missed_hits;
+    if(average===0){
+      score=0;
+    }
+    else if(blocknum!==0&&average!==0){
+      score = (blocknum*100*multiplier)/(timeTaken*2*average);
+      score*=10000;
+      score=Math.floor(score);
+      score/=10000;
+    }
+    document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
+  }
+}
 function handleStart(evt){
 var el = document.getElementById("box");
   hideTime=Date.now();
@@ -287,80 +361,6 @@ function Game(){
         startTime = Date.now();
       });
     };
-    function make(maxNum, sec){
-      setTimeout(function(){
-        var a=document.getElementById("box");
-        setWindowSize();
-        rand_height = getRandomIntInclusive(50,150);
-        item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
-        if( isMobile.iPhone()!=null){
-          rand_height = getRandomIntInclusive(30,70);
-        }
-        item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
-        a.style.top=item_h+'px';
-        a.style.left=item_w+'px';
-        a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
-        rand_col1 = getRandomIntInclusive(0,9);
-        rand_col2 = getRandomIntInclusive(0,9);
-        rand_col3 = getRandomIntInclusive(0,9);
-        $("#box").fadeIn(100);
-        if(i%3===0){
-          a.style.borderRadius="0%";
-          a.style.height=rand_height+"px";
-          a.style.width=rand_height+"px";
-          rand_height = getRandomIntInclusive(50,150);
-          i+=getRandomIntInclusive(1,5);
-        }
-        else if(i%3==1){
-          a.style.borderRadius="35%";
-          a.style.height=rand_height+"px";
-          a.style.width=rand_height+"px";
-          rand_height = getRandomIntInclusive(50,150);
-          i+=getRandomIntInclusive(1,5);
-        }
-        else if(i%3==2){
-          a.style.borderRadius="100%";
-          a.style.height=rand_height+"px";
-          a.style.width=rand_height+"px";
-          rand_height = getRandomIntInclusive(50,150);
-          i+=getRandomIntInclusive(1,5);
-        }
-        startTime = Date.now();
-        if(item_w+rand_height>max_width*0.8){
-          item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
-        }
-        else if(item_h+rand_height>max_height){
-          item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
-        }
-      }, sec);
-      blockyouron++;
-      if(blockyouron-1>=maxNum){
-        alert("Done!");
-        $("#game").fadeOut(200);
-        $("#finalStat").fadeIn(300);
-        var finishTime = Date.now();
-        var timeTaken = finishTime-makeTime;
-        timeTaken/=1000;
-        blocknum++;
-        if(blocknum===1){
-          score=0;
-          blocknum=0;
-        }
-        document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
-        document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
-        timeTaken+=10*missed_hits;
-        if(average===0){
-          score=0;
-        }
-        else if(blocknum!==0&&average!==0){
-          score = (blocknum*100*multiplier)/(timeTaken*2*average);
-          score*=10000;
-          score=Math.floor(score);
-          score/=10000;
-        }
-        document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
-      }
-    }
     var a = document.getElementById("box");
     if(document.getElementById("playzone").style.display=="block"){
       $("#playzone").css('width', max_width*0.8);
