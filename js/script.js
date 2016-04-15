@@ -378,7 +378,7 @@ function Game(){
       make(maxBlocks,0);
     };
     document.getElementById("box").onclick=function(){
-      startup();
+      handleStart();
     }
     document.getElementById("stopper").onclick=function(){
       stoppedTime= Date.now();
