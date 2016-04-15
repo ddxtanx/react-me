@@ -327,10 +327,6 @@ function Game(){
       }
     }
     var a = document.getElementById("box");
-    a.onclick=function(){
-      hideBox();
-      blocknum++;
-    };
     if(document.getElementById("playzone").style.display=="block"){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
@@ -339,6 +335,7 @@ function Game(){
   var el = document.getElementsByID("box")[0];
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
+  blocknum++;
   }
     function handleStart(){
       evt.preventDefault();
