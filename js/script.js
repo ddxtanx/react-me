@@ -105,6 +105,12 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
+function startup() {
+  var el = document.getElementsByID("box")[0];
+  el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleEnd, false);
+  blocknum++;
+}
 function Game(){
   item_h = 0;
   item_w = 0;
@@ -331,12 +337,6 @@ function Game(){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
     }
-    function startup() {
-  var el = document.getElementsByID("box")[0];
-  el.addEventListener("touchstart", handleStart, false);
-  el.addEventListener("touchend", handleEnd, false);
-  blocknum++;
-  }
     function handleStart(){
       evt.preventDefault();
   log("touchstart.");
