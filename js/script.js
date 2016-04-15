@@ -105,7 +105,7 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
-function handleStart(){
+function handleStart(evt){
   evt.preventDefault();
 log("touchstart.");
 var el = document.getElementsByTagName("canvas")[0];
@@ -135,7 +135,7 @@ var touches = evt.changedTouches;
     $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
   }
 }
-function handleEnd(){
+function handleEnd(evt){
   evt.preventDefault();
     log("touchend");
     var el = document.getElementsByTagName("canvas")[0];
