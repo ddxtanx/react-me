@@ -377,6 +377,9 @@ function Game(){
       }
       make(maxBlocks,0);
     };
+    a.onclick=function(){
+      startup();
+    }
     document.getElementById("stopper").onclick=function(){
       stoppedTime= Date.now();
       startTime=0;
