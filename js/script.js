@@ -106,7 +106,8 @@ var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
 function handleStart(evt){
-var el = document.getElementById("box")[0];
+var el = document.getElementById("box");
+var ctx = el.getContext("2d");
 var touches = evt.changedTouches;
   hideTime=Date.now();
   react = (hideTime - startTime)/1000;
@@ -133,10 +134,10 @@ var touches = evt.changedTouches;
   }
 }
 function handleEnd(evt){
-    var el = document.getElementsByTagName("canvas")[0];
+    var el = document.getElementById("box");
+    var ctx = el.getContext("2d");
     var touches = evt.changedTouches;
-
-}
+};
 function startup() {
   var el = document.getElementById("box");
   el.addEventListener("touchstart", handleStart, false);
