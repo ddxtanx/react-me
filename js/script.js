@@ -3,6 +3,7 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+
 function setWindowSize() {
   if (typeof (window.innerWidth) == 'number') {
     max_width = window.innerWidth;
@@ -334,7 +335,17 @@ function Game(){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
     }
-    function hideBox(){
+    function startup() {
+  var el = document.getElementsByID("box")[0];
+  el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleEnd, false);
+  }
+    function handleStart(){
+      evt.preventDefault();
+  log("touchstart.");
+  var el = document.getElementsByTagName("canvas")[0];
+  var ctx = el.getContext("2d");
+  var touches = evt.changedTouches;
       hideTime=Date.now();
       react = (hideTime - startTime)/1000;
       totalTime+=react;
@@ -359,6 +370,14 @@ function Game(){
         $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
       }
     }
+    function handleEnd(){
+      evt.preventDefault();
+        log("touchend");
+        var el = document.getElementsByTagName("canvas")[0];
+        var ctx = el.getContext("2d");
+        var touches = evt.changedTouches;
+
+    };
     document.getElementById("playzone").onclick=function(){
       missed_hits++;
       var scoress = document.getElementById("scores");
