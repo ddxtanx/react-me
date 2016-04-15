@@ -106,7 +106,7 @@ var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
 function startup() {
-  var el = document.getElementsByID("box")[0];
+  var el = document.getElementByID("box")[0];
   el.addEventListener("touchstart", handleStart, false);
   el.addEventListener("touchend", handleEnd, false);
   blocknum++;
