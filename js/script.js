@@ -345,7 +345,7 @@ function Game(){
       var scorer = 5;
       document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
       scorer+=5;
-      score+=Math.floor(1/(react*rand_height));
+      score+=Math.floor(1/(react*(rand_height/100)));
       if (blocknum===0){
         average=0;
       }
