@@ -23,6 +23,7 @@ function setWindowSize() {
     }
   }
 }
+var sizeMult = 0;
 var isMobile = {
   Android: function() {
     return navigator.userAgent.match(/Android/i);
@@ -285,6 +286,7 @@ function Game(){
     $("#difficulty").fadeIn();
     $("#easy").click(function(){
       multiplier=1;
+      sizeMult=1.5;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
       randTime= 3000;
@@ -311,6 +313,7 @@ function Game(){
       });
     });
     $("#medium").click(function(){
+      sizeMult=.7;
       multiplier=2;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
@@ -338,6 +341,7 @@ function Game(){
       });
     });
     document.getElementById("hard").onclick=function(){
+      sizeMult = .5;
       multiplier=3;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
