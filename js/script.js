@@ -7,6 +7,7 @@ Comments will be coming soon, once I don't have a lot going on with school.
 // Variable initilazation
 
 // Workaround for 300ms delay
+var scorAr = [];
 $(function() {
     FastClick.attach(document.body);
 });
@@ -348,6 +349,7 @@ function Game(){
       if(rand_height/1000===0){
         rand_height+=.2
       }
+      scorAr.push(1/(react*(rand_height/1000)));
       score+=Math.floor(1/(react*(rand_height/1000)));
       if (blocknum===0){
         average=0;
