@@ -3,10 +3,14 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+
+// Variable initilazation
+
+// Workaround for 300ms delay
 $(function() {
     FastClick.attach(document.body);
 });
-
+// finding height and width of screen
 function setWindowSize() {
   if (typeof (window.innerWidth) == 'number') {
     max_width = window.innerWidth;
@@ -24,6 +28,7 @@ function setWindowSize() {
   }
 }
 var sizeMult = 0;
+//Determining what OS the user is on
 var isMobile = {
   Android: function() {
     return navigator.userAgent.match(/Android/i);
@@ -98,6 +103,7 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
+//Game function
 function Game(){
   item_h = 0;
   item_w = 0;
@@ -136,11 +142,11 @@ function Game(){
   score = 0;
   b = document.getElementById("starter");
   randTime = 0;
-  $("#playzone").css('width', max_width*0.8);
-  $("#playzone").css('height', max_height-55);
+  //Setting sizes
   setWindowSize();
   $("#playzone").css('width', max_width*0.8);
   $("#playzone").css('height', max_height-55);
+  //Fade in blocks on start page
   $("#squarespan").mouseenter(function(){
     $("#square").fadeIn();
   });
@@ -159,6 +165,7 @@ function Game(){
   $("#squirclespan").mouseleave(function(){
     $("#squircle").fadeOut();
   });
+  //Page to page transitions
   $("#startbut").click(function(){
     $("#playzone").css('height', max_height-55+'px');
     $("#playzone").css('width', max_width*0.8+'px');
@@ -249,10 +256,12 @@ function Game(){
       });
     };
     var a = document.getElementById("box");
+    //This function makes the block afert a set amount of seconds
     function make(maxNum, sec){
       setTimeout(function(){
         var a=document.getElementById("box");
         setWindowSize();
+        //Random height and width and position
         rand_height = getRandomIntInclusive(50,150);
         item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
         if( isMobile.iPhone()!=null){
@@ -267,6 +276,7 @@ function Game(){
         rand_col3 = getRandomIntInclusive(0,9);
         $("#box").fadeIn(100);
         rand_height*=sizeMult;
+        //Random shapes
         if(i%3===0){
           a.style.borderRadius="0%";
           a.style.height=rand_height+"px";
@@ -289,6 +299,7 @@ function Game(){
           i+=getRandomIntInclusive(1,5);
         }
         startTime = Date.now();
+        //Resetting if a block is placed out of boundaries
         if(item_w+rand_height>max_width*0.8){
           item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
         }
@@ -297,6 +308,7 @@ function Game(){
         }
       }, sec);
       blockyouron++;
+      // Game end function
       if(blockyouron-1>=maxNum){
         alert("Done!");
         $("#game").fadeOut(200);
@@ -309,21 +321,18 @@ function Game(){
           score=0;
           blocknum=0;
         }
+        //Editing final page
         document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
         document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
         timeTaken+=10*missed_hits;
-        if(average===0){
+        if(average===0||blocknum===0){
           score=0;
         }
-        else if(blocknum!==0&&average!==0){
-          score = (blocknum*100*multiplier)/(timeTaken*2*average);
-          score*=10000;
-          score=Math.floor(score);
-          score/=10000;
-        }
+        score*=multiplier;
         document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
       }
     }
+    //Function that hides the box and puts the score data on the play screen
     function hide(){
     var a = document.getElementById("box");
       hideTime=Date.now();
@@ -336,6 +345,7 @@ function Game(){
       var scorer = 5;
       document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
       scorer+=5;
+      score+=Math.Floor(1/(react*rand_height));
       if (blocknum===0){
         average=0;
       }
@@ -354,6 +364,7 @@ function Game(){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
     }
+    //Function of you miss the box
     document.getElementById("playzone").onclick=function(){
       missed_hits++;
       var scoress = document.getElementById("scores");
@@ -369,6 +380,7 @@ function Game(){
       hide();
       blocknum++
     };
+    // Function for stopping and restarting the game
     document.getElementById("stopper").onclick=function(){
       stoppedTime= Date.now();
       startTime=0;
@@ -397,6 +409,7 @@ function Game(){
 $(".customHr").css({
   'top':'0.05*max_height+"px"'
 });
+// Handels if the device is IOS
   if( isMobile.iOS()!=null ){
     $(".customHr").css('margin-top', '-80px');
     $(".customHr").css('width', '100%');
@@ -498,7 +511,7 @@ $(".customHr").css({
     });
   }
   setWindowSize();
-
+// Handeling if device is landscape and IOS
   if(isMobile.iOS()!=null&&max_height<max_width){
     alert("yeet");
     $(".customHr").css({
@@ -515,7 +528,9 @@ $(".customHr").css({
   }
   }
   setWindowSize();
+  //Run game
 Game();
+//Play again function
 $("#playAgain").click(function(){
   averagesArray.push(average);
   scoresArray.push(score);
