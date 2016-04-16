@@ -11,6 +11,7 @@ var scorAr = [];
 $(function() {
     FastClick.attach(document.body);
 });
+var meh = [];
 // finding height and width of screen
 function setWindowSize() {
   if (typeof (window.innerWidth) == 'number') {
@@ -347,9 +348,10 @@ function Game(){
       document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": " + react + " sec.";
       scorer+=5;
       if(rand_height/1000===0){
-        rand_height+=.2
+        rand_height+=0.2;
       }
       scorAr.push(1/(react*(rand_height/1000)));
+      meh.push(rand_height);
       score+=Math.floor(1/(react*(rand_height/1000)));
       if (blocknum===0){
         average=0;
