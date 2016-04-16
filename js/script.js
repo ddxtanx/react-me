@@ -186,6 +186,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
       $("#thirty").click(function(){
         maxBlocks=30;
@@ -193,6 +194,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
       $("#fifty").click(function(){
         maxBlocks=50;
@@ -200,6 +202,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
     });
     $("#medium").click(function(){
@@ -214,6 +217,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
       $("#thirty").click(function(){
         maxBlocks=30;
@@ -221,6 +225,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
       $("#fifty").click(function(){
         maxBlocks=50;
@@ -228,6 +233,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
     });
     document.getElementById("hard").onclick=function(){
@@ -242,6 +248,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
       $("#thirty").click(function(){
         maxBlocks=30;
@@ -249,6 +256,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
       $("#fifty").click(function(){
         maxBlocks=50;
@@ -256,6 +264,7 @@ function Game(){
         $("#game").removeClass("hide");
         $("#game").fadeIn();
         startTime = Date.now();
+        make(maxBlocks, .5);
       });
     };
     var a = document.getElementById("box");
