@@ -74,8 +74,6 @@ var hideTime;
 var react;
 var totalTime = 0;
 var rand_color;
-var blocknum = 0;
-var blockyouron = 1;
 var startTime=Date.now();
 var amountOfGames = 0;
 setWindowSize();
@@ -204,7 +202,7 @@ function Game(){
       });
     });
     $("#medium").click(function(){
-      sizeMult=.7;
+      sizeMult=0.7;
       multiplier=2;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
@@ -232,7 +230,7 @@ function Game(){
       });
     });
     document.getElementById("hard").onclick=function(){
-      sizeMult = .5;
+      sizeMult = 0.5;
       multiplier=3;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
@@ -378,7 +376,7 @@ function Game(){
     };
     document.getElementById("box").onclick=function(){
       hide();
-    }
+    };
     document.getElementById("stopper").onclick=function(){
       stoppedTime= Date.now();
       startTime=0;
