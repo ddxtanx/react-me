@@ -378,7 +378,7 @@ function Game(){
     };
     document.getElementById("box").onclick=function(){
       hide();
-      blocknum++
+      blocknum++;
     };
     // Function for stopping and restarting the game
     document.getElementById("stopper").onclick=function(){
