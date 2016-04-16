@@ -7,6 +7,7 @@ Comments will be coming soon, once I don't have a lot going on with school.
 // Variable initilazation
 
 // Workaround for 300ms delay
+var reacAr = [];
 var scorAr = [];
 $(function() {
     FastClick.attach(document.body);
@@ -335,7 +336,7 @@ function Game(){
       }
     }
     //Function that hides the box and puts the score data on the play screen
-    function hide(){
+    function hid(){
     var a = document.getElementById("box");
       hideTime=Date.now();
       react = (hideTime - startTime)/1000;
@@ -352,6 +353,7 @@ function Game(){
       }
       scorAr.push(1/(react*(rand_height/1000)));
       meh.push(rand_height);
+      reacAr.push(react);
       score+=Math.floor(1/(react*(rand_height/1000)));
       if (blocknum===0){
         average=0;
@@ -384,7 +386,7 @@ function Game(){
       make(maxBlocks,0);
     };
     document.getElementById("box").onclick=function(){
-      hide();
+      hid();
       blocknum++;
     };
     // Function for stopping and restarting the game
