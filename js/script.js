@@ -512,9 +512,19 @@ $(".customHr").css({
     });
   }
   setWindowSize();
-  if(max_width>max_height){
+
+  if(max_width>max_height&&isMobile.iOS()!=null){
+    alert("yeet");
     $(".customHr").css({
-      'top':'4%'
+      'top':'3%'
+    });
+    $("#repoid").css({
+      'height':'0',
+      'width':'0'
+    });
+    $("#userid").css({
+      'height':'0',
+      'width':'0'
     });
   }
   }
