@@ -511,6 +511,12 @@ $(".customHr").css({
       'top':'45%'
     });
   }
+  setWindowSize();
+  if(max_width>max_height){
+    $(".customHr").css({
+      'top':'5%'
+    });
+  }
   }
   setWindowSize();
 Game();
