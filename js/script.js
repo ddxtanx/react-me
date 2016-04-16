@@ -3,6 +3,9 @@ I did not add any comments to this program, so if you are confused about anythin
 at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
+$(function() {
+    FastClick.attach(document.body);
+});
 
 function setWindowSize() {
   if (typeof (window.innerWidth) == 'number') {
