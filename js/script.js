@@ -514,7 +514,7 @@ $(".customHr").css({
   setWindowSize();
   if(max_width>max_height){
     $(".customHr").css({
-      'top':'5%'
+      'top':'4%'
     });
   }
   }
