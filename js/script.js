@@ -513,7 +513,7 @@ $(".customHr").css({
   }
   setWindowSize();
 
-  if(max_width>max_height&&isMobile.iOS()!=null){
+  if(isMobile.iOS()!=null&&max_height<max_width){
     alert("yeet");
     $(".customHr").css({
       'top':'3%'
