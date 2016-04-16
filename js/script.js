@@ -83,17 +83,8 @@ var widthRatioMin=1289/50;
 var widthRatioMax=1289/150;
 var rand_min = Math.floor((heightRatioMax*max_height)/74)-2;
 var rand_max = Math.floor((heightRatioMax*max_height)/26);
-var rand_height = getRandomIntInclusive(200000/(rand_min, rand_max));
-var rand_col1 = getRandomIntInclusive(0,9);
-var rand_col2 = getRandomIntInclusive(0,9);
-var rand_col3 = getRandomIntInclusive(0,9);
-var pos_top=30;
-var hideTime;
-var react;
 var averagesArray = [];
 var scoresArray = [];
-var totalTime = 0;
-var rand_color;
 var missed_hits = 0;
 var average = 0;
 var stoppedTime = 0;
@@ -376,6 +367,7 @@ function Game(){
     };
     document.getElementById("box").onclick=function(){
       hide();
+      blocknum++
     };
     document.getElementById("stopper").onclick=function(){
       stoppedTime= Date.now();
