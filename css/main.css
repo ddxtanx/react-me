@@ -39,6 +39,7 @@
 	font-family:Montserrat;
 	font-size:20px;
 	position:absolute;
+	top:0%;
 	right:20px;
 }
 
@@ -47,7 +48,7 @@
 	font-family:Raleway;
 	font-size:20px;
 	margin-left:80%;
-	margin-top:10px;
+	margin-top:15px;
 }
 
 #average
@@ -204,20 +205,21 @@
 }
 #how{
 	position: absolute;
-	left: 37%;
-	top:500px;
-	font-size: 30px;
+	left: 32%;
+	top:28%;
+	font-size: 50px;
 }
 #custom-form{
 	position: absolute;
-	left:37%;
-	top:550px;
+	font-size: 30px;
+	left:32%;
+	top:38%;
 }
 #submit{
 	position: absolute;
 	font-size: 30px;
-	left:37%;
-	top:600px;
+	left:32%;
+	top:48%;
 }
 #youavg
 {

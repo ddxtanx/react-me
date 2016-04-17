@@ -74,6 +74,20 @@ var isMobile = {
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function customClickFunction(){
+  $("#custom").click(function(){
+    $("#custom-form").fadeIn();
+    $("#custom").fadeOut();
+    $("#submit").fadeIn();
+    $("#how").fadeIn();
+    $(".number").fadeOut();
+    $("#form").submit(function(e) {
+      maxBlocks = parseInt(document.getElementById("custom-form").value);
+      e.preventDefault();
+      startGame()
+    });
+});
+}
 var item_h = 0;
 var item_w = 0;
 var playTop = 55;
@@ -277,17 +291,7 @@ function Game(){
         maxBlocks=50;
         startGame();
       });
-      $("#custom").click(function(){
-        $("#custom-form").fadeIn();
-        $("#custom").fadeOut();
-        $("#submit").fadeIn();
-        $("#how").fadeIn();
-        $("#form").submit(function(e) {
-          maxBlocks = parseInt(document.getElementById("custom-form").value);
-          e.preventDefault();
-          startGame()
-        });
-      });
+      customClickFunction();
     });
     $("#medium").click(function(){
       sizeMult=0.7;
@@ -307,18 +311,7 @@ function Game(){
         maxBlocks=50;
         startGame(0);
       });
-      $("#custom").click(function(){
-        $("#custom-form").fadeIn();
-        $("#custom").fadeOut();
-        $("#submit").fadeIn();
-        $("#how").fadeIn();
-        $("#form").submit(function(e) {
-          maxBlocks = parseInt(document.getElementById("custom-form").value);
-          alert(typeof maxBlocks);
-          e.preventDefault();
-          startGame();
-        });
-      });
+      customClickFunction();
     });
     document.getElementById("hard").onclick=function(){
       sizeMult = 0.5;
@@ -338,17 +331,7 @@ function Game(){
         maxBlocks=50;
         startGame();
       });
-      $("#custom").click(function(){
-        $("#custom-form").fadeIn();
-        $("#custom").fadeOut();
-        $("#submit").fadeIn();
-        $("#how").fadeIn();
-        $("#form").submit(function(e) {
-          maxBlocks = parseInt(document.getElementById("custom-form").value);
-          e.preventDefault();
-          startGame();
-        });
-      });
+      customClickFunction();
     };
     var a = document.getElementById("box");
     //This function makes the block afert a set amount of seconds
@@ -399,7 +382,7 @@ function Game(){
       document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
       $("#box").hide();
       if (isMobile.iOS()!=null){
-        $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
+        $("#scoor").css({ 'margin-top':'25px', 'font-size':'12px'});
       }
       make(maxBlocks,0);
     };
@@ -466,10 +449,40 @@ $(".customHr").css({
     $("#easy").css('left', '15%');
     $("#medium").css('left', '15%');
     $("#hard").css('left', '15%');
-    $("#howman").css('left', '15%');
-    $("#twenty").css('left', '25%');
-    $("#thirty").css('left', '25%');
-    $("#fifty").css('left', '25%');
+    $("#howman").css({
+    'left': '15%',
+    'top': '12%',
+    'font-size': '25px'
+    });
+    $("#twenty").css({
+      'left': '25%',
+      'top':'30%',
+      'font-size':'25px'
+    });
+    $("#thirty").css({
+      'left': '25%',
+      'top':'45%',
+      'font-size':'25px'
+    });
+    $("#fifty").css({
+      'left': '25%',
+      'top':'60%',
+      'font-size':'25px'
+    });
+    $("#custom").css({
+      'left': '15%',
+      'top':'75%',
+      'font-size':'25px'
+    });
+    $("#how").css({
+      'font-size':'20px'
+    });
+    $("#custom-form").css({
+      'font-size':'15px'
+    });
+    $("#submit").css({
+      'font-size':'15px'
+    });
     $("#starter").hide();
     $("#stopper").hide();
     $("#scores").css({
