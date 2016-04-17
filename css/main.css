@@ -160,6 +160,42 @@
 	position:absolute;
 	top:400px;
 }
+#difTitle
+{
+	position: absolute;
+	left:100px;
+  top:10%;
+}
+
+#howman
+{
+	left:22%;
+	position:absolute;
+}
+
+#twenty
+{
+	font-size:30px;
+	left:37%;
+	position:absolute;
+	top:200px;
+}
+
+#thirty
+{
+	font-size:30px;
+	left:37%;
+	position:absolute;
+	top:300px;
+}
+
+#fifty
+{
+	font-size:30px;
+	left:37%;
+	position:absolute;
+	top:400px;
+}
 #custom{
 	font-size: 30px;
 	position: absolute;
@@ -176,43 +212,6 @@
 	left:40%;
 	top:550px;
 }
-#difTitle
-{
-	position: absolute;
-	left:100px;
-  top:10%;
-}
-
-#howman
-{
-	left:25%;
-	position:absolute;
-}
-
-#twenty
-{
-	font-size:30px;
-	left:45%;
-	position:absolute;
-	top:200px;
-}
-
-#thirty
-{
-	font-size:30px;
-	left:45%;
-	position:absolute;
-	top:300px;
-}
-
-#fifty
-{
-	font-size:30px;
-	left:45%;
-	position:absolute;
-	top:400px;
-}
-
 #youavg
 {
 	font-size:30px;
