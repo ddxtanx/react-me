@@ -530,7 +530,7 @@ $(".customHr").css({
   }
   setWindowSize();
 // Handeling if device is landscape and IOS
-  if(isMobile.iOS()!=null&&max_height<max_width){
+  if(isMobile.iPad()!=null){
     alert("yeet");
     $(".customHr").css({
       'top':'3%'
