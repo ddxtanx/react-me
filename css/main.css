@@ -284,7 +284,21 @@
 	width:100%;
   margin-bottom: 20px;
 }
-
+#share{
+	position: absolute;
+	top:0px;
+	left:0px;
+}
+#repoid{
+	position: absolute;
+	top: 0px;
+	left:10%;
+}
+#userid{
+	position: absolute;
+	top: 0px;
+	left:20%;
+}
 .customHr
 {
 	background-color:#ff7f32;
