@@ -179,7 +179,7 @@ function Game(){
       sizeMult=1.5;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
-      randTime= 3000;
+      randTime= 2000;
       $("#twenty").click(function(){
         maxBlocks=20;
         $("#blockAmount").fadeOut();
@@ -210,7 +210,7 @@ function Game(){
       multiplier=2;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
-      randTime= 2000;
+      randTime= 1000;
       $("#twenty").click(function(){
         maxBlocks=20;
         $("#blockAmount").fadeOut();
@@ -241,7 +241,7 @@ function Game(){
       multiplier=3;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
-      randTime= 1000;
+      randTime= 500;
       $("#twenty").click(function(){
         maxBlocks=20;
         $("#blockAmount").fadeOut();
