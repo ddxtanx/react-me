@@ -7,8 +7,16 @@ Comments will be coming soon, once I don't have a lot going on with school.
 // Variable initilazation
 
 // Workaround for 300ms delay
+function startGame(){
+  $("#blockAmount").fadeOut();
+  $("#game").removeClass("hide");
+  $("#game").fadeIn();
+  startTime = Date.now();
+  make(maxBlocks, .5);
+};
 $("#custom-form").fadeOut();
 $("#submit").hide();
+$("#how").hide();
 var reacAr = [];
 var scorAr = [];
 $(function() {
@@ -110,6 +118,81 @@ var startTime;
 window.addEventListener('resize', setWindowSize);
 var randLetArr = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var randLetNum = getRandomIntInclusive(0, 15);
+function make(maxNum, sec){
+  setTimeout(function(){
+    var a=document.getElementById("box");
+    setWindowSize();
+    //Random height and width and position
+    rand_height = getRandomIntInclusive(50,150);
+    item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
+    if( isMobile.iPhone()!=null){
+      rand_height = getRandomIntInclusive(30,70);
+    }
+    item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
+    a.style.top=item_h+'px';
+    a.style.left=item_w+'px';
+    a.style.backgroundColor="#"+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)];
+    rand_col1 = getRandomIntInclusive(0,9);
+    rand_col2 = getRandomIntInclusive(0,9);
+    rand_col3 = getRandomIntInclusive(0,9);
+    $("#box").fadeIn(100);
+    rand_height*=sizeMult;
+    //Random shapes
+    if(i%3===0){
+      a.style.borderRadius="0%";
+      a.style.height=rand_height+"px";
+      a.style.width=rand_height+"px";
+      rand_height = getRandomIntInclusive(50,150);
+      i+=getRandomIntInclusive(1,5);
+    }
+    else if(i%3==1){
+      a.style.borderRadius="35%";
+      a.style.height=rand_height+"px";
+      a.style.width=rand_height+"px";
+      rand_height = getRandomIntInclusive(50,150);
+      i+=getRandomIntInclusive(1,5);
+    }
+    else if(i%3==2){
+      a.style.borderRadius="100%";
+      a.style.height=rand_height+"px";
+      a.style.width=rand_height+"px";
+      rand_height = getRandomIntInclusive(50,150);
+      i+=getRandomIntInclusive(1,5);
+    }
+    startTime = Date.now();
+    //Resetting if a block is placed out of boundaries
+    if(item_w+rand_height>max_width*0.8){
+      item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
+    }
+    else if(item_h+rand_height>max_height){
+      item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
+    }
+  }, sec);
+  blockyouron++;
+  // Game end function
+  if(blockyouron-1>=maxNum){
+    alert("Done!");
+    $("#game").fadeOut(200);
+    $("#finalStat").fadeIn(300);
+    var finishTime = Date.now();
+    var timeTaken = finishTime-makeTime;
+    timeTaken/=1000;
+    blocknum++;
+    if(blocknum===1){
+      score=0;
+      blocknum=0;
+    }
+    //Editing final page
+    document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
+    document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
+    timeTaken+=10*missed_hits;
+    if(average===0||blocknum===0){
+      score=0;
+    }
+    score*=multiplier;
+    document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
+  }
+}
 //Game function
 function Game(){
   item_h = 0;
@@ -184,32 +267,26 @@ function Game(){
       randTime= 2000;
       $("#twenty").click(function(){
         maxBlocks=20;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#thirty").click(function(){
         maxBlocks=30;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#fifty").click(function(){
         maxBlocks=50;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
         $("#custom").fadeOut();
         $("#submit").fadeIn();
+        $("#how").fadeIn();
+        $("#form").submit(function(e) {
+          maxBlocks = parseInt(document.getElementById("custom-form").value);
+          e.preventDefault();
+          startGame()
+        });
       });
     });
     $("#medium").click(function(){
@@ -220,32 +297,27 @@ function Game(){
       randTime= 1000;
       $("#twenty").click(function(){
         maxBlocks=20;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#thirty").click(function(){
         maxBlocks=30;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#fifty").click(function(){
         maxBlocks=50;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame(0);
       });
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
         $("#custom").fadeOut();
         $("#submit").fadeIn();
+        $("#how").fadeIn();
+        $("#form").submit(function(e) {
+          maxBlocks = parseInt(document.getElementById("custom-form").value);
+          alert(typeof maxBlocks);
+          e.preventDefault();
+          startGame();
+        });
       });
     });
     document.getElementById("hard").onclick=function(){
@@ -256,111 +328,31 @@ function Game(){
       randTime= 500;
       $("#twenty").click(function(){
         maxBlocks=20;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#thirty").click(function(){
         maxBlocks=30;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#fifty").click(function(){
         maxBlocks=50;
-        $("#blockAmount").fadeOut();
-        $("#game").removeClass("hide");
-        $("#game").fadeIn();
-        startTime = Date.now();
-        make(maxBlocks, .5);
+        startGame();
       });
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
         $("#custom").fadeOut();
         $("#submit").fadeIn();
+        $("#how").fadeIn();
+        $("#form").submit(function(e) {
+          maxBlocks = parseInt(document.getElementById("custom-form").value);
+          e.preventDefault();
+          startGame();
+        });
       });
     };
     var a = document.getElementById("box");
     //This function makes the block afert a set amount of seconds
-    function make(maxNum, sec){
-      setTimeout(function(){
-        var a=document.getElementById("box");
-        setWindowSize();
-        //Random height and width and position
-        rand_height = getRandomIntInclusive(50,150);
-        item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
-        if( isMobile.iPhone()!=null){
-          rand_height = getRandomIntInclusive(30,70);
-        }
-        item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
-        a.style.top=item_h+'px';
-        a.style.left=item_w+'px';
-        a.style.backgroundColor="#"+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)];
-        rand_col1 = getRandomIntInclusive(0,9);
-        rand_col2 = getRandomIntInclusive(0,9);
-        rand_col3 = getRandomIntInclusive(0,9);
-        $("#box").fadeIn(100);
-        rand_height*=sizeMult;
-        //Random shapes
-        if(i%3===0){
-          a.style.borderRadius="0%";
-          a.style.height=rand_height+"px";
-          a.style.width=rand_height+"px";
-          rand_height = getRandomIntInclusive(50,150);
-          i+=getRandomIntInclusive(1,5);
-        }
-        else if(i%3==1){
-          a.style.borderRadius="35%";
-          a.style.height=rand_height+"px";
-          a.style.width=rand_height+"px";
-          rand_height = getRandomIntInclusive(50,150);
-          i+=getRandomIntInclusive(1,5);
-        }
-        else if(i%3==2){
-          a.style.borderRadius="100%";
-          a.style.height=rand_height+"px";
-          a.style.width=rand_height+"px";
-          rand_height = getRandomIntInclusive(50,150);
-          i+=getRandomIntInclusive(1,5);
-        }
-        startTime = Date.now();
-        //Resetting if a block is placed out of boundaries
-        if(item_w+rand_height>max_width*0.8){
-          item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
-        }
-        else if(item_h+rand_height>max_height){
-          item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
-        }
-      }, sec);
-      blockyouron++;
-      // Game end function
-      if(blockyouron-1>=maxNum){
-        alert("Done!");
-        $("#game").fadeOut(200);
-        $("#finalStat").fadeIn(300);
-        var finishTime = Date.now();
-        var timeTaken = finishTime-makeTime;
-        timeTaken/=1000;
-        blocknum++;
-        if(blocknum===1){
-          score=0;
-          blocknum=0;
-        }
-        //Editing final page
-        document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
-        document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
-        timeTaken+=10*missed_hits;
-        if(average===0||blocknum===0){
-          score=0;
-        }
-        score*=multiplier;
-        document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
-      }
-    }
+    make();
     //Function that hides the box and puts the score data on the play screen
     function hid(){
     var a = document.getElementById("box");

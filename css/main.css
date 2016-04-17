@@ -202,15 +202,22 @@
 	top:500px;
 	left:37%;
 }
+#how{
+	position: absolute;
+	left: 37%;
+	top:500px;
+	font-size: 30px;
+}
 #custom-form{
 	position: absolute;
-	left:30%;
+	left:37%;
 	top:550px;
 }
 #submit{
 	position: absolute;
-	left:40%;
-	top:550px;
+	font-size: 30px;
+	left:37%;
+	top:600px;
 }
 #youavg
 {
