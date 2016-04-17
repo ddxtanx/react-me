@@ -20,7 +20,7 @@ $("#how").hide();
 var reacAr = [];
 var scorAr = [];
 $(function() {
-    FastClick.attach(document.body);
+  FastClick.attach(document.body);
 });
 var meh = [];
 // finding height and width of screen
@@ -86,7 +86,7 @@ function customClickFunction(){
       e.preventDefault();
       startGame()
     });
-});
+  });
 }
 var item_h = 0;
 var item_w = 0;
@@ -338,7 +338,7 @@ function Game(){
     make();
     //Function that hides the box and puts the score data on the play screen
     function hid(){
-    var a = document.getElementById("box");
+      var a = document.getElementById("box");
       hideTime=Date.now();
       react = (hideTime - startTime)/1000;
       totalTime+=react;
@@ -416,10 +416,10 @@ function Game(){
       stopInter();
     };
   });
-$(".customHr").css({
-  'top':'0.05*max_height+"px"'
-});
-// Handels if the device is IOS
+  $(".customHr").css({
+    'top':'0.05*max_height+"px"'
+  });
+  // Handels if the device is IOS
   if( isMobile.iOS()!=null ){
     $(".customHr").css('margin-top', '-80px');
     $(".customHr").css('width', '100%');
@@ -450,9 +450,9 @@ $(".customHr").css({
     $("#medium").css('left', '15%');
     $("#hard").css('left', '15%');
     $("#howman").css({
-    'left': '15%',
-    'top': '12%',
-    'font-size': '25px'
+      'left': '15%',
+      'top': '12%',
+      'font-size': '25px'
     });
     $("#twenty").css({
       'left': '25%',
@@ -551,7 +551,7 @@ $(".customHr").css({
     });
   }
   setWindowSize();
-// Handeling if device is landscape and IOS
+  // Handeling if device is landscape and IOS
   if(isMobile.iPad()!=null){
     $(".customHr").css({
       'margin-top':'-10px'
@@ -565,9 +565,9 @@ $(".customHr").css({
       'width':'0'
     });
   }
-  }
-  setWindowSize();
-  //Run game
+}
+setWindowSize();
+//Run game
 Game();
 //Play again function
 $("#playAgain").click(function(){
