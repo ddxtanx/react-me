@@ -106,6 +106,8 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
+var randLetArr = ['a', 'b', 'c', 'd', 'e', 'f'];
+var randLetNum = getRandomIntInclusive(0, 5);
 //Game function
 function Game(){
   item_h = 0;
@@ -280,7 +282,7 @@ function Game(){
         item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
         a.style.top=item_h+'px';
         a.style.left=item_w+'px';
-        a.style.backgroundColor="#"+rand_col1+"a"+rand_col2+"d"+rand_col3+"b";
+        a.style.backgroundColor="#"+rand_col1+randLetArr[randLetNum(0,5)]+rand_col2+randLetArr[randLetNum(0,5)]+rand_col3+randLetArr[randLetNum(0,5)];
         rand_col1 = getRandomIntInclusive(0,9);
         rand_col2 = getRandomIntInclusive(0,9);
         rand_col3 = getRandomIntInclusive(0,9);
