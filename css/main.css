@@ -234,7 +234,10 @@
 	position:absolute;
 	top:200px;
 }
-
+#youtime{
+	position: absolute;
+	left:10%;
+}
 #youscore
 {
 	font-size:30px;
