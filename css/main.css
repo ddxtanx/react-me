@@ -160,7 +160,22 @@
 	position:absolute;
 	top:400px;
 }
-
+#custom{
+	font-size: 30px;
+	position: absolute;
+	top:500px;
+	left:37%;
+}
+#custom-form{
+	position: absolute;
+	left:20%;
+	top:550px;
+}
+#submit{
+	position: absolute;
+	left:40%;
+	top:550px;
+}
 #difTitle
 {
 	position: absolute;

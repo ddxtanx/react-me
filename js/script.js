@@ -8,6 +8,7 @@ Comments will be coming soon, once I don't have a lot going on with school.
 
 // Workaround for 300ms delay
 $("#custom-form").fadeOut();
+$("#submit").hide();
 var reacAr = [];
 var scorAr = [];
 $(function() {
@@ -207,7 +208,7 @@ function Game(){
       });
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
-        
+
       })
     });
     $("#medium").click(function(){
