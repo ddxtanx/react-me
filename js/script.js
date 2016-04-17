@@ -106,8 +106,8 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
-var randLetArr = ['a', 'b', 'c', 'd', 'e', 'f'];
-var randLetNum = getRandomIntInclusive(0, 5);
+var randLetArr = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var randLetNum = getRandomIntInclusive(0, 15);
 //Game function
 function Game(){
   item_h = 0;
@@ -282,7 +282,7 @@ function Game(){
         item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
         a.style.top=item_h+'px';
         a.style.left=item_w+'px';
-        a.style.backgroundColor="#"+rand_col1+randLetArr[randLetNum(0,5)]+rand_col2+randLetArr[randLetNum(0,5)]+rand_col3+randLetArr[randLetNum(0,5)];
+        a.style.backgroundColor="#"+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum];
         rand_col1 = getRandomIntInclusive(0,9);
         rand_col2 = getRandomIntInclusive(0,9);
         rand_col3 = getRandomIntInclusive(0,9);
