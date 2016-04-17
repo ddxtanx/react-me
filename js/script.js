@@ -208,8 +208,8 @@ function Game(){
       });
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
-
-      })
+        $("#custom").fadeOut();
+      });
     });
     $("#medium").click(function(){
       sizeMult=0.7;
@@ -241,6 +241,10 @@ function Game(){
         startTime = Date.now();
         make(maxBlocks, .5);
       });
+      $("#custom").click(function(){
+        $("#custom-form").fadeIn();
+        $("#custom").fadeOut();
+      });
     });
     document.getElementById("hard").onclick=function(){
       sizeMult = 0.5;
@@ -271,6 +275,10 @@ function Game(){
         $("#game").fadeIn();
         startTime = Date.now();
         make(maxBlocks, .5);
+      });
+      $("#custom").click(function(){
+        $("#custom-form").fadeIn();
+        $("#custom").fadeOut();
       });
     };
     var a = document.getElementById("box");
