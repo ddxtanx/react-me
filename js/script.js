@@ -532,7 +532,7 @@ $(".customHr").css({
 // Handeling if device is landscape and IOS
   if(isMobile.iPad()!=null){
     $(".customHr").css({
-      'margin-top':'2%'
+      'margin-top':'.5%'
     });
     $("#repoid").css({
       'height':'0',
