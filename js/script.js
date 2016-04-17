@@ -209,6 +209,7 @@ function Game(){
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
         $("#custom").fadeOut();
+        $("#submit").fadeIn();
       });
     });
     $("#medium").click(function(){
@@ -244,6 +245,7 @@ function Game(){
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
         $("#custom").fadeOut();
+        $("#submit").fadeIn();
       });
     });
     document.getElementById("hard").onclick=function(){
@@ -279,6 +281,7 @@ function Game(){
       $("#custom").click(function(){
         $("#custom-form").fadeIn();
         $("#custom").fadeOut();
+        $("#submit").fadeIn();
       });
     };
     var a = document.getElementById("box");
