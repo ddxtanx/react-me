@@ -533,7 +533,7 @@ $(".customHr").css({
   if(isMobile.iPad()!=null){
     alert("yeet");
     $(".customHr").css({
-      'top':'3%'
+      'top':'2%'
     });
     $("#repoid").css({
       'height':'0',
