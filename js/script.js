@@ -283,6 +283,7 @@ function Game(){
         a.style.top=item_h+'px';
         a.style.left=item_w+'px';
         a.style.backgroundColor="#"+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum]+randLetArr[randLetNum];
+        randLetNum = getRandomIntInclusive(0,15);
         rand_col1 = getRandomIntInclusive(0,9);
         rand_col2 = getRandomIntInclusive(0,9);
         rand_col3 = getRandomIntInclusive(0,9);
