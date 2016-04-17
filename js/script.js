@@ -531,9 +531,8 @@ $(".customHr").css({
   setWindowSize();
 // Handeling if device is landscape and IOS
   if(isMobile.iPad()!=null){
-    alert("yeet");
     $(".customHr").css({
-      'top':'1%'
+      'margin-top':'4%'
     });
     $("#repoid").css({
       'height':'0',
