@@ -7,6 +7,7 @@ Comments will be coming soon, once I don't have a lot going on with school.
 // Variable initilazation
 
 // Workaround for 300ms delay
+$("#custom-form").fadeOut();
 var reacAr = [];
 var scorAr = [];
 $(function() {
@@ -204,6 +205,10 @@ function Game(){
         startTime = Date.now();
         make(maxBlocks, .5);
       });
+      $("#custom").click(function(){
+        $("#custom-form").fadeIn();
+        
+      })
     });
     $("#medium").click(function(){
       sizeMult=0.7;
