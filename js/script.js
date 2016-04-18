@@ -142,7 +142,7 @@ function make(maxNum, sec){
     if( isMobile.iPhone()!=null){
       rand_height = getRandomIntInclusive(30,70);
     }
-    item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-rand_height-20);
+    item_w = getRandomIntInclusive(rand_height/sizeMult, (max_width*0.8)-(rand_height/sizeMult)-20);
     a.style.top=item_h+'px';
     a.style.left=item_w+'px';
     a.style.backgroundColor="#"+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)];
