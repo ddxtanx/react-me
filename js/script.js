@@ -138,11 +138,12 @@ function make(maxNum, sec){
     setWindowSize();
     //Random height and width and position
     rand_height = getRandomIntInclusive(50,150);
-    item_h = getRandomIntInclusive(playTop+(rand_height/sizeMult)+5, (max_height-(rand_height/sizeMult)-20));
+    rand_height*=sizeMult;
+    item_h = getRandomIntInclusive((playTop+rand_height+5), (max_height-rand_height-20));
     if( isMobile.iPhone()!=null){
       rand_height = getRandomIntInclusive(30,70);
     }
-    item_w = getRandomIntInclusive(rand_height/sizeMult, (max_width*0.8)-(rand_height/sizeMult)-20);
+    item_w = getRandomIntInclusive(rand_height, (max_width*0.8)-(rand_height)-20);
     a.style.top=item_h+'px';
     a.style.left=item_w+'px';
     a.style.backgroundColor="#"+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)]+randLetArr[getRandomIntInclusive(0,15)];
@@ -150,7 +151,6 @@ function make(maxNum, sec){
     rand_col2 = getRandomIntInclusive(0,9);
     rand_col3 = getRandomIntInclusive(0,9);
     $("#box").fadeIn(100);
-    rand_height*=sizeMult;
     //Random shapes
     if(i%3===0){
       a.style.borderRadius="0%";
@@ -275,7 +275,7 @@ function Game(){
     $("#difficulty").fadeIn();
     $("#easy").click(function(){
       multiplier=1;
-      sizeMult=1.5;
+      sizeMult=1.15;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
       randTime= 2000;
