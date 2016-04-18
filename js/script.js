@@ -94,7 +94,7 @@ var playTop = 55;
 var max_width = 0;
 var max_height = 0;
 var blocknum = 0;
-var blockyouron = 0;
+var blockyouron = -1;
 var i = 3;
 var makeTime = Date.now();
 var rand_height = getRandomIntInclusive(50,150);
@@ -192,7 +192,7 @@ function make(maxNum, sec){
     var timeTaken = finishTime-makeTime;
     timeTaken/=1000;
     blocknum++;
-    if(blocknum===0){
+    if(blocknum===0||score===0||){
       score=0;
       blocknum=0;
     }
@@ -215,7 +215,7 @@ function Game(){
   max_width = 0;
   max_height = 0;
   blocknum = 0;
-  blockyouron = 0;
+  blockyouron = -1;
   i = 3;
   makeTime = Date.now();
   pos_top=30;
