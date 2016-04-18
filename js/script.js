@@ -192,7 +192,7 @@ function make(maxNum, sec){
     var timeTaken = finishTime-makeTime;
     timeTaken/=1000;
     blocknum++;
-    if(blocknum===1){
+    if(blocknum===0){
       score=0;
       blocknum=0;
     }
