@@ -138,7 +138,7 @@ function make(maxNum, sec){
     setWindowSize();
     //Random height and width and position
     rand_height = getRandomIntInclusive(50,150);
-    item_h = getRandomIntInclusive(playTop+rand_height+5, (max_height-rand_height-20));
+    item_h = getRandomIntInclusive(playTop+(rand_height/sizeMult)+5, (max_height-(rand_height/sizeMult)-20));
     if( isMobile.iPhone()!=null){
       rand_height = getRandomIntInclusive(30,70);
     }
