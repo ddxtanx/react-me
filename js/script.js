@@ -585,3 +585,5 @@ $("#playAgain").click(function(){
   document.getElementById("scoor").innerHTML="";
   Game();
 });
+alert(max_height);
+alert(max_width);
