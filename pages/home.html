@@ -55,7 +55,7 @@
       <button id="custom" type="button" class="btn btn-danger" ng-click="sub.click()"> Custom Amount </button>
       <div id="controllerForm">
       <form id="loginform" name="loginform" ng-submit="sub.submit(loginform)" novalidate>
-        <input id="custom-form" type="number" value = "20" min="1" ng-model="user.maxBlock" ng-required="required" required="required"></input>
+        <input id="custom-form" type="number" value = "20" min="1" ng-model="user.maxBlock" ng-required="required" required="required">{{maxBlocks=user.maxBlock}}</input>
         <input id="submit" class="btn" type="submit"></button>
       </form>
       <p id="how"> How Many Blocks? </how>
