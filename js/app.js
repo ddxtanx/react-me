@@ -1,8 +1,9 @@
 var app = angular.module("uReact", []);
-app.controller('formController', function(){
+app.controller('formController', function($scope){
    this.user = {};
-   submit: function(){
-     maxBlocks = parseInt(document.getElementById("custom-form").value);
+   $scope.sub = {
+   submit: function() {
+     maxBlocks = user.maxBlocks;
      e.preventDefault();
      startGame();
      $("#custom-form").fadeIn();
@@ -11,4 +12,5 @@ app.controller('formController', function(){
      $("#how").fadeIn();
      $(".number").fadeOut();
    }
+ }
 });
