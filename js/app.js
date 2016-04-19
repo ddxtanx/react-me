@@ -1,11 +1,12 @@
 var app = angular.module("uReact", []);
 app.controller('formController', function($scope){
-   this.user = {};
+   var user = {};
    $scope.sub = {
-   submit: function() {
-     maxBlocks = user.maxBlocks;
-     e.preventDefault();
+   submit: function(form) {
+     if(form.$valid){
+     maxBlocks = user.maxBlock;
      startGame();
+   }
    },
    click: function(){
      $("#custom-form").fadeIn();

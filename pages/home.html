@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/tooltipster.css" />
   <script type="text/javascript" src="../js/jquery.tooltipster.min.js"></script>
-  <script src="//code.angularjs.org/1.5.5/angular.min.js"></script>
+  <script src="http://code.angularjs.org/1.5.5/angular.min.js"></script>
   <script src="../js/app.js"></script>
   <script>
   $(document).ready(function() {
@@ -54,9 +54,9 @@
       <button id="fifty" type="button" class="btn btn-success number"> 50 Blocks</button>
       <button id="custom" type="button" class="btn btn-danger" ng-click="sub.click()"> Custom Amount </button>
       <div id="controllerForm">
-      <form id="loginform" name="form" ng-submit="loginform.$valid && sub.submit()" novalidate>
-        <input id="custom-form" type="number" value = "20" ng-min="1" ng-model="user.maxBlocks" ng-required="required" required></input>
-        <input id="submit" type="submit" ng-disabled="loginform.$invalid"></button>
+      <form id="loginform" name="loginform" ng-submit="sub.submit(loginform)" novalidate>
+        <input id="custom-form" type="number" value = "20" min="1" ng-model="user.maxBlock" ng-required="required" required="required"></input>
+        <input id="submit" class="btn" type="submit"></button>
       </form>
       <p id="how"> How Many Blocks? </how>
       </div>
