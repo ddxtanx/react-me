@@ -132,7 +132,6 @@ var startTime;
 window.addEventListener('resize', setWindowSize);
 window.addEventListener('resize', resetWindowSize);
 function resetWindowSize(){
-  alert("resizing");
   $("#playzone").css({
     'height': 'max_height'+'px',
     'width':'max_width'+'px'
