@@ -54,7 +54,7 @@
       <button id="fifty" type="button" class="btn btn-success number"> 50 Blocks</button>
       <button id="custom" type="button" class="btn btn-danger" ng-click="sub.click()"> Custom Amount </button>
       <div id="controllerForm">
-      <form id="form" name="form" ng-submit="loginform.$valid && sub.submit()" novalidate>
+      <form id="loginform" name="form" ng-submit="loginform.$valid && sub.submit()" novalidate>
         <input id="custom-form" type="number" value = "20" min="1" ng-model="user.maxBlocks" ng-required="required"></input>
         <input type="submit" id="submit" class="btn btn-warning" ></button>
       </form>
