@@ -47,13 +47,13 @@
       <button id="medium" type="button" class="btn btn-info"> Medium Difficulty </button>
       <button id="hard" type="button" class="btn btn-success"> Hard Difficulty </button>
     </div>
-    <div id="blockAmount">
+    <div id="blockAmount" ng-controller="formController">
       <h1 id="howman"> How many blocks do you want on this level? </h1>
       <button id="twenty" type="button" class="btn btn-primary number"> 20 Blocks </button>
       <button id="thirty" type="button" class="btn btn-info number"> 30 Blocks</button>
       <button id="fifty" type="button" class="btn btn-success number"> 50 Blocks</button>
-      <button id="custom" type="button" class="btn btn-danger"> Custom Amount </button>
-      <div id="controllerForm" ng-controller="formController">
+      <button id="custom" type="button" class="btn btn-danger" ng-click="login.click()"> Custom Amount </button>
+      <div id="controllerForm">
       <form id="form" name="form" ng-submit="loginform.$valid && login.submit()" novalidate>
         <input id="custom-form" type="number" value = "20" min="1" ng-model="user.maxBlocks" ng-required="required"></input>
         <input type="submit" id="submit" class="btn btn-warning" ></button>

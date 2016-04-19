@@ -6,6 +6,8 @@ app.controller('formController', function($scope){
      maxBlocks = user.maxBlocks;
      e.preventDefault();
      startGame();
+   },
+   click: function(){
      $("#custom-form").fadeIn();
      $("#custom").fadeOut();
      $("#submit").fadeIn();
