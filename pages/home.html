@@ -56,7 +56,7 @@
       <div id="controllerForm">
       <form id="loginform" name="form" ng-submit="loginform.$valid && sub.submit()" novalidate>
         <input id="custom-form" type="number" value = "20" ng-min="1" ng-model="user.maxBlocks" ng-required="required" required></input>
-        <input type="submit" ng-disabled="loginform.$invalid">Login</button>
+        <input id="submit" type="submit" ng-disabled="loginform.$invalid"></button>
       </form>
       <p id="how"> How Many Blocks? </how>
       </div>
