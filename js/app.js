@@ -1,10 +1,10 @@
-var app = angular.module("uReact", []);
-app.controller('formController', function($scope){
-   var user = {};
-   $scope.sub = {
+var app = angular.module("uReact", ['ngMessages']);
+app.controller('formController', function(){
+   user = {};
+   user.sub = {
    submit: function(form) {
      if(form.$valid){
-     maxBlocks = user.maxBlock;
+     maxBlocks = user.number;
      startGame();
    }
    },
@@ -16,4 +16,27 @@ app.controller('formController', function($scope){
      $(".number").fadeOut();
    }
  }
+ user.dirtyFncs ={
+
+    dirty: function (form){
+    for(var prop in form) {
+      if(form.hasOwnProperty(prop)) {
+         if(form[prop].$dirty) {
+           return true;
+         }
+      }
+    }
+    return false;
+  },
+  anyDirtyandInvalid: function (form){
+     for(var prop in form) {
+       if(form.hasOwnProperty(prop)) {
+          if(form[prop].$dirty&&form[prop].$invalid) {
+            return true;
+          }
+       }
+     }
+     return false;
+   }
+ };
 });
