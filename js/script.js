@@ -74,22 +74,6 @@ var isMobile = {
 function getRandomIntInclusive(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-function customClickFunction(){
-  $("#custom").click(function(){
-    $("#custom-form").fadeIn();
-    $("#custom").fadeOut();
-    $("#submit").fadeIn();
-    $("#how").fadeIn();
-    $(".number").fadeOut();
-    /*
-    $("#form").submit(function(e) {
-      maxBlocks = parseInt(document.getElementById("custom-form").value);
-      e.preventDefault();
-      startGame()
-    });
-    */
-  });
-}
 var item_h = 0;
 var item_w = 0;
 var playTop = 55;
@@ -306,7 +290,6 @@ function Game(){
         maxBlocks=50;
         startGame();
       });
-      customClickFunction();
     });
     $("#medium").click(function(){
       sizeMult=0.7;
@@ -326,7 +309,6 @@ function Game(){
         maxBlocks=50;
         startGame(0);
       });
-      customClickFunction();
     });
     document.getElementById("hard").onclick=function(){
       sizeMult = 0.5;
@@ -346,7 +328,6 @@ function Game(){
         maxBlocks=50;
         startGame();
       });
-      customClickFunction();
     };
     var a = document.getElementById("box");
     //This function makes the block afert a set amount of seconds
