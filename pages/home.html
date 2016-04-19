@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="uReact">
 <head>
   <title> U React! </title>
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="../img/red-dot.png" />
@@ -19,6 +19,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
   <link rel="stylesheet" type="text/css" href="../css/tooltipster.css" />
   <script type="text/javascript" src="../js/jquery.tooltipster.min.js"></script>
+  <script src="//code.angularjs.org/1.5.5/angular.min.js"></script>
+  <script src="../js/app.js"></script>
   <script>
   $(document).ready(function() {
     $('.tooltip').tooltipster();
@@ -51,12 +53,14 @@
       <button id="thirty" type="button" class="btn btn-info number"> 30 Blocks</button>
       <button id="fifty" type="button" class="btn btn-success number"> 50 Blocks</button>
       <button id="custom" type="button" class="btn btn-danger"> Custom Amount </button>
-      <form id="form">
-        <input id="custom-form" type="number" value = "20" min="1" required></input>
+      <div id="controllerForm" ng-controller="formController">
+      <form id="form" novalidate>
+        <input id="custom-form" type="number" value = "20" min="1" ng-model="user.maxBlocks" required></input>
         <input type="submit" id="submit" class="btn btn-warning"></button>
       </form>
       <p id="how"> How Many Blocks? </how>
       </div>
+    </div>
       <div id="finalStat">
         <p id="youavg"> You averaged <span id="check"></span> boxes per second!</p>
         <p id="youhit"> You hit <span id="boxesHit"> </span> out of <span id="boxyouon"></span> boxes! </p>

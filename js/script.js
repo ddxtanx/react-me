@@ -130,6 +130,20 @@ var b = document.getElementById("starter");
 var randTime = 0;
 var startTime;
 window.addEventListener('resize', setWindowSize);
+window.addEventListener('resize', resetWindowSize);
+function resetWindowSize(){
+  alert("resizing");
+  $("#playzone").css({
+    'height': 'max_height'+'px',
+    'width':'max_width'+'px'
+  });
+}
+if(max_height!=document.getElementById("playzone").style.height||max_width!=document.getElementById("playzone").style.width){
+  $("#playzone").css({
+    'height': 'max_height'+'px',
+    'width':'max_width'+'px'
+  });
+}
 var randLetArr = ['a', 'b', 'c', 'd', 'e', 'f', 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var randLetNum = getRandomIntInclusive(0, 15);
 function make(maxNum, sec){
@@ -492,7 +506,8 @@ function Game(){
     $("#youtime").css({
       'position':'absolute',
       'top':'5%',
-      'font-size':'13px'
+      'font-size':'13px',
+      'left': '40%'
     });
     $("#scoring").css({
       'font-size': '15px'
@@ -585,5 +600,3 @@ $("#playAgain").click(function(){
   document.getElementById("scoor").innerHTML="";
   Game();
 });
-alert(max_height);
-alert(max_width);
