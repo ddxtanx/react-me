@@ -81,11 +81,13 @@ function customClickFunction(){
     $("#submit").fadeIn();
     $("#how").fadeIn();
     $(".number").fadeOut();
+    /*
     $("#form").submit(function(e) {
       maxBlocks = parseInt(document.getElementById("custom-form").value);
       e.preventDefault();
       startGame()
     });
+    */
   });
 }
 var item_h = 0;
