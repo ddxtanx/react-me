@@ -6,6 +6,12 @@ app.controller('formController', ['$scope', function($scope){
      if(form.$valid){
      maxBlocks = $scope.number;
      startGame();
+     $("#custom-form").fadeOut();
+     $("#custom").fadeIn();
+     $("#submit").fadeOut();
+     $("#how").fadeOut();
+     $(".number").fadeIn();
+     $("#errormes").fadeOut();
    }
    },
    click: function(){

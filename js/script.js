@@ -308,7 +308,7 @@ function Game(){
       });
       $("#fifty").click(function(){
         maxBlocks=50;
-        startGame(0);
+        startGame();
       });
     });
     document.getElementById("hard").onclick=function(){
