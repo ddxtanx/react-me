@@ -1,10 +1,10 @@
 var app = angular.module("uReact", ['ngMessages']);
-app.controller('formController', function(){
+app.controller('formController', ['$scope', function($scope){
    user = {};
-   user.sub = {
+   $scope.sub = {
    submit: function(form) {
      if(form.$valid){
-     maxBlocks = user.number;
+     maxBlocks = $scope.number;
      startGame();
    }
    },
@@ -16,7 +16,7 @@ app.controller('formController', function(){
      $(".number").fadeOut();
    }
  }
- user.dirtyFncs ={
+ $scope.dirtyFncs ={
 
     dirty: function (form){
     for(var prop in form) {
@@ -39,4 +39,4 @@ app.controller('formController', function(){
      return false;
    }
  };
-});
+}]);

@@ -52,11 +52,11 @@
       <button id="twenty" type="button" class="btn btn-primary number"> 20 Blocks </button>
       <button id="thirty" type="button" class="btn btn-info number"> 30 Blocks</button>
       <button id="fifty" type="button" class="btn btn-success number"> 50 Blocks</button>
-      <button id="custom" type="button" class="btn btn-danger" ng-click="user.sub.2click()"> Custom Amount </button>
+      <button id="custom" type="button" class="btn btn-danger" ng-click="sub.click()"> Custom Amount </button>
       <div id="controllerForm">
-      <form id="form" name="form" ng-submit="user.sub.submit(form.num)" novalidate>
-        <input id="custom-form" ng-model="user.number" name="num" type="number" value = "20" min="1" required integer></input>
-      <div ng-show="user.dirtyFncs.anyDirty(form)" ng-messages="form.num.$error" role="alert">
+      <form id="form" name="form" ng-submit="sub.submit(form.num)" novalidate>
+        <input id="custom-form" ng-model="number" name="num" type="number" value = "20" min="1" required integer></input>
+      <div ng-show="dirtyFncs.anyDirty(form)" ng-messages="num.$error" role="alert">
         <div ng-messages="required" ng-show="form.num.$error.required">Please Input a number </div>
         <div ng-messages="min" ng-show="form.num.$error.min">The number has to be greater then one </div>
       </div>
