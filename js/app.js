@@ -14,6 +14,21 @@ app.controller('formController', ['$scope', function($scope){
      $("#submit").fadeIn();
      $("#how").fadeIn();
      $(".number").fadeOut();
+     $("#errormes").fadeIn();
+     $("#errormes").css({
+       'position':'absolute',
+       'font-size':'20px',
+       'top':'58%',
+       'left':'32%'
+     })
+   }
+ }
+ $scope.isInt = function(num){
+   if(num==Math.floor(num)){
+     return true;
+   }
+   else if(num!=Math.floor(num)){
+     return false;
    }
  }
  $scope.dirtyFncs ={

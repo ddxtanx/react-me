@@ -14,6 +14,7 @@ function startGame(){
   startTime = Date.now();
   make(maxBlocks, .5);
 };
+$("#errormes").hide();
 $("#custom-form").fadeOut();
 $("#submit").hide();
 $("#how").hide();

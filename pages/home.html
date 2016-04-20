@@ -56,9 +56,8 @@
       <div id="controllerForm">
       <form id="form" name="form" ng-submit="sub.submit(form.num)" novalidate>
         <input id="custom-form" ng-model="number" name="num" type="number" value = "20" min="1" required integer></input>
-      <div ng-show="dirtyFncs.anyDirty(form)" ng-messages="num.$error" role="alert">
-        <div ng-messages="required" ng-show="form.num.$error.required">Please Input a number </div>
-        <div ng-messages="min" ng-show="form.num.$error.min">The number has to be greater then one </div>
+      <div ng-show="!form.$valid" ng-messages="num.$error" role="alert">
+        <div id="errormes" ng-messages="required">Please Input a valid number number, the number has to be greater than zero and be a whole number. </div>
       </div>
         <input id="submit" class="btn" type="submit"></button>
       </form>

@@ -341,3 +341,11 @@
 	border-radius: 25%;
 	display:none;
 }
+.ng-invalid.ng-dirty{
+	border-color: red;
+	border-width: 7px;
+}
+.ng-valid.ng-dirty{
+	border-color: #00FF00;
+	border-width: 7px;
+}
