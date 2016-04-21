@@ -207,6 +207,7 @@ function make(maxNum, sec){
       score=0;
     }
     score*=multiplier;
+    document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
   }
 }
 //Game function
