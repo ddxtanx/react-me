@@ -84,7 +84,7 @@ var playTop = 55;
 var max_width = 0;
 var max_height = 0;
 var blocknum = 0;
-var blockyouron = -1;
+var blockyouron = 0;
 var i = 3;
 var makeTime = Date.now();
 var rand_height = getRandomIntInclusive(50,150);
@@ -207,7 +207,6 @@ function make(maxNum, sec){
       score=0;
     }
     score*=multiplier;
-    document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
   }
 }
 //Game function
@@ -410,7 +409,6 @@ function Game(){
       a.style.display="block";
       startTime=0;
       react=0;
-      blockyouron--;
       this.style.display="none";
       document.getElementById("stopper").style.display="block";
       stopInter();

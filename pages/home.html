@@ -16,7 +16,7 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <meta charset="utf-8" />
   <meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
-  <meta name="viewport" content='width=device-width, content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1", user-scalable='0''>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="../css/tooltipster.css" />
   <script type="text/javascript" src="../js/jquery.tooltipster.min.js"></script>
   <script src="http://code.angularjs.org/1.5.5/angular.min.js"></script>
@@ -55,7 +55,7 @@
       <button id="custom" type="button" class="btn btn-danger" ng-click="sub.click()"> Custom Amount </button>
       <div id="controllerForm">
       <form id="form" name="form" ng-submit="sub.submit(form.num)" novalidate>
-        <input id="custom-form" ng-model="number" name="num" type="number" value = "20" min="1" required integer></input>
+        <input id="custom-form" ng-model="number" name="num" type="number" value = "20" min="1" required onlyDigits></input>
       <div ng-show="!form.$valid" ng-messages="num.$error" role="alert">
         <div id="errormes" ng-messages="required">Please Input a valid number number, the number has to be greater than zero and be a whole number. </div>
       </div>
