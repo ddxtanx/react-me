@@ -8,7 +8,9 @@ document.ontouchmove = function(event){
     event.preventDefault();
 }
 // Variable initilazation
-
+var audio1 = new Audio("../music/pop.wav");
+var audio2 = new Audio("../music/pong.wav");
+var audio3 = new Audio("../music/cracking.wav");
 // Workaround for 300ms delay
 function startGame(){
   $("#blockAmount").fadeOut();
@@ -389,6 +391,16 @@ function Game(){
     document.getElementById("box").onclick=function(){
       hid();
       blocknum++;
+      var randn = getRandomIntInclusive(1,7);
+      if(randn%3===0){
+        audio3.play();
+      }
+      else if(randn%3==1){
+        audio2.play();
+      }
+      else if(randn%3==2){
+        audio1.play();
+      }
     };
     // Function for stopping and restarting the game
     document.getElementById("stopper").onclick=function(){

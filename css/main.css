@@ -1,6 +1,6 @@
 body.noscroll
 {
-    position: fixed; 
+    position: fixed;
     overflow-y: scroll;
     width: 100%;
 }
