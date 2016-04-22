@@ -7,10 +7,64 @@ Comments will be coming soon, once I don't have a lot going on with school.
 document.ontouchmove = function(event){
     event.preventDefault();
 }
+var isOff = false;
 // Variable initilazation
-var audio1 = new Audio("../music/pop.wav");
-var audio2 = new Audio("../music/pong.wav");
-var audio3 = new Audio("../music/cracking.wav");
+var audioArr = {
+audio1: new Audio("../music/cracking.wav"),
+audio2: new Audio("../music/pong.wav"),
+audio3: new Audio("../music/pop.wav")
+}
+console.log(audioArr)
+document.onkeydown = function(e) {
+
+    switch(e.keyCode){
+
+    case 38:
+      if(!isOff&&audioArr.audio1.volume<1){
+        audioArr.audio1.volume+=.1;
+        audioArr.audio2.volume+=.1;
+        audioArr.audio3.volume+=.1;
+      }
+      console.log(audioArr.audio1.volume);
+    break;
+    case 40:
+          if(!isOff&&audioArr.audio1.volume>0){
+            audioArr.audio1.volume-=.1;
+            audioArr.audio2.volume-=.1;
+            audioArr.audio3.volume-=.1;
+          }
+          console.log(audioArr.audio1.volume);
+    break;
+}
+  if(audioArr.audio1.volume<0){
+    audioArr.audio1.volume=0;
+    audioArr.audio2.volume=0;
+    audioArr.audio3.volume=0;
+  }
+  else if (audioArr.audio1.volume>1){
+    audioArr.audio1.volume=1;
+    audioArr.audio2.volume=1;
+    audioArr.audio3.volume=1;
+  }
+}
+audioArr.turnOffVolume = function(){
+  isOff=true;
+  this.audio1.volume = 0;
+  this.audio2.volume = 0;
+  this.audio3.volume = 0;
+  $("#soundBut").hide();
+  $("#soundButOn").fadeIn();
+  document.getElementById("onoff").innerHTML= "Sound Off."
+}
+audioArr.turnOnVolume = function(){
+  isOff= false;
+  this.audio1.volume = 1;
+  this.audio2.volume = 1;
+  this.audio3.volume = 1;
+  $("#soundButOn").hide();
+  $("#soundBut").fadeIn();
+  document.getElementById("onoff").innerHTML= "Sound On."
+}
 // Workaround for 300ms delay
 function startGame(){
   $("#blockAmount").fadeOut();
@@ -18,7 +72,10 @@ function startGame(){
   $("#game").fadeIn();
   startTime = Date.now();
   make(maxBlocks, .5);
+  startTime=Date.now();
 };
+
+$("#soundButOn").hide();
 $("#errormes").hide();
 $("#custom-form").fadeOut();
 $("#submit").hide();
@@ -194,15 +251,18 @@ function make(maxNum, sec){
     $("#game").fadeOut(200);
     $("#finalStat").fadeIn(300);
     var finishTime = Date.now();
-    var timeTaken = finishTime-makeTime;
+    var timeTaken = finishTime-startTime;
     timeTaken/=1000;
     blocknum++;
     if(blocknum===0||score===0){
       score=0;
       blocknum=0;
     }
+    blocknum--;
+    average=timeTaken/blocknum;
+    var blockPer = (blocknum/maxBlocks)*100;
     //Editing final page
-    document.getElementById("youavg").innerHTML="You averaged " +average +" seconds per box.";
+    document.getElementById("youavg").innerHTML="You had " + blockPer +"% accuracy!";
     document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
     timeTaken+=10*missed_hits;
     if(average===0||blocknum===0){
@@ -225,7 +285,6 @@ function Game(){
   makeTime = Date.now();
   pos_top=30;
   totalTime = 0;
-  startTime=Date.now();
   setWindowSize();
   heightRatioMax = 728/150;
   heightRatioMin = 728/50;
@@ -393,13 +452,13 @@ function Game(){
       blocknum++;
       var randn = getRandomIntInclusive(1,7);
       if(randn%3===0){
-        audio3.play();
+        audioArr.audio3.play();
       }
       else if(randn%3==1){
-        audio2.play();
+        audioArr.audio2.play();
       }
       else if(randn%3==2){
-        audio1.play();
+        audioArr.audio1.play();
       }
     };
     // Function for stopping and restarting the game

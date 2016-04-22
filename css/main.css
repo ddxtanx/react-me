@@ -1,3 +1,7 @@
+#imgg{
+  display:block;
+  opacity: 1 !important;
+}
 body.noscroll
 {
     position: fixed;
