@@ -4,47 +4,44 @@ at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
 // No Scrolling
-$(document).ready(function(){
-  audioArr.theme.play();
-});
 document.ontouchmove = function(event){
-    event.preventDefault();
-}
+  event.preventDefault();
+};
 var isOff = false;
 // Variable initilazation
 
 //Audio Controls
 var audioArr = {
-theme: new Audio("../music/theme.mp3"),
-audio1: new Audio("../music/cracking.wav"),
-audio2: new Audio("../music/pong.wav"),
-audio3: new Audio("../music/pop.wav")
-}
+  theme: new Audio("../music/theme.mp3"),
+  audio1: new Audio("../music/cracking.wav"),
+  audio2: new Audio("../music/pong.wav"),
+  audio3: new Audio("../music/pop.wav")
+};
 //Play Theme
 audioArr.theme.play();
-console.log(audioArr)
+console.log(audioArr);
 //Audio Volume Control
 document.onkeydown = function(e) {
 
-    switch(e.keyCode){
+  switch(e.keyCode){
 
     case 38:
-      if(!isOff&&audioArr.audio1.volume<1){
-        audioArr.audio1.volume+=.1;
-        audioArr.audio2.volume+=.1;
-        audioArr.audio3.volume+=.1;
-      }
-      console.log(audioArr.audio1.volume);
+    if(!isOff&&audioArr.audio1.volume<1){
+      audioArr.audio1.volume+=0.1;
+      audioArr.audio2.volume+=0.1;
+      audioArr.audio3.volume+=0.1;
+    }
+    console.log(audioArr.audio1.volume);
     break;
     case 40:
-          if(!isOff&&audioArr.audio1.volume>0){
-            audioArr.audio1.volume-=.1;
-            audioArr.audio2.volume-=.1;
-            audioArr.audio3.volume-=.1;
-          }
-          console.log(audioArr.audio1.volume);
+    if(!isOff&&audioArr.audio1.volume>0){
+      audioArr.audio1.volume-=0.1;
+      audioArr.audio2.volume-=0.1;
+      audioArr.audio3.volume-=0.1;
+    }
+    console.log(audioArr.audio1.volume);
     break;
-}
+  }
   if(audioArr.audio1.volume<0){
     audioArr.audio1.volume=0;
     audioArr.audio2.volume=0;
@@ -55,11 +52,11 @@ document.onkeydown = function(e) {
     audioArr.audio2.volume=1;
     audioArr.audio3.volume=1;
   }
-  if(audioArr.audio1.volume+.25>1){
+  if(audioArr.audio1.volume+0.25>1){
     audioArr.theme.volume=1;
   }
-  audioArr.theme.volume=audioArr.audio1.volume+.25;
-}
+  audioArr.theme.volume=audioArr.audio1.volume+0.25;
+};
 //Volume On and Off
 audioArr.turnOffVolume = function(){
   isOff=true;
@@ -69,18 +66,18 @@ audioArr.turnOffVolume = function(){
   this.theme.volume = 0;
   $("#soundBut").hide();
   $("#soundButOn").fadeIn();
-  document.getElementById("onoff").innerHTML= "Sound Off."
-}
+  document.getElementById("onoff").innerHTML= "Sound Off.";
+};
 audioArr.turnOnVolume = function(){
   isOff= false;
-  this.audio1.volume = .5;
-  this.audio2.volume = .5;
-  this.audio3.volume = .5;
-  this.theme.volume = .75;
+  this.audio1.volume = 0.5;
+  this.audio2.volume = 0.5;
+  this.audio3.volume = 0.5;
+  this.theme.volume = 0.75;
   $("#soundButOn").hide();
   $("#soundBut").fadeIn();
-  document.getElementById("onoff").innerHTML= "Sound On."
-}
+  document.getElementById("onoff").innerHTML= "Sound On.";
+};
 
 // Pause and Start theme functions
 document.getElementById("stopper").onclick=function(){
@@ -100,9 +97,9 @@ function startGame(){
   $("#game").removeClass("hide");
   $("#game").fadeIn();
   startTime = Date.now();
-  make(maxBlocks, .5);
+  make(maxBlocks, 0.5);
   startTime=Date.now();
-};
+}
 
 $("#soundButOn").hide();
 $("#errormes").hide();
@@ -634,11 +631,11 @@ function Game(){
       'top':'45%'
     });
     alert("There is audio in this game! Be warned!");
-    $("#soundBut").hide();
-    $("#soundButOn").hide();
-    $("#imagg").hide();
-    audioArr.theme.play();
-  }
+    $(".sobut").hide();
+    var result = confirm( "Do you want to play music?" );
+    if ( result ) {
+      audioArr.theme.play();
+    }
   setWindowSize();
   // Handeling if device is landscape and IOS
   if(isMobile.iPad()!=null){
@@ -653,10 +650,7 @@ function Game(){
       'height':'0',
       'width':'0'
     });
-    $("#soundBut").hide();
-    $("#soundButOn").hide();
-    $("#imagg").hide();
-    audioArr.theme.play();
+    $(".sobut").hide();
   }
 }
 setWindowSize();
