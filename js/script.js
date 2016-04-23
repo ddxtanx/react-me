@@ -656,7 +656,7 @@ function Game(){
     var result = confirm( "Do you want to play music?" );
     if ( result ) {
       audioArr.theme.play();
-      this.style.display="none";
+      document.getElementById("stopper").style.display="none";
       b.style.display="block";
     }else{
       $("#stopper").hide();
