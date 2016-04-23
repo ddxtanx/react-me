@@ -530,8 +530,7 @@ function Game(){
     $("#medium").css('left', '15%');
     $("#hard").css('left', '15%');
     $("#howman").css({
-      'left': '15%',
-      'top': '20%',
+      'left': '10%',
       'font-size': '25px'
     });
     $("#twenty").css({
