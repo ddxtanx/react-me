@@ -298,6 +298,10 @@ function make(maxNum, sec){
       score=0;
     }
     score*=multiplier;
+    score/=maxBlocks;
+    score*=10000;
+    score=Math.floor(score);
+    score/=10000;
     document.getElementById("youscore").innerHTML="You scored " + score + " points! Congrats!";
   }
 }
