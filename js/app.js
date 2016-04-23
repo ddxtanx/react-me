@@ -1,5 +1,5 @@
 (function() {
-  var app = angular.module("uReact", ['ngMessages']);
+  var app = angular.module("uReact", []);
 app.controller('formController', ['$scope', function($scope){
    user = {};
    $scope.sub = {
