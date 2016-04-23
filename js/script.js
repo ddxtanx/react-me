@@ -633,7 +633,8 @@ function Game(){
     alert("There is audio in this game! Be warned!");
     $("#soundBut").hide();
     $("#soundButOn").hide();
-    $("#imagg").hide()
+    $("#imagg").hide();
+    audioArr.theme.play();
   }
   setWindowSize();
   // Handeling if device is landscape and IOS
@@ -649,6 +650,9 @@ function Game(){
       'height':'0',
       'width':'0'
     });
+    $("#soundBut").hide();
+    $("#soundButOn").hide();
+    $("#imagg").hide();
     audioArr.theme.play();
   }
 }
