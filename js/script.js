@@ -474,14 +474,14 @@ function Game(){
       make(maxBlocks,0);
     };
     function ifSound(){
-      var randn = getRandomIntInclusive(1,500);
+      var randn = getRandomIntInclusive(3,5);
       if(randn%2===0){
         audioArr.audio3.play();
       }
       else if(randn%3===0){
         audioArr.audio2.play();
       }
-      else if(randn%4===0){
+      else if(randn%5===0){
         audioArr.audio1.play();
       }
       else{
