@@ -194,6 +194,7 @@ var totalTime = 0;
 var rand_color;
 var startTime;
 var amountOfGames = 0;
+var spawnTime = 0;
 setWindowSize();
 var heightRatioMax = 728/150;
 var heightRatioMin = 728/50;
@@ -278,6 +279,7 @@ function make(maxNum, sec){
       item_h = getRandomIntInclusive(playTop+rand_height+5, max_height-rand_height-5);
     }
   }, sec);
+  spawnTime = Date.now();
   blockyouron++;
   console.log("Blocknum =" + blocknum);
   // Game end function
@@ -301,6 +303,7 @@ function make(maxNum, sec){
 }
 //Game function
 function Game(){
+  spawnTime = 0;
   item_h = 0;
   item_w = 0;
   playTop = 55;
@@ -425,7 +428,7 @@ function Game(){
     function hid(){
       var a = document.getElementById("box");
       hideTime=Date.now();
-      react = (hideTime - startTime)/1000;
+      react = (hideTime - spawnTime)/1000;
       totalTime+=react;
       document.getElementById("score").innerHTML=react;
       $("#box").fadeOut(100);
