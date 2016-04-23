@@ -651,7 +651,12 @@ function Game(){
       'height':'0',
       'width':'0'
     });
+    alert("There is audio in this game! Be warned!");
     $(".sobut").hide();
+    var result = confirm( "Do you want to play music?" );
+    if ( result ) {
+      audioArr.theme.play();
+    }
   }
 }
 setWindowSize();
