@@ -4,6 +4,9 @@ at gcc@ameritech.net and I will get back to you as soon as I can.
 Comments will be coming soon, once I don't have a lot going on with school.
 */
 // No Scrolling
+$(document).ready(function(){
+  audioArr.theme.play();
+});
 document.ontouchmove = function(event){
     event.preventDefault();
 }
