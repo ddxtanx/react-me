@@ -487,6 +487,7 @@ function Game(){
       else{
         audioArr.audio2.play();
       }
+      randn = getRandomIntInclusive(1,500);
     }
     document.getElementById("box").onclick=function(){
       hid();
