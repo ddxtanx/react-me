@@ -18,6 +18,10 @@ var audioArr = {
   audio3: new Audio("../music/pop.wav")
 };
 //Play Theme
+audioArr.theme.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
 audioArr.theme.play();
 console.log(audioArr);
 //Audio Volume Control
@@ -55,7 +59,15 @@ document.onkeydown = function(e) {
   if(audioArr.audio1.volume+0.25>1){
     audioArr.theme.volume=1;
   }
+  if(audioArr.audio1.volume+0.25<=1){
   audioArr.theme.volume=audioArr.audio1.volume+0.25;
+  }
+  else if(audioArr.audio1.volume===0){
+    audioArr.theme.volume=0;
+  }
+  else if(audioArr.audio1.volume+.25>1){
+    audioArr.theme.volume=1;
+  }
 };
 //Volume On and Off
 audioArr.turnOffVolume = function(){
@@ -98,7 +110,6 @@ function startGame(){
   $("#game").fadeIn();
   startTime = Date.now();
   make(maxBlocks, 0.5);
-  startTime=Date.now();
 }
 
 $("#soundButOn").hide();
@@ -181,7 +192,7 @@ var hideTime;
 var react;
 var totalTime = 0;
 var rand_color;
-var startTime=Date.now();
+var startTime;
 var amountOfGames = 0;
 setWindowSize();
 var heightRatioMax = 728/150;
@@ -192,10 +203,8 @@ var rand_min = Math.floor((heightRatioMax*max_height)/74)-2;
 var rand_max = Math.floor((heightRatioMax*max_height)/26);
 var averagesArray = [];
 var scoresArray = [];
-var missed_hits = 0;
 var average = 0;
 var stoppedTime = 0;
-var restartTime = 0;
 var interId;
 var maxBlocks = 20;
 var multiplier = 0;
@@ -261,7 +270,6 @@ function make(maxNum, sec){
       rand_height = getRandomIntInclusive(50,150);
       i+=getRandomIntInclusive(1,5);
     }
-    startTime = Date.now();
     //Resetting if a block is placed out of boundaries
     if(item_w+rand_height>max_width*0.8){
       item_w = getRandomIntInclusive(rand_height, max_height-rand_height);
@@ -271,26 +279,19 @@ function make(maxNum, sec){
     }
   }, sec);
   blockyouron++;
+  console.log("Blocknum =" + blocknum);
   // Game end function
   if(blockyouron-1>=maxNum){
-    alert("Done!");
     $("#game").fadeOut(200);
     $("#finalStat").fadeIn(300);
     var finishTime = Date.now();
     var timeTaken = finishTime-startTime;
     timeTaken/=1000;
-    blocknum++;
-    if(blocknum===0||score===0){
-      score=0;
-      blocknum=0;
-    }
-    blocknum--;
     average=timeTaken/blocknum;
     var blockPer = (blocknum/maxBlocks)*100;
     //Editing final page
     document.getElementById("youavg").innerHTML="You had " + blockPer +"% accuracy!";
     document.getElementById("youhit").innerHTML="You hit "+blocknum+ " blocks in "+timeTaken+" seconds.";
-    timeTaken+=10*missed_hits;
     if(average===0||blocknum===0){
       score=0;
     }
@@ -306,7 +307,7 @@ function Game(){
   max_width = 0;
   max_height = 0;
   blocknum = 0;
-  blockyouron = -1;
+  blockyouron = 0;
   i = 3;
   makeTime = Date.now();
   pos_top=30;
@@ -324,10 +325,8 @@ function Game(){
   rand_col3 = getRandomIntInclusive(0,9);
   pos_top=30;
   totalTime = 0;
-  missed_hits = 0;
   average = 0;
   stoppedTime = 0;
-  restartTime = 0;
   maxBlocks = 20;
   multiplier = 0;
   timeTaken =0;
@@ -422,7 +421,6 @@ function Game(){
     };
     var a = document.getElementById("box");
     //This function makes the block afert a set amount of seconds
-    make();
     //Function that hides the box and puts the score data on the play screen
     function hid(){
       var a = document.getElementById("box");
@@ -446,13 +444,6 @@ function Game(){
       if (blocknum===0){
         average=0;
       }
-      else if(blocknum!==0){
-        average = (totalTime/blocknum);
-        average*=1000;
-        average = Math.floor(average);
-        average/=1000;
-      }
-      make(maxBlocks, randTime);
       if (isMobile.iOS()!=null){
         $("#scoor").css({ 'margin-top':'20px', 'font-size':'12px'});
       }
@@ -461,13 +452,11 @@ function Game(){
       $("#playzone").css('width', max_width*0.8);
       $("#playzone").css('height', max_height-55);
     }
-    //Function of you miss the box
+    //Function if you miss the box
     document.getElementById("playzone").onclick=function(){
-      missed_hits++;
       var scoress = document.getElementById("scores");
       scoress.insertAdjacentHTML('afterend', '<div id="scoor"> <p id="scoring"> </p> </div>');
       document.getElementById("scoring").innerHTML="Block number "+ blockyouron + ": missed";
-      $("#box").hide();
       if (isMobile.iOS()!=null){
         $("#scoor").css({ 'margin-top':'25px', 'font-size':'12px'});
       }
@@ -489,12 +478,13 @@ function Game(){
       }
       randn = getRandomIntInclusive(3,5);
     }
-    document.getElementById("box").onclick=function(){
+    $("#box").click(function(){
       hid();
       blocknum++;
       var randn = getRandomIntInclusive(1,500);
       ifSound();
-    };
+      make(maxBlocks, randTime);
+    });
     // Function for stopping and restarting the game
   });
   $(".customHr").css({
