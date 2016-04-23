@@ -636,7 +636,8 @@ function Game(){
     if ( result ) {
       audioArr.theme.play();
     }
-  setWindowSize();
+    setWindowSize();
+  }
   // Handeling if device is landscape and IOS
   if(isMobile.iPad()!=null){
     $(".customHr").css({
@@ -654,7 +655,6 @@ function Game(){
   }
 }
 setWindowSize();
-}
 //Run game
 Game();
 //Play again function
