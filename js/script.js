@@ -478,11 +478,14 @@ function Game(){
       if(randn%2===0){
         audioArr.audio3.play();
       }
-      else if(randn%3==1){
+      else if(randn%3===0){
         audioArr.audio2.play();
       }
-      else if(randn%3==2){
+      else if(randn%4===0){
         audioArr.audio1.play();
+      }
+      else{
+        audioArr.audio2.play();
       }
     }
     document.getElementById("box").onclick=function(){
@@ -490,10 +493,6 @@ function Game(){
       blocknum++;
       var randn = getRandomIntInclusive(1,500);
       ifSound();
-      if(isPrime(randn)){
-        randn  = getRandomIntInclusive(1,5);
-        ifSound();
-      }
     };
     // Function for stopping and restarting the game
   });
