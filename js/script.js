@@ -654,6 +654,7 @@ function Game(){
   }
 }
 setWindowSize();
+}
 //Run game
 Game();
 //Play again function
