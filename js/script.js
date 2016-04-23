@@ -474,6 +474,7 @@ function Game(){
       make(maxBlocks,0);
     };
     function ifSound(){
+      var randn = getRandomIntInclusive(1,500);
       if(randn%2===0){
         audioArr.audio3.play();
       }
