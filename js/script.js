@@ -9,12 +9,18 @@ document.ontouchmove = function(event){
 }
 var isOff = false;
 // Variable initilazation
+
+//Audio Controls
 var audioArr = {
+theme: new Audio("../music/theme.mp3"),
 audio1: new Audio("../music/cracking.wav"),
 audio2: new Audio("../music/pong.wav"),
 audio3: new Audio("../music/pop.wav")
 }
+//Play Theme
+audioArr.theme.play();
 console.log(audioArr)
+//Audio Volume Control
 document.onkeydown = function(e) {
 
     switch(e.keyCode){
@@ -46,25 +52,45 @@ document.onkeydown = function(e) {
     audioArr.audio2.volume=1;
     audioArr.audio3.volume=1;
   }
+  if(audioArr.audio1.volume+.25>1){
+    audioArr.theme.volume=1;
+  }
+  audioArr.theme.volume=audioArr.audio1.volume+.25;
 }
+//Volume On and Off
 audioArr.turnOffVolume = function(){
   isOff=true;
   this.audio1.volume = 0;
   this.audio2.volume = 0;
   this.audio3.volume = 0;
+  this.theme.volume = 0;
   $("#soundBut").hide();
   $("#soundButOn").fadeIn();
   document.getElementById("onoff").innerHTML= "Sound Off."
 }
 audioArr.turnOnVolume = function(){
   isOff= false;
-  this.audio1.volume = 1;
-  this.audio2.volume = 1;
-  this.audio3.volume = 1;
+  this.audio1.volume = .5;
+  this.audio2.volume = .5;
+  this.audio3.volume = .5;
+  this.theme.volume = .75;
   $("#soundButOn").hide();
   $("#soundBut").fadeIn();
   document.getElementById("onoff").innerHTML= "Sound On."
 }
+
+// Pause and Start theme functions
+document.getElementById("stopper").onclick=function(){
+  this.style.display="none";
+  b.style.display="block";
+  audioArr.theme.pause();
+};
+document.getElementById("starter").onclick=function(){
+  audioArr.theme.play();
+  this.style.display="none";
+  document.getElementById("stopper").style.display="block";
+};
+
 // Workaround for 300ms delay
 function startGame(){
   $("#blockAmount").fadeOut();
@@ -447,11 +473,8 @@ function Game(){
       }
       make(maxBlocks,0);
     };
-    document.getElementById("box").onclick=function(){
-      hid();
-      blocknum++;
-      var randn = getRandomIntInclusive(1,7);
-      if(randn%3===0){
+    function ifSound(){
+      if(randn%2===0){
         audioArr.audio3.play();
       }
       else if(randn%3==1){
@@ -460,31 +483,18 @@ function Game(){
       else if(randn%3==2){
         audioArr.audio1.play();
       }
+    }
+    document.getElementById("box").onclick=function(){
+      hid();
+      blocknum++;
+      var randn = getRandomIntInclusive(1,500);
+      ifSound();
+      if(isPrime(randn)){
+        randn  = getRandomIntInclusive(1,5);
+        ifSound();
+      }
     };
     // Function for stopping and restarting the game
-    document.getElementById("stopper").onclick=function(){
-      stoppedTime= Date.now();
-      startTime=0;
-      react=0;
-      this.style.display="none";
-      b.style.display="block";
-      interId= setInterval(myInter, 300);
-    };
-    function myInter() {
-      a.style.display="none";
-    }
-    function stopInter() {
-      clearInterval(interId);
-      make(maxBlocks, 0.5);
-    }
-    document.getElementById("starter").onclick=function(){
-      a.style.display="block";
-      startTime=0;
-      react=0;
-      this.style.display="none";
-      document.getElementById("stopper").style.display="block";
-      stopInter();
-    };
   });
   $(".customHr").css({
     'top':'0.05*max_height+"px"'
@@ -620,6 +630,10 @@ function Game(){
       'position':'absolute',
       'top':'45%'
     });
+    alert("There is audio in this game! Be warned!");
+    $("#soundBut").hide();
+    $("#soundButOn").hide();
+    $("#imagg").hide()
   }
   setWindowSize();
   // Handeling if device is landscape and IOS

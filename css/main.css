@@ -1,6 +1,10 @@
+.sobut{
+  margin-top:10px;
+}
 #imgg{
   display:block;
   opacity: 1 !important;
+  margin-top:10px;
 }
 body.noscroll
 {
