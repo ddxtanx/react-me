@@ -649,6 +649,7 @@ function Game(){
       'height':'0',
       'width':'0'
     });
+    audioArr.theme.play();
   }
 }
 setWindowSize();
