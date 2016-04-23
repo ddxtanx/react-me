@@ -374,7 +374,6 @@ function Game(){
       sizeMult=1.15;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
-      randTime= 2000;
       $("#twenty").click(function(){
         maxBlocks=20;
         startGame();
@@ -393,7 +392,6 @@ function Game(){
       multiplier=2;
       $("#difficulty").fadeOut();
       $("#blockAmount").fadeIn();
-      randTime= 1000;
       $("#twenty").click(function(){
         maxBlocks=20;
         startGame();
