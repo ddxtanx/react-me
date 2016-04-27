@@ -722,7 +722,19 @@ $("#playAgain").click(function() {
 });
 
 (function() {
-    var app = angular.module("uReact", []);
+  var app = angular.module("uReact", []);
+  app.directive("bugPage", function(){
+    return{
+      restrict: 'E',
+      templateUrl: '../pages/bugs.html'
+    };
+  });
+  app.directive("surveyPage", function(){
+    return{
+      restrict: 'E',
+      templateUrl: '../pages/survey.html'
+    };
+  });
     app.controller("formController", [ "$scope", function($scope) {
         user = {};
         $scope.sub = {
@@ -784,3 +796,9 @@ $("#playAgain").click(function() {
         };
     } ]);
 })();
+$("#bugs").click(function(){
+  $("#bpage").fadeIn();
+});
+$("#survey").click(function(){
+  $("#spage").fadeIn();
+});
