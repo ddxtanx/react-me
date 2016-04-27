@@ -402,6 +402,9 @@ function Game() {
         $("#squircle").fadeOut();
     });
     $("#startbut").click(function() {
+        if (isMobile.iOS() != null) {
+            audioArr.theme.play();
+        }
         $("#playzone").css("height", max_height - 55 + "px");
         $("#playzone").css("width", max_width * .8 + "px");
         $("#startme").fadeOut();
