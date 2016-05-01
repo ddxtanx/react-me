@@ -94,14 +94,9 @@ router.post('/register', upload.single('profileimage') ,function(req, res, next)
 
     User.getUserByUsername(username, function(err, user){
       if(err) throw err;
-      console.log(user);
-      console.log(!user);
       if(!user){
-        console.log(user);
-        console.log(!user);
         User.createUser(newUser, function(err, user){
           if(err) throw err;
-          console.log(user);
         });
 
         req.flash('success', 'You are now registered and can login');
@@ -110,8 +105,6 @@ router.post('/register', upload.single('profileimage') ,function(req, res, next)
         res.redirect('/');
       }
       else{
-        console.log(user);
-        console.log(!user);
         req.flash('failed', 'There is already a user with that username');
         res.location('/users/register');
         res.redirect('/users/register');

@@ -22,11 +22,16 @@ body.noscroll
 	color:#FF7B21;
 	font-family:Montserrat;
 	font-size:40px;
-	left:35%;
+	left:30%;
 	position:absolute;
 	top:70px;
 }
-
+#logout{
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 30px;
+}
 #box
 {
 	background-color:red;

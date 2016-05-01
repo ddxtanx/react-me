@@ -103,6 +103,12 @@ function startGame() {
     $("#blockAmount").fadeOut();
     $("#game").removeClass("hide");
     $("#game").fadeIn();
+    $("#logout").css({
+      'font-size':'0px'
+    });
+    $("#fdout").css({
+      'font-size':'0px'
+    });
     startTime = Date.now();
     make(maxBlocks, .5);
 }
@@ -747,6 +753,7 @@ $("#playAgain").click(function() {
                     maxBlocks = $scope.number;
                     startGame();
                     $("#custom-form").fadeOut();
+
                     $("#custom").fadeIn();
                     $("#submit").fadeOut();
                     $("#how").fadeOut();
