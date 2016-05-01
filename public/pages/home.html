@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html ng-app="uReact">
+<head>
+  <title> U React! </title>
+  <link rel="apple-touch-icon-precomposed"  sizes="57x57" href="../img/image.png" />
+  <link rel="shortcut icon" type="image/x-icon"  href="http://www.free-icons-download.net/images/red-dot-icon-57558.png" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat|Raleway'  rel='stylesheet' type='text/css'>
+  <link  rel="stylesheet" type="text/css" href="../css/main.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet"  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+
+  <!-- jQuery library -->
+  <script  src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script  src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <meta name="google-site-verification" content="v_SFDR9KhAEayFR-Bl9zWNTBOUtjbqZb-T_Kr8_ziXI" />
+  <meta charset="utf-8" />
+  <meta name = "description" content="Welcome to U React! This is a fun game about clicking boxes quickly as they appear on the screen!"/>
+  <meta http-equiv="Content-type" content="text/html" charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0"/>
+  <link  rel="stylesheet" type="text/css" href="../css/tooltipster.css" />
+  <script  type="text/javascript" src="../js/jquery.tooltipster.min.js"></script>
+  <script  src="http://code.angularjs.org/1.5.5/angular.min.js"></script>
+  <script>
+  $(document).ready(function() {
+    $('.tooltip').tooltipster();
+  });
+  </script>
+</head>
+<body>
+  <button id="stopper" class="startstuff btn btn-danger"> Push To Pause Music. </button>
+  <button id="starter" class="startstuff btn btn-warning"> Push To Play Music </button>
+  <div id="startme">
+    <iframe id="repoid" src="https://ghbtns.com/github-btn.html?user=ddxtanx&repo=react-me&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+    <iframe id="userid" src="https://ghbtns.com/github-btn.html?user=ddxtanx&type=follow&count=true&size=large" frameborder="0" scrolling="0" width="220px" height="30px"></iframe>
+    <div id="title">
+      <h3 id="titleslot"> U React! <h3>
+      </div>
+      <div class="customHr">.</div>
+      <p class="startscr" id="startscph"> Welcome to U React! This is a game all about testing your reaction speed!  Once you click the start button then you just have to click the <br /><span style="color:#7777FF;" id="circlespan">circles</span>, <br /><span style="color:#11CC11" id="squarespan"> squares </span>, <br /> <span style="color:#FF7777" id="squirclespan"> or curvy boxes, </span> <br /> and see how fast your reaction speed is!</p>
+      <button type="button" id="startbut" class="startscr btn btn-primary"> Click to start Game! </button>
+      <img id="soundBut" class="sobut" src="../img/sound-off.png" onclick="audioArr.turnOffVolume();"></img>
+      <img id="soundButOn" class="sobut" src="../img/sound.png" onclick="audioArr.turnOnVolume();"></img>
+      <p id="onoff"  class="sobut"> Sound On </p>
+      <img src="../img/vol-help.png" id="imgg" class="tooltip sobut" title="Press UP arrow to turn up volume, and DOWN arrow to turn down volume"/>
+      <div id="circle"> </div>
+      <div id="square"> </div>
+      <div id="squircle"></div>
+    </div>
+    <div id="difficulty">
+      <h1 id="difTitle"> Choose Your Difficulty: The Higher the difficulty, the faster the blocks appear! </h1>
+      <button id="easy" type="button" class="btn btn-primary"> Easy Difficulty </button>
+      <button id="medium" type="button" class="btn btn-info"> Medium Difficulty </button>
+      <button id="hard" type="button" class="btn btn-success"> Hard Difficulty </button>
+    </div>
+    <div id="blockAmount" ng-controller="formController">
+      <h1 id="howman"> How many blocks do you want on this level? </h1>
+      <button id="twenty" type="button" class="btn btn-primary number"> 20 Blocks </button>
+      <button id="thirty" type="button" class="btn btn-info number"> 30 Blocks</button>
+      <button id="fifty" type="button" class="btn btn-success number"> 50 Blocks</button>
+      <button id="custom" type="button" class="btn btn-danger" ng-click="sub.click()"> Custom Amount </button>
+      <div id="controllerForm">
+      <form id="form" name="form" ng-submit="sub.submit(form.num)" novalidate>
+        <input id="custom-form" ng-model="number" name="num" type="number" value = "20" min="2" required onlyDigits></input>
+      <div ng-show="!form.$valid" role="alert">
+        <div id="errormes" >Please Input a valid number number, the number has to be greater than one and be a whole number. </div>
+      </div>
+        <input id="submit" class="btn btn-success" type="submit"></button>
+      </form>
+      <p id="how"> How Many Blocks? </how>
+      </div>
+    </div>
+      <div id="finalStat">
+        <p id="youavg"> You averaged <span id="check"></span> boxes per second!</p>
+        <p id="youhit"> You hit <span id="boxesHit"> </span> out of <span id="boxyouon"></span> boxes! </p>
+        <p id="youscore"> You scored </p>
+        <a id="survey"> Please click here to take a quick survey on the quality of this website! </a>
+        <a id="bugs"> If there were any mistakes or bugs in the game, please click here! </a>
+        <button id="playAgain" type="button" class="btn btn-success"> Play Again? </button>
+      </div>
+      <div id="game" class="hide">
+        <div id="playzone"> </div>
+        <div id="box"> </div>
+        <p id="youtime"> Your Time: <span id="score"> </span></p>
+        <p id="scores" class="startstuff"> Yours Scores Are: </p>
+        <p id="average" class="startstuff"> U React! </p>
+      </div>
+      <!-- AddToAny BEGIN -->
+      <div class="a2a_kit a2a_kit_size_32 a2a_default_style" id="share">
+        <a class="a2a_dd" href="https://www.addtoany.com/share?linkurl=u-react.herokuapp.com&amp;linkname=Hey!%20I%20was%20just%20play%20UReact%2C%20a%20fun%20reaction%20time%20tester%20and%20you%20should%20play%20it%20too!%20"></a>
+        <a class="a2a_button_facebook"></a>
+        <a class="a2a_button_twitter"></a>
+        <a class="a2a_button_google_plus"></a>
+      </div>
+      <bug-page id="bpage"></bug-page>
+      <survey-page id="spage"></survey-page>
+      <script>
+      var a2a_config = a2a_config || {};
+      a2a_config.linkname = "Hey! I was just play UReact, a fun reaction time tester and you should play it too! ";
+      a2a_config.linkurl = "u-react.herokuapp.com";
+      a2a_config.color_main = "D7E5ED";
+      a2a_config.color_border = "AECADB";
+      a2a_config.color_link_text = "333333";
+      a2a_config.color_link_text_hover = "333333";
+      </script>
+      <script async src="https://static.addtoany.com/menu/page.js"></script>
+      <!-- AddToAny END -->
+      <script src="../js/script.js"></script>
+      <script src="../js/fastclick.js"></script>
+      <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75603673-1', 'auto');
+      ga('send', 'pageview');
+
+      </script>
+
+    </body>
+    </html>
