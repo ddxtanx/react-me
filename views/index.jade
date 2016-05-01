@@ -1,0 +1,128 @@
+doctype html
+html(ng-app='uReact')
+  head
+    title  U React! 
+    link(rel='apple-touch-icon-precomposed', sizes='57x57', href='../img/image.png')
+    link(rel='shortcut icon', type='image/x-icon', href='http://www.free-icons-download.net/images/red-dot-icon-57558.png')
+    link(href='https://fonts.googleapis.com/css?family=Montserrat|Raleway', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', type='text/css', href='../css/main.css')
+    // Latest compiled and minified CSS
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    // jQuery library
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js')
+    // Latest compiled JavaScript
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    meta(name='google-site-verification', content='v_SFDR9KhAEayFR-Bl9zWNTBOUtjbqZb-T_Kr8_ziXI')
+    meta(charset='utf-8')
+    meta(name='description', content='Welcome to U React! This is a fun game about clicking boxes quickly as they appear on the screen!')
+    meta(http-equiv='Content-type', content='text/html', charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0')
+    link(rel='stylesheet', type='text/css', href='../css/tooltipster.css')
+    script(type='text/javascript', src='../js/jquery.tooltipster.min.js')
+    script(src='http://code.angularjs.org/1.5.5/angular.min.js')
+    script.
+      $(document).ready(function() {
+      $('.tooltip').tooltipster();
+      });
+  body
+    button#stopper.startstuff.btn.btn-danger  Push To Pause Music. 
+    button#starter.startstuff.btn.btn-warning  Push To Play Music 
+    #startme
+      iframe#repoid(src='https://ghbtns.com/github-btn.html?user=ddxtanx&repo=react-me&type=star&count=true&size=large', frameborder='0', scrolling='0', width='160px', height='30px')
+      iframe#userid(src='https://ghbtns.com/github-btn.html?user=ddxtanx&type=follow&count=true&size=large', frameborder='0', scrolling='0', width='220px', height='30px')
+      #title
+        h3#titleslot
+          | U React! 
+          h3
+      .customHr .
+      p#startscph.startscr
+        | Welcome to U React! This is a game all about testing your reaction speed!  Once you click the start button then you just have to click the 
+        br
+        span#circlespan(style='color:#7777FF;') circles
+        | , 
+        br
+        span#squarespan(style='color:#11CC11')  squares 
+        | , 
+        br
+        span#squirclespan(style='color:#FF7777')  or curvy boxes, 
+        br
+        |  and see how fast your reaction speed is!
+      button#startbut.startscr.btn.btn-primary(type='button')  Click to start Game! 
+      img#soundBut.sobut(src='../img/sound-off.png', onclick='audioArr.turnOffVolume();')
+      img#soundButOn.sobut(src='../img/sound.png', onclick='audioArr.turnOnVolume();')
+      p#onoff.sobut  Sound On 
+      img#imgg.tooltip.sobut(src='../img/vol-help.png', title='Press UP arrow to turn up volume, and DOWN arrow to turn down volume')
+      #circle  
+      #square  
+      #squircle
+    #difficulty
+      h1#difTitle
+        | Choose Your Difficulty: The Higher the difficulty, the faster the blocks appear!
+      button#easy.btn.btn-primary(type='button')  Easy Difficulty 
+      button#medium.btn.btn-info(type='button')  Medium Difficulty 
+      button#hard.btn.btn-success(type='button')  Hard Difficulty 
+    #blockAmount(ng-controller='formController')
+      h1#howman  How many blocks do you want on this level? 
+      button#twenty.btn.btn-primary.number(type='button')  20 Blocks 
+      button#thirty.btn.btn-info.number(type='button')  30 Blocks
+      button#fifty.btn.btn-success.number(type='button')  50 Blocks
+      button#custom.btn.btn-danger(type='button', ng-click='sub.click()')  Custom Amount 
+      #controllerForm
+        form#form(name='form', ng-submit='sub.submit(form.num)', novalidate='')
+          input#custom-form(ng-model='number', name='num', type='number', value='20', min='2', required='', onlydigits='')
+          div(ng-show='!form.$valid', role='alert')
+            #errormes
+              | Please Input a valid number number, the number has to be greater than one and be a whole number.
+          input#submit.btn.btn-success(type='submit')
+        p#how
+          | How Many Blocks?
+    #finalStat
+      p#youavg
+        | You averaged 
+        span#check
+        |  boxes per second!
+      p#youhit
+        | You hit 
+        span#boxesHit  
+        |  out of 
+        span#boxyouon
+        |  boxes!
+      p#youscore  You scored 
+      a#survey  Please click here to take a quick survey on the quality of this website! 
+      a#bugs  If there were any mistakes or bugs in the game, please click here! 
+      button#playAgain.btn.btn-success(type='button')  Play Again? 
+    #game.hide
+      #playzone  
+      #box  
+      p#youtime
+        | Your Time: 
+        span#score  
+      p#scores.startstuff  Yours Scores Are: 
+      p#average.startstuff  U React! 
+    // AddToAny BEGIN
+    #share.a2a_kit.a2a_kit_size_32.a2a_default_style
+      a.a2a_dd(href='https://www.addtoany.com/share?linkurl=u-react.herokuapp.com&linkname=Hey!%20I%20was%20just%20play%20UReact%2C%20a%20fun%20reaction%20time%20tester%20and%20you%20should%20play%20it%20too!%20')
+      a.a2a_button_facebook
+      a.a2a_button_twitter
+      a.a2a_button_google_plus
+    bug-page#bpage
+    survey-page#spage
+    script.
+      var a2a_config = a2a_config || {};
+      a2a_config.linkname = "Hey! I was just play UReact, a fun reaction time tester and you should play it too! ";
+      a2a_config.linkurl = "u-react.herokuapp.com";
+      a2a_config.color_main = "D7E5ED";
+      a2a_config.color_border = "AECADB";
+      a2a_config.color_link_text = "333333";
+      a2a_config.color_link_text_hover = "333333";
+    script(async='', src='https://static.addtoany.com/menu/page.js')
+    // AddToAny END
+    script(src='../js/script.js')
+    script(src='../js/fastclick.js')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-75603673-1', 'auto');
+      ga('send', 'pageview');
