@@ -63,7 +63,7 @@ router.post('/register', upload.single('profileimage') ,function(req, res, next)
 
   if(req.file){
     console.log('Uploading File...');
-    var profileimage = req.file.filename;
+    var profileimage = username+ 'prof-pic';
   } else {
     console.log('No File Uploaded...');
     var profileimage = 'noimage.jpg';

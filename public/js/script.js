@@ -103,6 +103,12 @@ function startGame() {
     $("#blockAmount").fadeOut();
     $("#game").removeClass("hide");
     $("#game").fadeIn();
+    $("#logout").css({
+      'font-size':'0px'
+    });
+    $("#fdout").css({
+      'font-size':'0px'
+    });
     startTime = Date.now();
     make(maxBlocks, .5);
 }
@@ -642,8 +648,9 @@ function Game() {
         });
         $("#startscph").css("font-size", "13px");
         $("#titleslot").css({
-            left: "25%",
-            top: "10%"
+            left: "5%",
+            top: "10%",
+            "font-size":'20px'
         });
         $("#average").css({
             position: "absolute",
@@ -747,6 +754,7 @@ $("#playAgain").click(function() {
                     maxBlocks = $scope.number;
                     startGame();
                     $("#custom-form").fadeOut();
+
                     $("#custom").fadeIn();
                     $("#submit").fadeOut();
                     $("#how").fadeOut();
