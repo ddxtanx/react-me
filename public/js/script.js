@@ -544,7 +544,10 @@ function Game() {
     $(".customHr").css({
         top: '0.05*max_height+"px"'
     });
-    if (isMobile.iOS() != null) {
+}
+
+setWindowSize();
+if (isMobile.iOS() != null) {
         $(".customHr").css("margin-top", "-80px");
         $(".customHr").css("width", "100%");
         $("#startbut").css("top", "82%");
@@ -706,10 +709,6 @@ function Game() {
             $("#starter").hide();
         }
     }
-}
-
-setWindowSize();
-
 Game();
 
 $("#playAgain").click(function() {
