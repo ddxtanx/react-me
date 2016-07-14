@@ -2,7 +2,7 @@ var bcrypt = require('bcryptjs');
 // Use db.users.find().pretty()
 var mongoose = require('mongoose');
 
-var mongoURI = "mongodb://ddxtanx:1Bvbg6mjm%s@ds011872.mlab.com:11872/logins";
+var mongoURI = "*******";
 var MongoDB = mongoose.connect(mongoURI).connection;
 MongoDB.on('error', function(err) { console.log(err.message); });
 MongoDB.once('open', function() {
