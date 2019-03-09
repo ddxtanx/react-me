@@ -1,14 +1,15 @@
 var bcrypt = require('bcryptjs');
 // Use db.users.find().pretty()
 var mongoose = require('mongoose');
-
-var mongoURI = "*******";
-var MongoDB = mongoose.connect(mongoURI).connection;
-MongoDB.on('error', function(err) { console.log(err.message); });
-MongoDB.once('open', function() {
+var process = require("process");
+var env = process.env;
+var mongoURI = `mongodb://${env.MONGO_USER}:${env.MONGO_PASS}@${env.MONGO_URL}`;
+mongoose.connect(mongoURI);
+mongoose.connection.on('error', function(err) { console.log(err.message); });
+mongoose.connection.on('open', function() {
   console.log("mongodb connection open");
 });
-
+console.log("hi");
 var db = mongoose.connection;
 
 // User Schema

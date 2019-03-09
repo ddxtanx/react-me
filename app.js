@@ -17,7 +17,7 @@ var mongoose = require('mongoose');
 var db = mongoose.connection;
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var env = require("process").env;
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Handle Sessions
 app.use(session({
-  secret:'secret',
+  secret:env.SESS_SECRET,
   saveUninitialized: true,
   resave: true
 }));

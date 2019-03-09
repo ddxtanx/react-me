@@ -1,0 +1,24 @@
+2019-03-09T11:30:49.817-0600 I CONTROL  [initandlisten] MongoDB starting : pid=44214 port=27017 dbpath=/data/db 64-bit host=GMac3149.local
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] db version v3.2.4
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] git version: e2ee9ffcf9f5a94fad76802e28cc978718bb7a30
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.2q  20 Nov 2018
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] allocator: system
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] modules: none
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] build environment:
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten]     distarch: x86_64
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-03-09T11:30:49.818-0600 I CONTROL  [initandlisten] options: {}
+2019-03-09T11:30:49.819-0600 I -        [initandlisten] Detected data files in /data/db created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-03-09T11:30:49.819-0600 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=9G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2019-03-09T11:30:50.430-0600 I CONTROL  [initandlisten] 
+2019-03-09T11:30:50.431-0600 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2019-03-09T11:30:50.436-0600 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/db/diagnostic.data'
+2019-03-09T11:30:50.436-0600 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2019-03-09T11:30:50.437-0600 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-03-09T11:32:01.686-0600 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55325 #1 (1 connection now open)
+2019-03-09T11:32:01.803-0600 I INDEX    [conn1] build index on: test.users properties: { v: 1, key: { username: 1 }, name: "username_1", ns: "test.users", background: true }
+2019-03-09T11:32:01.808-0600 I INDEX    [conn1] build index done.  scanned 0 total records. 0 secs
+2019-03-09T11:32:01.809-0600 I COMMAND  [conn1] command test.$cmd command: createIndexes { createIndexes: "users", indexes: [ { name: "username_1", key: { username: 1 }, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 107ms
+2019-03-09T11:32:31.726-0600 I NETWORK  [conn1] end connection 127.0.0.1:55325 (0 connections now open)
+2019-03-09T11:45:51.535-0600 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.100, "nodename nor servname provided, or not known"), (192.168.0.100, "nodename nor servname provided, or not known") ]
+2019-03-09T12:00:53.023-0600 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.100, "nodename nor servname provided, or not known"), (192.168.0.100, "nodename nor servname provided, or not known") ]

@@ -1,4 +1,5 @@
 var express = require('express');
+
 var router = express.Router();
 var multer = require('multer');
 var upload = multer({dest: './uploads'});
@@ -17,7 +18,8 @@ router.get('/register', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', {title:'Login'});
+  	console.log("got login page");
+	res.render('login', {title:'Login'});
 });
 
 router.post('/login',
@@ -42,12 +44,14 @@ passport.use(new LocalStrategy(function(username, password, done){
     if(!user){
       return done(null, false, {message: 'Unknown User'});
     }
-
+	console.log("found user");
     User.comparePassword(password, user.password, function(err, isMatch){
       if(err) return done(err);
       if(isMatch){
+		console.log("match");
         return done(null, user);
       } else {
+		console.log("not match");
         return done(null, false, {message:'Invalid Password'});
       }
     });
