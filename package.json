@@ -16,7 +16,7 @@
     "express": "^4.16.4",
     "express-messages": "*",
     "express-session": "^1.15.6",
-    "express-validator": "^5.3.1",
+    "express-validator": "^6.0.0",
     "jade": "*",
     "mongodb": "^3.1.13",
     "mongoose": "^5.4.18",
