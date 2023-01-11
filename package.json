@@ -26,7 +26,7 @@
     "passport-http": "*",
     "passport-local": "*",
     "serve-favicon": "^2.5.0",
-    "snyk": "^1.465.0"
+    "snyk": "^1.518.0"
   },
   "description": "The game itself is up and running at [u-react.herokuapp.com](http://u-react.herokuapp.com)",
   "main": "app.js",
